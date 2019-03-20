@@ -1,0 +1,104 @@
+////////////////////////////////////////////////////////////////////////////////////
+// PARENT THEME MIXINS (ONLY AS REFERENCE IF NEEDED)
+////////////////////////////////////////////////////////////////////////////////////
+
+	@import (reference) url('../../../eichmeister/assets/css/mixins.less');
+
+//////////////////////////////////////////////////////////////////////////////////
+// RESPONSIVE DESIGN BREAKPOINTS
+//////////////////////////////////////////////////////////////////////////////////
+
+	// ALREADY SET IN PARENT THEME
+	// JUST HERE COMMENTED IN SO YOU CAN HAVE A QUICK LOOK IN CASE YOU WANNA CHECK
+
+	// @breakpoint1: 360px;
+	// @breakpoint2: 480px;
+	// @breakpoint3: 768px;
+	// @breakpoint4: 1024px;
+	// @breakpoint5: 1280px;
+	// @breakpoint6: 1468px;
+	// @breakpoint7: 1680px;
+	// @breakpoint8: 1920px;
+	// @breakpoint9: 2200px;
+
+////////////////////////////////////////////////////////////////////////////////////
+// SELF HOSTED GOOGLE FONT -> DSGVO
+////////////////////////////////////////////////////////////////////////////////////
+
+	/*
+	@font-face {
+	  font-family: 'Roboto Condensed';
+	  font-style: normal;
+	  font-weight: 300;
+	  src: url('../fonts/roboto-condensed-v16-latin-300.eot');
+	  src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'),
+	       url('../fonts/roboto-condensed-v16-latin-300.eot?#iefix') format('embedded-opentype'),
+	       url('../fonts/roboto-condensed-v16-latin-300.woff2') format('woff2'),
+	       url('../fonts/roboto-condensed-v16-latin-300.woff') format('woff'), 
+	       url('../fonts/roboto-condensed-v16-latin-300.ttf') format('truetype'), 
+	       url('../fonts/roboto-condensed-v16-latin-300.svg#RobotoCondensed') format('svg');
+	}
+	*/
+
+////////////////////////////////////////////////////////////////////////////////////
+// GENERAL SETTINGS (COLORS, FONTS, ...)
+////////////////////////////////////////////////////////////////////////////////////
+
+	@black: #000;
+	@white: #FFF;
+
+	@font1: Arial, sans-serif;
+	@font2: Arial, sans-serif;
+	@font-weight: 400;
+
+////////////////////////////////////////////////////////////////////////////////////
+// PROJECT SPECIFIC ELEMENTS
+////////////////////////////////////////////////////////////////////////////////////
+
+	// RESPONSIVE FONT SIZE GENERALLY USED ACCROSS THE SITE
+	.font-size-body {
+		.font-size-responsive(14px, 14px, 14px, 16px, 16px, 16px, 18px, 20px);
+	}
+
+	// GRADIENT OVERLAY FOR BACKGROUND IMAGES
+	.gradient-left-to-right {
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,70b0e0+100&0.7+0,0+100 */
+		background: -moz-linear-gradient(left, rgba(0,0,0,0.7) 0%, rgba(112,176,224,0) 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(left, rgba(0,0,0,0.7) 0%,rgba(112,176,224,0) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(to right, rgba(0,0,0,0.7) 0%,rgba(112,176,224,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3000000', endColorstr='#0070b0e0',GradientType=1 ); /* IE6-9 */
+	}
+
+	.hl-big {
+		font-family: @font2;
+		font-weight: 700;
+		text-transform: uppercase;
+		.font-size-responsive(30px, 30px, 40px, 40px, 50px, 70px, 80px, 80px);
+
+		&.hl-big-light {
+			font-weight: 300;
+		}
+
+		p {
+			margin-top: 15px;
+		}
+	}
+
+	// CALL TO ACTION (LINK / BUTTON STYLES)
+	.cta {
+		font-size: 14px;
+		font-weight: 400;
+		padding: 10px 25px;
+		.font-size-responsive(14px, 14px, 16px, 16px, 18px, 20px, 22px, 24px);
+
+		&.cta-outline-white {
+			background: transparent;
+			border: 2px solid #FFF;
+			color: #FFF;
+
+			&:hover {
+				background: #FFF;
+				color: #000;
+			}
+		}
+	}
