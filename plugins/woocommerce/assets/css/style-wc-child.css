@@ -1,0 +1,4 @@
+body.woocommerce #em-wc-container,
+body.woocommerce-page #em-wc-container {
+  width: 1200px;
+}
