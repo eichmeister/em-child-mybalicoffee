@@ -93,31 +93,21 @@
 
 	// Add custom Fields
     include( locate_template('plugins/woocommerce/fields/em-wc-product-fields.php') );
+    include( locate_template('plugins/woocommerce/fields/em-wc-taxonomy-fields.php') );
 
     // Remove meta box "eichmeister product data"
     add_filter( 'em_wc_product_activate', '__return_false' );
 
- //    if ( ! function_exists( 'update_em_text_box_1' ) ) {
- //        function update_em_text_box_1( $text ) {
- //        	$text = 'Geschmack';
- //            return $text;
- //        }
- //        add_filter('em_text_box_1', 'update_em_text_box_1', 10, 4);
- //    }
+//////////////////////////////////////////////////////////////////////////////////////////////
+// SINGLE PAGE LAYOUT
+//////////////////////////////////////////////////////////////////////////////////////////////
 
- //    if ( ! function_exists( 'update_em_text_box_2' ) ) {
- //        function update_em_text_box_2( $text ) {
- //        	$text = 'Herkunft';
- //            return $text;
- //        }
- //        add_filter('em_text_box_2', 'update_em_text_box_2', 10, 4);
- //    }
-
- //    if ( ! function_exists( 'update_em_text_box_3' ) ) {
- //        function update_em_text_box_3( $text ) {
- //        	$text = 'Lieferung';
- //            return $text;
- //        }
- //        add_filter('em_text_box_3', 'update_em_text_box_3', 10, 4);
- //    }
-	// 
+	add_action( 'woocommerce_before_main_content', 'em_wc_custom_single_page_background', 5 );
+	function em_wc_custom_single_page_background() {
+		$flavor_term_meta = get_term_meta( get_field("gebiet_region")->term_id ); 
+		$flavor_background_color = array_shift($flavor_term_meta['background-color']); 
+		?>
+		<div class="custom-background" style="background-color: <?php echo $flavor_background_color; ?>">
+		</div>
+		<?php
+	}

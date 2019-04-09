@@ -25,16 +25,13 @@
 //////////////////////////////////////////////////////////////////////////////////////
 
     function my_theme_enqueue_styles() {
-
-        wp_dequeue_style( 'flexgrid-css' );
-        wp_enqueue_style( 'grid-css',    get_template_directory_uri()."/assets/css/lib/grid/grid.css" );
         
         wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/assets/css/style.css' );
         wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/assets/css/style.css', array('parent-style') );
 
         // New woocommerce styles
-        wp_enqueue_style( 'style-woocommerce-child-css', get_stylesheet_directory_uri()."/plugins/woocommerce/assets/css/style-wc-child.css" );
-        wp_enqueue_script( 'em-woocommerce', get_stylesheet_directory_uri()."/plugins/woocommerce/assets/js/em-woocommerce.js", array(), '1.0.0', true );
+        wp_enqueue_style( 'style-wc-child-css', get_stylesheet_directory_uri()."/plugins/woocommerce/assets/css/style-wc-child.css" );
+        wp_enqueue_script( 'script-wc-child-js', get_stylesheet_directory_uri()."/plugins/woocommerce/assets/js/script-wc-child.js", array(), '1.0.0', true );
 
         if (is_page_template('page-templates/tpl-lp-1.php')) {
 
