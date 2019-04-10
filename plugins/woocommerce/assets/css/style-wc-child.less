@@ -22,9 +22,6 @@
 
 	body.woocommerce, 
 	body.woocommerce-page {
-		#em-wc-container {
-			width: 1200px;
-		}
 	}
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -33,12 +30,17 @@
 
 	body.single-product {
 		// Custom Mybali Background by taxonomies
+
+		.product {
+			position: relative;
+		}
+
 		.custom-background {
 			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
-			height: 80vh;
+			height: 100%;
 			z-index: -10;
 
 			&:before {
@@ -87,5 +89,127 @@
 		// product gallery
 		.woocommerce-product-gallery__trigger {
 			display: none;
+		}
+
+		#custom-taxonomies {
+			position: relative;
+  			background-image: url("../img/bali-background-4.jpg");
+			background-size: cover;
+			background-repeat: repeat-x;
+
+			&:before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 100px;
+  				background-image: url("../img/bali-background-2.png");
+  				background-size: contain;
+  				background-repeat: repeat-x;
+  				z-index: 1;
+			}
+
+			&:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 200px;
+  				background-image: linear-gradient(to top, rgba(255, 255, 255, 0), #ffffff);
+  				z-index: 1;
+			}
+
+			.custom-taxonomies-image {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 300px;
+				height: 200px;
+  				background-image: url("../img/bali-background-3.svg");
+  				background-size: contain;
+  				background-repeat: no-repeat;
+  				z-index: 2;
+			}
+
+			.region {
+				.region-background {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 80%;
+					height: 80%;
+					z-index: 10;
+
+					&:before {
+						content: "";
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+		  				background-image: url("../img/bali-background.svg");
+		  				background-size: contain;
+					}
+				}
+
+				img {
+
+					position: relative;
+					top: 10%;
+					left: 20%;
+					width: auto;
+					height: 80%;
+					z-index: 20;
+				}
+			}
+
+			.flavor {
+				.flavor-background {
+					position: absolute;
+					top: 10%;
+					right: 0;
+					width: 80%;
+					height: 80%;
+					z-index: 10;
+
+					&:before {
+						content: "";
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+		  				background-image: url("../img/bali-background.svg");
+		  				background-size: contain;
+					}
+				}
+
+				img {
+
+					position: relative;
+					top: 0;
+					left: 0;
+					width: auto;
+					height: 80%;
+					z-index: 20;
+				}
+			}
+
+			.content {
+				align-self: center;
+			}
+
+			@media all and (min-width: @breakpoint3_mf) {
+				.order-1 {
+					order: 1;
+				}
+
+				.order-2 {
+					order: 2;
+				}
+			}
 		}
 	}

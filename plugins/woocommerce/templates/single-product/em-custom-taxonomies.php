@@ -12,15 +12,13 @@ $flavor_term_meta = get_term_meta( $flavor_field->term_id );
 	<div class="row">
 
 		<div class="col_6">
-			<div class="custom-background"></div>
-			<?php echo wp_get_attachment_image(array_shift($flavor_term_meta['background_image']), $size = 'full' ); ?>
+			<div class="region-background" style="background-color: <?php echo array_shift($region_term_meta['background_color']); ?>"></div>
+			<?php echo wp_get_attachment_image(array_shift($region_term_meta['background_image']), $size = 'full' ); ?>
 		</div>
-		<div class="col_6">
-			<div class="content">
-				<h3 class="hl3"><?php echo $flavor_field->name; ?></h3>
-				<h4 class="hl4"><?php echo array_shift($flavor_term_meta['sub_headline']); ?></h4>
-				<p><?php echo $flavor_field->description; ?></p>
-			</div>
+		<div class="col_6 content">
+			<h3 class="hl3"><?php echo $region_field->name; ?></h3>
+			<h4 class="hl4"><?php echo array_shift($region_term_meta['sub_headline']); ?></h4>
+			<p><?php echo $region_field->description; ?></p>
 		</div>
 	
 	</div>
@@ -30,17 +28,15 @@ $flavor_term_meta = get_term_meta( $flavor_field->term_id );
 <div class="flavor">
 	<div class="row">
 
-		<div class="col_6">
-			<div class="content">
-				<h3 class="hl3"><?php echo $region_field->name; ?></h3>
-				<h4 class="hl4"><?php echo array_shift($region_term_meta['sub_headline']); ?></h4>
-				<p><?php echo $region_field->description; ?></p>
-			</div>
+		<div class="col_6 order-2">
+			<div class="flavor-background" style="background-color: <?php echo array_shift($flavor_term_meta['background_color']); ?>"></div>
+			<?php echo wp_get_attachment_image(array_shift($flavor_term_meta['background_image']), $size = 'full' ); ?>
 		</div>
 
-		<div class="col_6">
-			<div class="custom-background"></div>
-			<?php echo wp_get_attachment_image(array_shift($region_term_meta['background_image']), $size = 'full' ); ?>
+		<div class="col_6 content order-1">
+			<h3 class="hl3"><?php echo $flavor_field->name; ?></h3>
+			<h4 class="hl4"><?php echo array_shift($flavor_term_meta['sub_headline']); ?></h4>
+			<p><?php echo $flavor_field->description; ?></p>
 		</div>
 	
 	</div>

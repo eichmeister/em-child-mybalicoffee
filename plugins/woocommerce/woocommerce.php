@@ -101,13 +101,3 @@
 //////////////////////////////////////////////////////////////////////////////////////////////
 // SINGLE PAGE LAYOUT
 //////////////////////////////////////////////////////////////////////////////////////////////
-
-	add_action( 'woocommerce_before_main_content', 'em_wc_custom_single_page_background', 5 );
-	function em_wc_custom_single_page_background() {
-		$flavor_term_meta = get_term_meta( get_field('gebiet_region')->term_id ); 
-		$flavor_background_color = array_shift($flavor_term_meta['background-color']); 
-		?>
-		<div class="custom-background" style="background-color: <?php echo $flavor_background_color; ?>">
-		</div>
-		<?php
-	}
