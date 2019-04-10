@@ -8,7 +8,7 @@ acf_add_local_field_group(array(
 		array(
 			'key' => 'field_5caca09eb1bbc',
 			'label' => 'Background-color',
-			'name' => 'background-color',
+			'name' => 'background_color',
 			'type' => 'color_picker',
 			'instructions' => '',
 			'required' => 0,
@@ -23,7 +23,7 @@ acf_add_local_field_group(array(
 		array(
 			'key' => 'field_5caca0b2b1bbd',
 			'label' => 'Background-Image',
-			'name' => 'background-image',
+			'name' => 'background_image',
 			'type' => 'image',
 			'instructions' => '',
 			'required' => 0,

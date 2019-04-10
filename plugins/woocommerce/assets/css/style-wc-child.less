@@ -32,6 +32,7 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 	body.single-product {
+		// Custom Mybali Background by taxonomies
 		.custom-background {
 			position: absolute;
 			top: 0;
@@ -64,5 +65,27 @@
   				background-repeat: repeat-x;
   				z-index: -2;
 			}
+		}
+
+		#em-wc-container {
+			table.variations {
+				margin-bottom: 40px;
+
+				tr {
+					td {
+						padding: 20px 0 0 0;
+					}
+				}
+
+				select {
+					border: 0;
+					border-bottom: 1px solid #fff;
+				}
+			}
+		}
+
+		// product gallery
+		.woocommerce-product-gallery__trigger {
+			display: none;
 		}
 	}

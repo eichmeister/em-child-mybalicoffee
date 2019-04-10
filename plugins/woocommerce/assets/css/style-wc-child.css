@@ -33,3 +33,16 @@ body.single-product .custom-background:after {
   background-repeat: repeat-x;
   z-index: -2;
 }
+body.single-product #em-wc-container table.variations {
+  margin-bottom: 40px;
+}
+body.single-product #em-wc-container table.variations tr td {
+  padding: 20px 0 0 0;
+}
+body.single-product #em-wc-container table.variations select {
+  border: 0;
+  border-bottom: 1px solid #fff;
+}
+body.single-product .woocommerce-product-gallery__trigger {
+  display: none;
+}
