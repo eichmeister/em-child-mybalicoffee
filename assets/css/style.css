@@ -180,6 +180,71 @@ h6 {
   background: #000;
   color: #FFF;
 }
+.btn-line-left {
+  font-size: 24px;
+  font-weight: 700;
+  position: relative;
+  display: block;
+  text-align: right;
+  padding-left: 100px;
+  overflow: auto;
+  float: right;
+}
+@media all and (min-width: 360px) and (max-width: 480px) {
+  .btn-line-left {
+    font-size: 24px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .btn-line-left {
+    font-size: 24px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .btn-line-left {
+    font-size: 28px;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+  .btn-line-left {
+    font-size: 28px;
+  }
+}
+@media all and (min-width: 1280px) and (max-width: 1468px) {
+  .btn-line-left {
+    font-size: 34px;
+  }
+}
+@media all and (min-width: 1468px) and (max-width: 1680px) {
+  .btn-line-left {
+    font-size: 34px;
+  }
+}
+@media all and (min-width: 1680px) and (max-width: 1920px) {
+  .btn-line-left {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 1920px) {
+  .btn-line-left {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 2200px) {
+  .btn-line-left {
+    font-size: 40px;
+  }
+}
+.btn-line-left:before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 80px;
+  background-color: #033142;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
 .gradient-left-to-right {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,70b0e0+100&0.7+0,0+100 */
   background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.7) 0%, rgba(112, 176, 224, 0) 100%);

@@ -12,7 +12,7 @@ $flavor_term_meta = get_term_meta( $flavor_field->term_id );
 	<div class="row">
 
 		<div class="col_6">
-			<div class="region-background" style="background-color: <?php echo array_shift($region_term_meta['background_color']); ?>"></div>
+			<div class="region-background" style="background-color: <?php echo $region_term_meta['background_color'][0]; ?>"></div>
 			<?php echo wp_get_attachment_image(array_shift($region_term_meta['background_image']), $size = 'full' ); ?>
 		</div>
 		<div class="col_6 content">

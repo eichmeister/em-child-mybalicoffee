@@ -24,7 +24,7 @@ body.single-product .custom-background:before {
   width: 100%;
   height: 100%;
   background-image: url("../img/bali-background.svg");
-  background-size: cover;
+  background-size: contain;
   background-repeat: repeat;
   z-index: -5;
 }
@@ -97,17 +97,18 @@ body.single-product #custom-taxonomies:after {
   background-image: linear-gradient(to top, rgba(255, 255, 255, 0), #ffffff);
   z-index: 1;
 }
-body.single-product #custom-taxonomies .custom-taxonomies-image {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 300px;
-  height: 200px;
-  background-image: url("../img/bali-background-3.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  z-index: 2;
+@media all and (min-width: 769px) {
+  body.single-product #custom-taxonomies .custom-taxonomies-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 200px;
+    background-image: url("../img/bali-background-3.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 2;
+  }
 }
 body.single-product #custom-taxonomies .region .region-background {
   position: absolute;
@@ -125,7 +126,7 @@ body.single-product #custom-taxonomies .region .region-background:before {
   width: 100%;
   height: 100%;
   background-image: url("../img/bali-background.svg");
-  background-size: cover;
+  background-size: contain;
   background-repeat: repeat;
 }
 body.single-product #custom-taxonomies .region img {
@@ -138,7 +139,7 @@ body.single-product #custom-taxonomies .region img {
 }
 body.single-product #custom-taxonomies .flavor .flavor-background {
   position: absolute;
-  top: 10%;
+  top: 0;
   left: 10%;
   width: 100%;
   height: 100%;
@@ -152,13 +153,13 @@ body.single-product #custom-taxonomies .flavor .flavor-background:before {
   width: 100%;
   height: 100%;
   background-image: url("../img/bali-background.svg");
-  background-size: cover;
+  background-size: contain;
   background-repeat: repeat;
 }
 body.single-product #custom-taxonomies .flavor img {
   position: relative;
-  top: 0;
-  left: 0;
+  top: -10%;
+  left: 0%;
   width: 80%;
   height: auto;
   z-index: 20;
@@ -173,4 +174,46 @@ body.single-product #custom-taxonomies .content {
   body.single-product #custom-taxonomies .order-2 {
     order: 2;
   }
+}
+.em-product-tile-4:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/bali-background.svg");
+  background-size: contain;
+  background-repeat: repeat;
+}
+.em-product-tile-4 .flavor,
+.em-product-tile-4 .region {
+  text-align: center;
+  color: #FFF;
+  display: block;
+}
+.em-product-tile-4 .title {
+  font-size: 2em;
+  text-align: center;
+  color: #FFF;
+  display: block;
+}
+.em-product-tile-4 .description {
+  position: relative;
+}
+.em-product-tile-4 .more-information {
+  position: absolute;
+  top: 200%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: fit-content;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.em-product-tile-4:hover .wrapper {
+  opacity: 0;
+}
+.em-product-tile-4:hover .more-information {
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

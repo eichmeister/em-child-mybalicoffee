@@ -94,6 +94,28 @@
         }
     }
 
+    .btn-line-left {
+        .font-size-responsive(24px,24px,28px,28px,34px,34px,40px,40px);
+        font-weight: @font-weight-bold;
+        position: relative;
+        display: block;
+        text-align: right;
+        padding-left: 100px;
+        overflow: auto;
+        float: right;
+
+        &:before {
+            content: "";
+            position: absolute;
+            height: 3px;
+            width: 80px;
+            background-color: @darkblue;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+    }
+
 	// GRADIENT OVERLAY FOR BACKGROUND IMAGES
 	.gradient-left-to-right {
 		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,70b0e0+100&0.7+0,0+100 */
