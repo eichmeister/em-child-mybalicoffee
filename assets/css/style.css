@@ -1,17 +1,3 @@
-/*
-	@font-face {
-	  font-family: 'Roboto Condensed';
-	  font-style: normal;
-	  font-weight: 300;
-	  src: url('../fonts/roboto-condensed-v16-latin-300.eot');
-	  src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'),
-	       url('../fonts/roboto-condensed-v16-latin-300.eot?#iefix') format('embedded-opentype'),
-	       url('../fonts/roboto-condensed-v16-latin-300.woff2') format('woff2'),
-	       url('../fonts/roboto-condensed-v16-latin-300.woff') format('woff'), 
-	       url('../fonts/roboto-condensed-v16-latin-300.ttf') format('truetype'), 
-	       url('../fonts/roboto-condensed-v16-latin-300.svg#RobotoCondensed') format('svg');
-	}
-	*/
 @import url(icon-font-custom.css);
 .font-size-body {
   font-size: 14px;
@@ -61,6 +47,139 @@
     font-size: 20px;
   }
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  text-transform: uppercase;
+  font-size: 34px;
+}
+@media all and (min-width: 360px) and (max-width: 480px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 36px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 768px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 36px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 38px;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 1280px) and (max-width: 1468px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 42px;
+  }
+}
+@media all and (min-width: 1468px) and (max-width: 1680px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 44px;
+  }
+}
+@media all and (min-width: 1680px) and (max-width: 1920px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 48px;
+  }
+}
+@media all and (min-width: 1920px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 48px;
+  }
+}
+@media all and (min-width: 2200px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 48px;
+  }
+}
+.font1 {
+  font-family: Arial, sans-serif;
+}
+.font2 {
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+}
+.btn {
+  background-color: #033142;
+  color: #FFF;
+  border: 1px solid #033142;
+  display: inline-block;
+  padding: 1em 1.5em;
+  outline: none;
+  text-decoration: none;
+  text-align: center;
+}
+.btn:hover {
+  background-color: #FFF;
+  color: #033142;
+  border: 1px solid #033142;
+}
+.btn.btn-outline-black {
+  background-color: transparent;
+  color: #000;
+  border: 1px solid #000;
+}
+.btn.btn-outline-black:hover {
+  background: #000;
+  color: #FFF;
+}
 .gradient-left-to-right {
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,70b0e0+100&0.7+0,0+100 */
   background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.7) 0%, rgba(112, 176, 224, 0) 100%);
@@ -72,121 +191,326 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b3000000', endColorstr='#0070b0e0', GradientType=1);
   /* IE6-9 */
 }
-.hl-big {
-  font-family: Arial, sans-serif;
+.content-border {
+  padding-left: 20px;
+  margin-left: 20px;
+  border-left: 1px solid #FFF;
+}
+.box-shadow {
+  -webkit-box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.15);
+}
+.hl-1,
+.hl1 {
+  font-size: 40px;
   font-weight: 700;
-  text-transform: uppercase;
-  font-size: 30px;
+  font-family: Arial, sans-serif;
 }
 @media all and (min-width: 360px) and (max-width: 480px) {
-  .hl-big {
-    font-size: 30px;
+  .hl-1,
+  .hl1 {
+    font-size: 40px;
   }
 }
 @media all and (min-width: 480px) and (max-width: 768px) {
-  .hl-big {
-    font-size: 30px;
+  .hl-1,
+  .hl1 {
+    font-size: 40px;
   }
 }
 @media all and (min-width: 768px) and (max-width: 1024px) {
-  .hl-big {
-    font-size: 40px;
-  }
-}
-@media all and (min-width: 1024px) and (max-width: 1280px) {
-  .hl-big {
-    font-size: 40px;
-  }
-}
-@media all and (min-width: 1280px) and (max-width: 1468px) {
-  .hl-big {
+  .hl-1,
+  .hl1 {
     font-size: 50px;
   }
 }
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+  .hl-1,
+  .hl1 {
+    font-size: 50px;
+  }
+}
+@media all and (min-width: 1280px) and (max-width: 1468px) {
+  .hl-1,
+  .hl1 {
+    font-size: 60px;
+  }
+}
 @media all and (min-width: 1468px) and (max-width: 1680px) {
-  .hl-big {
-    font-size: 70px;
+  .hl-1,
+  .hl1 {
+    font-size: 60px;
   }
 }
 @media all and (min-width: 1680px) and (max-width: 1920px) {
-  .hl-big {
+  .hl-1,
+  .hl1 {
     font-size: 80px;
   }
 }
 @media all and (min-width: 1920px) {
-  .hl-big {
+  .hl-1,
+  .hl1 {
     font-size: 80px;
   }
 }
 @media all and (min-width: 2200px) {
-  .hl-big {
+  .hl-1,
+  .hl1 {
     font-size: 80px;
   }
 }
-.hl-big.hl-big-light {
-  font-weight: 300;
-}
-.hl-big p {
-  margin-top: 15px;
-}
-.cta {
+.hl-2,
+.hl2 {
+  font-size: 34px;
   font-weight: 400;
-  padding: 10px 25px;
-  font-size: 14px;
+  font-family: Arial, sans-serif;
 }
 @media all and (min-width: 360px) and (max-width: 480px) {
-  .cta {
+  .hl-2,
+  .hl2 {
+    font-size: 34px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .hl-2,
+  .hl2 {
+    font-size: 34px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .hl-2,
+  .hl2 {
+    font-size: 50px;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+  .hl-2,
+  .hl2 {
+    font-size: 54px;
+  }
+}
+@media all and (min-width: 1280px) and (max-width: 1468px) {
+  .hl-2,
+  .hl2 {
+    font-size: 60px;
+  }
+}
+@media all and (min-width: 1468px) and (max-width: 1680px) {
+  .hl-2,
+  .hl2 {
+    font-size: 60px;
+  }
+}
+@media all and (min-width: 1680px) and (max-width: 1920px) {
+  .hl-2,
+  .hl2 {
+    font-size: 80px;
+  }
+}
+@media all and (min-width: 1920px) {
+  .hl-2,
+  .hl2 {
+    font-size: 80px;
+  }
+}
+@media all and (min-width: 2200px) {
+  .hl-2,
+  .hl2 {
+    font-size: 80px;
+  }
+}
+.hl-3,
+.hl3 {
+  font-size: 28px;
+  font-weight: 700;
+  font-family: Arial, sans-serif;
+}
+@media all and (min-width: 360px) and (max-width: 480px) {
+  .hl-3,
+  .hl3 {
+    font-size: 28px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .hl-3,
+  .hl3 {
+    font-size: 28px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .hl-3,
+  .hl3 {
+    font-size: 34px;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+  .hl-3,
+  .hl3 {
+    font-size: 34px;
+  }
+}
+@media all and (min-width: 1280px) and (max-width: 1468px) {
+  .hl-3,
+  .hl3 {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 1468px) and (max-width: 1680px) {
+  .hl-3,
+  .hl3 {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 1680px) and (max-width: 1920px) {
+  .hl-3,
+  .hl3 {
+    font-size: 60px;
+  }
+}
+@media all and (min-width: 1920px) {
+  .hl-3,
+  .hl3 {
+    font-size: 60px;
+  }
+}
+@media all and (min-width: 2200px) {
+  .hl-3,
+  .hl3 {
+    font-size: 60px;
+  }
+}
+.hl-4,
+.hl4 {
+  font-size: 24px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+}
+@media all and (min-width: 360px) and (max-width: 480px) {
+  .hl-4,
+  .hl4 {
+    font-size: 24px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .hl-4,
+  .hl4 {
+    font-size: 24px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .hl-4,
+  .hl4 {
+    font-size: 28px;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+  .hl-4,
+  .hl4 {
+    font-size: 28px;
+  }
+}
+@media all and (min-width: 1280px) and (max-width: 1468px) {
+  .hl-4,
+  .hl4 {
+    font-size: 34px;
+  }
+}
+@media all and (min-width: 1468px) and (max-width: 1680px) {
+  .hl-4,
+  .hl4 {
+    font-size: 34px;
+  }
+}
+@media all and (min-width: 1680px) and (max-width: 1920px) {
+  .hl-4,
+  .hl4 {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 1920px) {
+  .hl-4,
+  .hl4 {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 2200px) {
+  .hl-4,
+  .hl4 {
+    font-size: 40px;
+  }
+}
+.p,
+p,
+button {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Arial, sans-serif;
+  line-height: 1.4;
+}
+@media all and (min-width: 360px) and (max-width: 480px) {
+  .p,
+  p,
+  button {
     font-size: 14px;
   }
 }
 @media all and (min-width: 480px) and (max-width: 768px) {
-  .cta {
+  .p,
+  p,
+  button {
     font-size: 14px;
   }
 }
 @media all and (min-width: 768px) and (max-width: 1024px) {
-  .cta {
+  .p,
+  p,
+  button {
     font-size: 16px;
   }
 }
 @media all and (min-width: 1024px) and (max-width: 1280px) {
-  .cta {
+  .p,
+  p,
+  button {
     font-size: 16px;
   }
 }
 @media all and (min-width: 1280px) and (max-width: 1468px) {
-  .cta {
+  .p,
+  p,
+  button {
     font-size: 18px;
   }
 }
 @media all and (min-width: 1468px) and (max-width: 1680px) {
-  .cta {
-    font-size: 20px;
+  .p,
+  p,
+  button {
+    font-size: 18px;
   }
 }
 @media all and (min-width: 1680px) and (max-width: 1920px) {
-  .cta {
-    font-size: 22px;
+  .p,
+  p,
+  button {
+    font-size: 20px;
   }
 }
 @media all and (min-width: 1920px) {
-  .cta {
-    font-size: 22px;
+  .p,
+  p,
+  button {
+    font-size: 20px;
   }
 }
 @media all and (min-width: 2200px) {
-  .cta {
-    font-size: 24px;
+  .p,
+  p,
+  button {
+    font-size: 20px;
   }
-}
-.cta.cta-outline-white {
-  background: transparent;
-  border: 2px solid #FFF;
-  color: #FFF;
-}
-.cta.cta-outline-white:hover {
-  background: #FFF;
-  color: #000;
 }
 :focus {
   outline: none;
@@ -244,10 +568,6 @@ body {
     font-size: 18px;
   }
 }
-strong,
-b {
-  font-weight: 700;
-}
 a {
   color: #000;
   text-decoration: none;
@@ -261,153 +581,6 @@ a {
 a:hover {
   text-decoration: none;
   color: #333;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 0;
-  line-height: 1;
-  text-transform: uppercase;
-}
-h1,
-h2 {
-  font-size: 34px;
-}
-@media all and (min-width: 360px) and (max-width: 480px) {
-  h1,
-  h2 {
-    font-size: 36px;
-  }
-}
-@media all and (min-width: 480px) and (max-width: 768px) {
-  h1,
-  h2 {
-    font-size: 36px;
-  }
-}
-@media all and (min-width: 768px) and (max-width: 1024px) {
-  h1,
-  h2 {
-    font-size: 38px;
-  }
-}
-@media all and (min-width: 1024px) and (max-width: 1280px) {
-  h1,
-  h2 {
-    font-size: 40px;
-  }
-}
-@media all and (min-width: 1280px) and (max-width: 1468px) {
-  h1,
-  h2 {
-    font-size: 42px;
-  }
-}
-@media all and (min-width: 1468px) and (max-width: 1680px) {
-  h1,
-  h2 {
-    font-size: 44px;
-  }
-}
-@media all and (min-width: 1680px) and (max-width: 1920px) {
-  h1,
-  h2 {
-    font-size: 48px;
-  }
-}
-@media all and (min-width: 1920px) {
-  h1,
-  h2 {
-    font-size: 48px;
-  }
-}
-@media all and (min-width: 2200px) {
-  h1,
-  h2 {
-    font-size: 48px;
-  }
-}
-h3,
-h4,
-h5,
-h6 {
-  font-size: 22px;
-}
-@media all and (min-width: 360px) and (max-width: 480px) {
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: 22px;
-  }
-}
-@media all and (min-width: 480px) and (max-width: 768px) {
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: 22px;
-  }
-}
-@media all and (min-width: 768px) and (max-width: 1024px) {
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: 24px;
-  }
-}
-@media all and (min-width: 1024px) and (max-width: 1280px) {
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: 24px;
-  }
-}
-@media all and (min-width: 1280px) and (max-width: 1468px) {
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: 24px;
-  }
-}
-@media all and (min-width: 1468px) and (max-width: 1680px) {
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: 24px;
-  }
-}
-@media all and (min-width: 1680px) and (max-width: 1920px) {
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: 26px;
-  }
-}
-@media all and (min-width: 1920px) {
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: 26px;
-  }
-}
-@media all and (min-width: 2200px) {
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: 26px;
-  }
 }
 .em-social-media-channels a {
   background: #000;

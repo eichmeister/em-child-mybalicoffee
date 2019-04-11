@@ -101,3 +101,17 @@
 //////////////////////////////////////////////////////////////////////////////////////////////
 // SINGLE PAGE LAYOUT
 //////////////////////////////////////////////////////////////////////////////////////////////
+
+	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+	add_action( 'woocommerce_before_single_product_summary', 'woocommerce_breadcrumb', 5 );
+	add_action( 'woocommerce_before_single_product_summary', 'wc_print_notices', 6 );
+
+    // Product single page - related products headline
+
+    function em_related_products_headline() {
+        return "Ähnliche Produkte";
+    }
+    add_filter( 'em_related_products_headline', 'em_related_products_headline' );
+    add_filter( 'em_related_products_sub_headline', '__return_false' );
+
+

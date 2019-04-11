@@ -1,3 +1,10 @@
+body.single-product {
+  /******** summary background ********/
+  /******** Product summary ********/
+  /******** Product Attributes ********/
+  /******** Product Gallery ********/
+  /******** Taxonomies layout ********/
+}
 body.single-product .product {
   position: relative;
 }
@@ -17,7 +24,8 @@ body.single-product .custom-background:before {
   width: 100%;
   height: 100%;
   background-image: url("../img/bali-background.svg");
-  background-size: contain;
+  background-size: cover;
+  background-repeat: repeat;
   z-index: -5;
 }
 body.single-product .custom-background:after {
@@ -32,6 +40,15 @@ body.single-product .custom-background:after {
   background-repeat: repeat-x;
   z-index: -2;
 }
+body.single-product .summary {
+  color: #FFF;
+}
+body.single-product #em-wc-container .woocommerce-breadcrumb {
+  color: #FFF;
+}
+body.single-product #em-wc-container .woocommerce-breadcrumb a {
+  color: #FFF;
+}
 body.single-product #em-wc-container table.variations {
   margin-bottom: 40px;
 }
@@ -41,6 +58,13 @@ body.single-product #em-wc-container table.variations tr td {
 body.single-product #em-wc-container table.variations select {
   border: 0;
   border-bottom: 1px solid #fff;
+}
+body.single-product #em-wc-container .single_variation_wrap input.qty {
+  width: 60px;
+  background-color: transparent;
+  border: 1px solid #FFF;
+  color: #FFF;
+  padding: 13px 10px;
 }
 body.single-product .woocommerce-product-gallery__trigger {
   display: none;
@@ -87,10 +111,10 @@ body.single-product #custom-taxonomies .custom-taxonomies-image {
 }
 body.single-product #custom-taxonomies .region .region-background {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 80%;
-  height: 80%;
+  top: -20%;
+  left: -10%;
+  width: 100%;
+  height: 100%;
   z-index: 10;
 }
 body.single-product #custom-taxonomies .region .region-background:before {
@@ -101,22 +125,23 @@ body.single-product #custom-taxonomies .region .region-background:before {
   width: 100%;
   height: 100%;
   background-image: url("../img/bali-background.svg");
-  background-size: contain;
+  background-size: cover;
+  background-repeat: repeat;
 }
 body.single-product #custom-taxonomies .region img {
   position: relative;
-  top: 10%;
+  top: 0%;
   left: 20%;
-  width: auto;
-  height: 80%;
+  width: 80%;
+  height: auto;
   z-index: 20;
 }
 body.single-product #custom-taxonomies .flavor .flavor-background {
   position: absolute;
   top: 10%;
-  right: 0;
-  width: 80%;
-  height: 80%;
+  left: 10%;
+  width: 100%;
+  height: 100%;
   z-index: 10;
 }
 body.single-product #custom-taxonomies .flavor .flavor-background:before {
@@ -127,14 +152,15 @@ body.single-product #custom-taxonomies .flavor .flavor-background:before {
   width: 100%;
   height: 100%;
   background-image: url("../img/bali-background.svg");
-  background-size: contain;
+  background-size: cover;
+  background-repeat: repeat;
 }
 body.single-product #custom-taxonomies .flavor img {
   position: relative;
   top: 0;
   left: 0;
-  width: auto;
-  height: 80%;
+  width: 80%;
+  height: auto;
   z-index: 20;
 }
 body.single-product #custom-taxonomies .content {

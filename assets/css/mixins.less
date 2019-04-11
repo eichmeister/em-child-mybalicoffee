@@ -25,20 +25,34 @@
 // SELF HOSTED GOOGLE FONT -> DSGVO
 ////////////////////////////////////////////////////////////////////////////////////
 
-	/*
-	@font-face {
-	  font-family: 'Roboto Condensed';
-	  font-style: normal;
-	  font-weight: 300;
-	  src: url('../fonts/roboto-condensed-v16-latin-300.eot');
-	  src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'),
-	       url('../fonts/roboto-condensed-v16-latin-300.eot?#iefix') format('embedded-opentype'),
-	       url('../fonts/roboto-condensed-v16-latin-300.woff2') format('woff2'),
-	       url('../fonts/roboto-condensed-v16-latin-300.woff') format('woff'), 
-	       url('../fonts/roboto-condensed-v16-latin-300.ttf') format('truetype'), 
-	       url('../fonts/roboto-condensed-v16-latin-300.svg#RobotoCondensed') format('svg');
+
+	@font1: Arial, sans-serif;
+	@font2: Arial, sans-serif;
+
+	@font-weight: 400;
+	@font-weight-bold: 700;
+
+	// RESPONSIVE FONT SIZE GENERALLY USED ACCROSS THE SITE
+	.font-size-body {
+		.font-size-responsive(14px, 14px, 14px, 16px, 16px, 16px, 18px, 20px);
 	}
-	*/
+
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        text-transform: uppercase;
+        .font-size-responsive(34px, 36px, 38px, 40px, 42px, 44px, 48px, 48px);
+    }
+
+	.font1 {
+		font-family: @font1;
+	}
+
+	.font2 {
+		font-family: @font2;
+		font-weight: @font-weight
+	}
 
 ////////////////////////////////////////////////////////////////////////////////////
 // GENERAL SETTINGS (COLORS, FONTS, ...)
@@ -46,19 +60,39 @@
 
 	@black: #000;
 	@white: #FFF;
-
-	@font1: Arial, sans-serif;
-	@font2: Arial, sans-serif;
-	@font-weight: 400;
+	@darkblue: #033142;
 
 ////////////////////////////////////////////////////////////////////////////////////
 // PROJECT SPECIFIC ELEMENTS
 ////////////////////////////////////////////////////////////////////////////////////
+	
+    .btn {
+        background-color: @darkblue;
+        color: @white;
+        border: 1px solid @darkblue;
+        display: inline-block;
+        padding: 1em 1.5em;
+        outline: none;
+        text-decoration: none;
+        text-align: center;
+        
+        &:hover {
+            background-color: @white;
+            color: @darkblue;
+            border: 1px solid @darkblue;
+        }
 
-	// RESPONSIVE FONT SIZE GENERALLY USED ACCROSS THE SITE
-	.font-size-body {
-		.font-size-responsive(14px, 14px, 14px, 16px, 16px, 16px, 18px, 20px);
-	}
+        &.btn-outline-black {
+            background-color: transparent;
+            color: #000;
+            border: 1px solid #000;
+
+            &:hover {
+                background: #000;
+                color: #FFF;
+            }
+        }
+    }
 
 	// GRADIENT OVERLAY FOR BACKGROUND IMAGES
 	.gradient-left-to-right {
@@ -69,36 +103,52 @@
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3000000', endColorstr='#0070b0e0',GradientType=1 ); /* IE6-9 */
 	}
 
-	.hl-big {
-		font-family: @font2;
-		font-weight: 700;
-		text-transform: uppercase;
-		.font-size-responsive(30px, 30px, 40px, 40px, 50px, 70px, 80px, 80px);
-
-		&.hl-big-light {
-			font-weight: 300;
-		}
-
-		p {
-			margin-top: 15px;
-		}
+	.content-border {
+		padding-left: 20px;
+		margin-left: 20px;
+		border-left: 1px solid @white;
 	}
 
-	// CALL TO ACTION (LINK / BUTTON STYLES)
-	.cta {
-		font-size: 14px;
-		font-weight: 400;
-		padding: 10px 25px;
-		.font-size-responsive(14px, 14px, 16px, 16px, 18px, 20px, 22px, 24px);
-
-		&.cta-outline-white {
-			background: transparent;
-			border: 2px solid #FFF;
-			color: #FFF;
-
-			&:hover {
-				background: #FFF;
-				color: #000;
-			}
-		}
+	.box-shadow {
+		-webkit-box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.15);
+		-moz-box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.15);
+		box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.15);
 	}
+	h1,h2,h3,h4,h5,h6 {
+
+	}
+
+    .hl-1,
+    .hl1 {
+        .font-size-responsive(40px,40px,50px,50px,60px,60px,80px,80px);
+        font-weight: @font-weight-bold;
+        font-family: @font1;
+    }
+
+    .hl-2,
+    .hl2 {
+        .font-size-responsive(34px,34px,50px,54px,60px,60px,80px,80px);
+        font-weight: @font-weight;
+        font-family: @font1;
+    }
+
+    .hl-3,
+    .hl3 {
+        .font-size-responsive(28px,28px,34px,34px,40px,40px,60px,60px);
+        font-weight: @font-weight-bold;
+        font-family: @font1;
+    }
+
+    .hl-4,
+    .hl4 {
+        .font-size-responsive(24px,24px,28px,28px,34px,34px,40px,40px);
+        font-weight: @font-weight;
+        font-family: @font1;
+    }
+
+    .p, p, button {
+        .font-size-responsive(14px,14px,16px,16px,18px,18px,20px,20px);
+        font-weight: @font-weight;
+        font-family: @font1;
+        line-height: 1.4;
+    }
