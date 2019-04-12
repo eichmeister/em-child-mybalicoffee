@@ -252,6 +252,7 @@
 		&:before {
 			content: "";
 			position: absolute;
+			opacity: 0;
 			top: 0;
 			left: 0;
 			width: 100%;
@@ -259,6 +260,8 @@
 			background-image: url("../img/bali-background.svg");
 			background-size: contain;
 			background-repeat: repeat;
+			-webkit-transition: all .6s ease;
+			transition: all .6s ease;
 		}
 
 		.flavor,
@@ -275,8 +278,15 @@
 			display: block;
 		}
 
+		.pt-images {
+			position: relative;
+			z-index: 100;
+			padding: 20px 50px 0 50px;
+		}
+
 		.description {
 			position: relative;
+			margin-bottom: 20px;
 		}
 
 		.more-information {
@@ -285,11 +295,21 @@
 			left: 50%;
 			transform: translate( -50%, 0 );
 			width: fit-content;
-			-webkit-transition: all .4s ease;
-			transition: all .4s ease;
+			-webkit-transition: all .6s ease;
+			transition: all .6s ease;
+		}
+
+		.wrapper {
+			opacity: 1;
+			-webkit-transition: all .6s ease;
+			transition: all .6s ease;
 		}
 
 		&:hover {
+			&:before {
+				opacity: 1;
+			}
+
 			.wrapper {
 				opacity: 0;
 			}

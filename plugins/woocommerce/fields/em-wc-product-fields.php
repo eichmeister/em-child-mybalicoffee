@@ -30,6 +30,21 @@ acf_add_local_field_group(array(
 			'mime_types' => '',
 		),
 		array(
+			'key' => 'field_product_color',
+			'label' => 'Product-color',
+			'name' => 'product_color',
+			'type' => 'color_picker',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '#fff',
+		),
+		array(
 			'key' => 'field_5cac8e6d83f76',
 			'label' => 'Gebiet / Region',
 			'name' => 'gebiet_region',
@@ -38,7 +53,7 @@ acf_add_local_field_group(array(
 			'required' => 1,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '50',
 				'class' => '',
 				'id' => '',
 			),
@@ -60,7 +75,7 @@ acf_add_local_field_group(array(
 			'required' => 1,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '',
+				'width' => '50',
 				'class' => '',
 				'id' => '',
 			),

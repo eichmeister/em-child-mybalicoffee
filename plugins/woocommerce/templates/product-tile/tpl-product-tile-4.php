@@ -21,7 +21,6 @@ if ( ! $_product->is_type('variation') ) {
 		return;
 	}
 }
-
 wp_enqueue_script( 'wc-add-to-cart-variation' );
 
 $em_post_id  = $_product->get_id();
@@ -39,9 +38,11 @@ $region_background_color = $region_term_meta['background_color'][0];
 
 $flavor_field = get_field('bohnenart');
 $flavor_term_meta = get_term_meta( $flavor_field->term_id ); 
+
+$product_color = get_field('product_color');
 ?>
 
-<div class="em-product-tile-4 em-product-tile <?php echo $product_tile_grid; ?>" data-em_post_id="<?php echo $em_post_id; ?>"<?php if ( isset($region_background_color) ) { echo ' style="background-color: ' . $region_background_color . '"'; } ?>>
+<div class="em-product-tile-4 em-product-tile <?php echo $product_tile_grid; ?>" data-em_post_id="<?php echo $em_post_id; ?>"<?php if ( isset($product_color) ) { echo ' style="background-color: ' . $product_color . '"'; } ?>>
 
 	<div class="tile-loader"></div>
 	<div class="content">
@@ -67,7 +68,7 @@ $flavor_term_meta = get_term_meta( $flavor_field->term_id );
 		} else {
 
 			$parent = wc_get_product($_product->get_parent_id());
-			$link = add_query_arg( 'attribute_pa_farbe', $attribute, $parent->get_permalink() );
+			$link = $parent->get_permalink();
 
 			if ( $product->get_image_id() ) {
 				$new_images = array( $product->get_image_id() );
@@ -92,3 +93,5 @@ $flavor_term_meta = get_term_meta( $flavor_field->term_id );
 
     </div>
 </div>
+
+<?php $em_post_id = null; ?>

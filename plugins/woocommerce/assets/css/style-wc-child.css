@@ -178,6 +178,7 @@ body.single-product #custom-taxonomies .content {
 .em-product-tile-4:before {
   content: "";
   position: absolute;
+  opacity: 0;
   top: 0;
   left: 0;
   width: 100%;
@@ -185,6 +186,8 @@ body.single-product #custom-taxonomies .content {
   background-image: url("../img/bali-background.svg");
   background-size: contain;
   background-repeat: repeat;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
 }
 .em-product-tile-4 .flavor,
 .em-product-tile-4 .region {
@@ -198,8 +201,14 @@ body.single-product #custom-taxonomies .content {
   color: #FFF;
   display: block;
 }
+.em-product-tile-4 .pt-images {
+  position: relative;
+  z-index: 100;
+  padding: 20px 50px 0 50px;
+}
 .em-product-tile-4 .description {
   position: relative;
+  margin-bottom: 20px;
 }
 .em-product-tile-4 .more-information {
   position: absolute;
@@ -207,8 +216,16 @@ body.single-product #custom-taxonomies .content {
   left: 50%;
   transform: translate(-50%, 0);
   width: fit-content;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+.em-product-tile-4 .wrapper {
+  opacity: 1;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+.em-product-tile-4:hover:before {
+  opacity: 1;
 }
 .em-product-tile-4:hover .wrapper {
   opacity: 0;
