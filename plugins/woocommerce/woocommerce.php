@@ -1,6 +1,5 @@
 <?php
 
-
 //////////////////////////////////////////////////////////////////////////////////////////////
 // ADD CUSTOM TAXONOMY
 //////////////////////////////////////////////////////////////////////////////////////////////
@@ -101,6 +100,29 @@
 //////////////////////////////////////////////////////////////////////////////////////////////
 // SINGLE PAGE LAYOUT
 //////////////////////////////////////////////////////////////////////////////////////////////
+
+    remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 10 );
+    remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
+    remove_action( 'after_setup_theme', 'em_wc_theme_setup', 10 );
+    add_action( 'woocommerce_before_single_product_summary', 'em_show_single_product_image', 20 );
+
+
+    function em_show_single_product_image() {
+		global $product;
+		$columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 4 );
+		$post_thumbnail_id = $product->get_image_id();
+		$wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_classes', array(
+			'woocommerce-product-gallery',
+			'woocommerce-product-gallery--' . ( $product->get_image_id() ? 'with-images' : 'without-images' ),
+			'woocommerce-product-gallery--columns-' . absint( $columns ),
+			'images',
+		) );
+		?>
+		<div class="<?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>" style="opacity: 0; transition: opacity .25s ease-in-out;">
+		<?php echo wp_get_attachment_image( $post_thumbnail_id, 'img_600' ); ?>
+		</div>
+		<?php
+    }
 
 	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 	add_action( 'woocommerce_before_single_product_summary', 'woocommerce_breadcrumb', 5 );

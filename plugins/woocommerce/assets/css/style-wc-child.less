@@ -113,8 +113,23 @@
 		}
 
 		/******** Product Gallery ********/
-		.woocommerce-product-gallery__trigger {
-			display: none;
+		.woocommerce-product-gallery {
+			img {
+				margin: 0 auto;
+				display: block;
+				max-width: 400px;
+				width: 100%;
+
+				@media all and (min-width: @breakpoint5_mf) {
+					max-width: 300px;
+				}
+
+				@media all and (min-width: @breakpoint3_mf) {
+					max-width: 400px;
+				}
+
+			}
+
 		}
 
 		/******** Taxonomies layout ********/
@@ -244,6 +259,27 @@
 		}
 	}
 
+/////////////////////////////////////////////////////////////////////////////////
+// 4)  ARCHIVE
+/////////////////////////////////////////////////////////////////////////////////
+	
+	body.woocommerce.archive {
+		.shop-header {
+			margin-bottom: 50px;
+
+			span {
+				color: #afafaf;
+			}
+
+			a {
+				margin-left: 30px;
+
+				&.active {
+					font-weight: bold;
+				}
+			}
+		}
+	}
 /////////////////////////////////////////////////////////////////////////////////
 // 11) PRODUCT TILE
 /////////////////////////////////////////////////////////////////////////////////

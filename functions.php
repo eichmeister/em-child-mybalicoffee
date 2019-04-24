@@ -1,30 +1,6 @@
 <?php
 
 //////////////////////////////////////////////////////////////////////////////////////
-// NEW MODULE AS TEST
-//////////////////////////////////////////////////////////////////////////////////////
-      
-        /**
-         * ----------------------------
-         * XXXXXXXXX
-         * Displays one set of XXX
-         * ----------------------------
-         * @param $args['array'] | Array : Array of content items
-         */
-        function new_module_test_function( $array ) {
-
-            if (isset($array) && is_array($array)):
-
-                $items = $array['items'];
-                $size = "full";
-
-                include( locate_template('module-content-repeater.php') );
-
-            endif;
-
-        }
-
-//////////////////////////////////////////////////////////////////////////////////////
 // EICHMEISTER THEME SETTINGS (manual / options pages)
 //////////////////////////////////////////////////////////////////////////////////////
 
@@ -37,8 +13,8 @@
             return apply_filters( 'em_theme_info', array(
                 'header' => $header_id,
                 'footer' => 'custom',
-                'logo_header' => get_stylesheet_directory_uri().'/assets/images/logo.png',
-                'logo_footer' => get_stylesheet_directory_uri().'/assets/images/logo.png',  
+                'logo_header' => get_stylesheet_directory_uri().'/assets/img/logo.svg',
+                'logo_footer' => get_stylesheet_directory_uri().'/assets/img/logo-white.svg',
                 'google_api_key' => get_field('em_gmaps_apikey', 'option')
             ));
         }

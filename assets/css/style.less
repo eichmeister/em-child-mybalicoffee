@@ -42,7 +42,72 @@
 ////////////////////////////////////////////////////////////////////////////////////   
 
     header#main-header {
-        // HEADER OVERRIDES
+        background-color: #fff;
+
+        nav#main-nav {
+            ul {
+                margin-top: 4px;
+
+                & > li {
+                    a {
+                        color: #033142;
+                        font-size: 18px;
+
+                        &:hover {
+                            color: #033142;
+                            border-bottom: 3px solid #033142;
+                        }
+                    }
+
+                    &.current-menu-item > a,
+                    &.current-menu-parent > a {
+                        font-weight: bold;
+                        color: #033142;
+                        border-bottom: 3px solid #033142;
+                    }
+                }
+            }
+        }
+
+        .logo {
+            height: 40px;
+            top: 5px;
+            margin-right: 40px;
+        }
+
+        .c-hamburger {
+            span {
+                background-color: #033142;
+
+                &:before,
+                &:after {
+                    background-color: #033142;
+                }
+            }
+        }
+
+        .shopping-cart-btn {
+            font-size: 18px;
+            padding: 20px 0 20px 30px;
+            position: relative;
+
+            &:hover {
+                color: #033142;
+                border-bottom: 3px solid #033142;
+            }
+
+            .em-shopping-cart {
+                height: 20px;
+                width: 30px;
+                background-image: url("../img/cart.svg");
+                display: block;
+                position: absolute;
+                top: 18px;
+                left: 0;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
     }
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -50,12 +115,138 @@
 //////////////////////////////////////////////////////////////////////////////////// 
 
     footer#main-footer {
-        // FOOTER OVERRIDES
+        background-color: #0e1426;
+        color: #fff;
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: -80px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            transform: rotate(180deg);
+            background-image: url(../../plugins/woocommerce/assets/img/bali-background-2.png);
+            background-size: contain;
+            background-repeat: repeat-x;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.5;
+            background-image: url("../img/module-content-repeater.svg");
+            background-size: contain;
+            background-repeat: repeat-x;
+        }
+
+        a {
+            color: #fff;
+        }
+
+        .address {
+            nav {
+                margin-bottom: 20px;
+
+                p {
+                    margin-bottom: 20px;
+                }
+
+                a {
+                    display: block;
+                }
+            }
+
+            .logo {
+                margin-bottom: 20px;
+            }
+
+            .logo-color {
+                fill: red;
+            }
+
+            .em-social-media-channels {
+                a {
+                    background-color: #fff;
+                    border-color: #fff;
+                    color: #0e1426;
+                }
+            }
+        }
+
+        strong {
+            padding: 0;
+            margin: 0;
+            line-height: 3.13;
+            letter-spacing: 1.1px;
+            color: #999;
+            height: 50px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        nav {
+            padding: 0;
+            margin: 0;
+
+            ul {
+                padding: 0;
+                margin: 0;
+
+                li {
+                    padding: 0;
+                    margin: 0;
+
+                    &.current-menu-item > a,
+                    &.current-menu-parent > a {
+                        color: #999;
+                    }
+                    
+                    a {       
+                        line-height: 2.25;
+                        letter-spacing: 3px;
+                        text-transform: uppercase;
+
+                        &:hover {
+                            color: #999;
+                        }
+                    }
+                }
+            }
+        }
     }
 
 ////////////////////////////////////////////////////////////////////////////////////
 // GENERAL PROJECT SPECIFIC STYLES
 ////////////////////////////////////////////////////////////////////////////////////
+
+    body {
+        &.starts-with-hero {
+            #shop-archive-hero {
+                margin-top: -102px !important;
+                
+                .bg-photo {
+                    .inner-full {
+                        padding-top: 102px !important;
+                    }
+                }
+            }
+        }
+
+        div#main {
+            overflow: unset;
+
+            section {
+                &:first-child {
+                    padding-top: 102px !important;
+                }
+            }
+        }
+    }
 
     .em-social-media-channels {
         a {
@@ -67,6 +258,147 @@
             &:hover {
                 background: #FFF;
                 color: #000;
+            }
+        }
+    }
+
+    .em-hero-simple {
+        position: relative;
+        margin-bottom: 80px;
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-image: url(../../plugins/woocommerce/assets/img/bali-background-2.png);
+            background-size: contain;
+            background-repeat: repeat-x;
+        }
+
+        .inner-full {
+            .inner-wrapper {
+                width: 1200px;
+                color: #fff;
+                text-align: center;
+            }
+        }
+    }
+
+////////////////////////////////////////////////////////////////////////////////////
+// MODULE CONTENT REPEATER
+////////////////////////////////////////////////////////////////////////////////////
+
+    .em-content-repeater {
+        color: #fff;
+
+        a {
+            color: #fff;
+            margin-bottom: 40px;
+            .font-size-responsive(14px,14px,16px,16px,18px,18px,20px,20px);
+
+            &.btn-line-left {
+                &:before {
+                    background-color: #fff;
+                }
+            }
+        }
+
+        .row {
+            position: relative;
+            margin-bottom: 100px;
+
+            @media all and (min-width: @breakpoint3_mf) {    
+                left: 30px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .item {
+                order: 1;
+                position: relative;
+                background-clip: unset;
+                padding: 0;
+        
+                @media all and (min-width: @breakpoint3_mf) {
+                    &.order-2 {
+                        order: 2;
+                    }
+                }
+
+                .trademark {    
+                    position: absolute;
+                    bottom: -50px;
+                    right: 20px;
+                    width: 100px;
+                    height: 100px;
+                }
+
+                .logo-headline {
+                    margin-bottom: 40px;
+
+                    & > img {
+                        width: 50%;
+                        margin: 0 auto;
+                        display: block;
+                    }
+                }
+
+                .content {
+                    margin-bottom: 40px;
+                }
+            }
+
+            .item-text {
+                padding: 30px;
+            }
+
+            @media all and (min-width: @breakpoint3_mf) {
+                .item-image {
+                    & > figure {
+                        position: relative;
+                        top: -30px;
+                        left: -30px;
+                    }
+
+                    &:before {
+                        content: "";
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        background-image: url("../img/module-content-repeater.svg");
+                        background-size: cover;
+                        background-repeat: repeat;
+                        -webkit-transition: all 0.6s ease;
+                        transition: all 0.6s ease;
+                        background-position: top right;
+                    }
+                }
+            }
+
+            @media all and (min-width: @breakpoint3_mf) {
+                &.flipped {
+                    left: -30px;
+
+                    .item-image {
+                        & > figure {
+                            top: auto;
+                            left: auto;
+                            bottom: -30px;
+                            right: -30px;
+                        }
+
+                        &:before {
+                            background-position: top left;
+                        }
+                    }
+                }
             }
         }
     }

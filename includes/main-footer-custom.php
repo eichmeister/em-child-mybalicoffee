@@ -1,8 +1,17 @@
-<div id="em-footer-custom" class="wrapper-1400 padding-ver-50">
+<div id="em-footer-custom" class="wrapper-1200 padding-top-50">
     <div class="row">
+        <div class="col_4 address">
+            <object data="<?php echo em_theme_info()['logo_footer'] ?>" type="image/svg+xml" class="logo"></object>
+            <nav>
+                <p><?php the_field('address', 'option'); ?></p>
+                <a href="tel:<?php the_field('phone', 'option'); ?>"><?php the_field('phone', 'option'); ?></a>
+                <a href="mailto:<?php the_field('email', 'option'); ?>"><?php the_field('email', 'option'); ?></a>
+            </nav>
+            <?php EM()->Template->social_media_channels(); ?>
+        </div>
         <div class="col_3">
             <strong>
-                <?php _e('Navigation', 'eichmeister'); ?>
+                <?php _e('Products', 'eichmeister'); ?>
             </strong>
             <nav>
                 <?php 
@@ -16,7 +25,7 @@
         </div>
         <div class="col_3">
             <strong>
-                <?php _e('Products', 'eichmeister'); ?>
+                <?php _e('Navigation', 'eichmeister'); ?>
             </strong>
             <nav>
                 <?php 
@@ -28,9 +37,8 @@
                 ?>
             </nav>
         </div>
-        <div class="col_3">
+        <div class="col_2">
             <strong>
-                <?php _e('Services', 'eichmeister'); ?>
             </strong>
             <nav>
                 <?php 
@@ -42,14 +50,5 @@
                 ?>
             </nav>
         </div>
-        <div class="col_3 last">
-            <strong>
-                <?php _e('Contact', 'eichmeister'); ?>
-            </strong>
-            <div>
-                <?php the_field('address_info', 'option'); ?>
-            </div>
-        </div>
     </div>
-    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/ico_trust.png" class="trust-icon" />
 </div>
