@@ -37,6 +37,67 @@
         }
     }
 
+    .mobile-hide {
+        @media all and (max-width: @breakpoint3) {
+            display: none;
+        }
+    }
+
+
+    // Formstone Dropdown
+    .fs_eichmeister {
+        background-color: transparent;
+        border-bottom: 1px solid #fff;
+
+        button {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            background-color: transparent;
+            color: #fff;
+            font-weight: normal;
+
+            &.fs-dropdown-selected {
+                &:after {
+                    display: inline-block;
+                    font: normal normal normal 14px/1 FontAwesome;
+                    font-size: inherit;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    content: "\f078";
+                    position: absolute;
+                    right: 0;
+                    top: 8px;
+                    font-weight: lighter;
+                    font-size: 10px;
+                }
+            }
+        }
+
+        .fs-dropdown-options {
+            background-color: #fff;
+
+            .fs-dropdown-item {
+                &:hover {
+                    background: #ddd;
+                }
+            }
+
+            button {
+                border: 0;
+                padding: 10px;
+                margin: 0;
+                border-bottom: 1px solid #dedede;
+                color: #000;
+
+                &:last-child {
+                    border-bottom: 0;
+                }
+            }
+        }
+    }
+
 ////////////////////////////////////////////////////////////////////////////////////
 // HEADER
 ////////////////////////////////////////////////////////////////////////////////////   
@@ -46,12 +107,11 @@
 
         nav#main-nav {
             ul {
-                margin-top: 4px;
-
                 & > li {
                     a {
                         color: #033142;
                         font-size: 18px;
+                        padding: 22px 0;
 
                         &:hover {
                             color: #033142;
@@ -88,12 +148,18 @@
 
         .shopping-cart-btn {
             font-size: 18px;
-            padding: 20px 0 20px 30px;
+            padding: 16px 0 16px 30px;
             position: relative;
+            margin-left: 15px;
+            @media all and (min-width: @breakpoint3_mf) {
+                margin-right: 15px;
+            }
 
             &:hover {
-                color: #033142;
-                border-bottom: 3px solid #033142;
+                @media all and (min-width: @breakpoint3_mf) {
+                    color: #033142;
+                    // border-bottom: 3px solid #033142;
+                }
             }
 
             .em-shopping-cart {
@@ -102,10 +168,14 @@
                 background-image: url("../img/cart.svg");
                 display: block;
                 position: absolute;
-                top: 18px;
+                top: 12px;
                 left: 0;
                 background-size: contain;
                 background-repeat: no-repeat;
+            }
+
+            .cart-item-count {
+                background: #000;
             }
         }
     }
@@ -117,14 +187,15 @@
     footer#main-footer {
         background-color: #0e1426;
         color: #fff;
+        padding-top: 40px;
 
         &:after {
             content: "";
             position: absolute;
-            top: -80px;
+            top: -1px;
             left: 0;
             width: 100%;
-            height: 100px;
+            height: 40px;
             transform: rotate(180deg);
             background-image: url(../../plugins/woocommerce/assets/img/bali-background-2.png);
             background-size: contain;
@@ -171,9 +242,14 @@
 
             .em-social-media-channels {
                 a {
+                    margin-left: 5px;
                     background-color: #fff;
                     border-color: #fff;
                     color: #0e1426;
+
+                    &:hover {
+                        opacity: 0.8;
+                    }
                 }
             }
         }
@@ -246,6 +322,12 @@
                 }
             }
         }
+        &.woocommerce-cart,
+        &.woocommerce-checkout {
+            .woocommerce {
+                padding-top: 32px !important;
+            }
+        }
     }
 
     .em-social-media-channels {
@@ -264,18 +346,18 @@
 
     .em-hero-simple {
         position: relative;
-        margin-bottom: 80px;
 
         &:after {
             content: "";
             position: absolute;
-            bottom: -80px;
+            bottom: -1px;
             left: 0;
             width: 100%;
             height: 100px;
             background-image: url(../../plugins/woocommerce/assets/img/bali-background-2.png);
             background-size: contain;
             background-repeat: repeat-x;
+            z-index: 0;
         }
 
         .inner-full {

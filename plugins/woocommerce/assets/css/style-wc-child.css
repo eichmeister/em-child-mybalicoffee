@@ -4,6 +4,7 @@ body.single-product {
   /******** Product Attributes ********/
   /******** Product Gallery ********/
   /******** Taxonomies layout ********/
+  /******** Related Products ********/
 }
 body.single-product .product {
   position: relative;
@@ -28,20 +29,11 @@ body.single-product .custom-background:before {
   background-repeat: repeat;
   z-index: -5;
 }
-body.single-product .custom-background:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background-image: url("../img/bali-background-2.png");
-  background-size: contain;
-  background-repeat: repeat-x;
-  z-index: -2;
-}
 body.single-product .summary {
   color: #FFF;
+}
+body.single-product .summary .hl1 {
+  font-family: 'Condor', sans-serif;
 }
 body.single-product #em-wc-container .woocommerce-breadcrumb {
   color: #FFF;
@@ -61,10 +53,21 @@ body.single-product #em-wc-container table.variations select {
 }
 body.single-product #em-wc-container .single_variation_wrap input.qty {
   width: 60px;
+  height: 44px;
   background-color: transparent;
   border: 1px solid #FFF;
   color: #FFF;
   padding: 13px 10px;
+  font-size: 16px;
+  line-height: 1em;
+}
+body.single-product #em-wc-container .single_variation_wrap .btn,
+body.single-product #em-wc-container .single_variation_wrap .button {
+  height: 44px;
+  font-size: 16px;
+  line-height: 1em;
+  padding: 13px 10px;
+  border: 1px solid transparent;
 }
 body.single-product .woocommerce-product-gallery img {
   margin: 0 auto;
@@ -188,6 +191,24 @@ body.single-product #custom-taxonomies .content {
     order: 2;
   }
 }
+body.single-product #related-products h4 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+body.single-product #related-products h5 {
+  text-align: center;
+  margin-top: -40px;
+  margin-bottom: 60px;
+}
+body.single-product #related-products:before,
+body.single-product #related-products:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+body.single-product #related-products .btn-line-left {
+  margin-top: 40px;
+}
 body.woocommerce.archive .shop-header {
   margin-bottom: 50px;
 }
@@ -214,6 +235,9 @@ body.woocommerce.archive .shop-header a.active {
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }
+.em-product-tile-4 .content {
+  overflow: hidden;
+}
 .em-product-tile-4 .flavor,
 .em-product-tile-4 .region {
   text-align: center;
@@ -225,6 +249,7 @@ body.woocommerce.archive .shop-header a.active {
   text-align: center;
   color: #FFF;
   display: block;
+  font-family: 'Condor', sans-serif;
 }
 .em-product-tile-4 .pt-images {
   position: relative;
@@ -233,7 +258,7 @@ body.woocommerce.archive .shop-header a.active {
 }
 .em-product-tile-4 .description {
   position: relative;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 .em-product-tile-4 .more-information {
   position: absolute;

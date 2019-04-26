@@ -16,8 +16,7 @@ $flavor_term_meta = get_term_meta( $flavor_field->term_id );
 			<?php echo wp_get_attachment_image(array_shift($region_term_meta['background_image']), $size = 'full' ); ?>
 		</div>
 		<div class="col_6 content">
-			<h3 class="hl3"><?php echo $region_field->name; ?></h3>
-			<h4 class="hl4"><?php echo array_shift($region_term_meta['sub_headline']); ?></h4>
+			<h3 class="hl3 first-line-bold"><?php echo $region_field->name; ?></br><?php echo array_shift($region_term_meta['sub_headline']); ?></h3>
 			<p><?php echo $region_field->description; ?></p>
 		</div>
 	
@@ -34,8 +33,7 @@ $flavor_term_meta = get_term_meta( $flavor_field->term_id );
 		</div>
 
 		<div class="col_6 content order-1">
-			<h3 class="hl3"><?php echo $flavor_field->name; ?></h3>
-			<h4 class="hl4"><?php echo array_shift($flavor_term_meta['sub_headline']); ?></h4>
+			<h3 class="hl3 first-line-bold"><?php echo $flavor_field->name; ?></br><?php echo array_shift($flavor_term_meta['sub_headline']); ?></h3>
 			<p><?php echo $flavor_field->description; ?></p>
 		</div>
 	

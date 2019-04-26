@@ -28,8 +28,9 @@
         <?php if ( EM()->is_woocommerce_installed() ) { ?>
 
             <a href="<?php echo wc_get_cart_url(); ?>" class="shopping-cart-btn float-right" alt="<?php _e('View shopping cart', 'eichmeister'); ?>" title="<?php _e('View shopping cart', 'eichmeister'); ?>">
-                <i class="em-shopping-cart"></i>
-                <span>Warenkorb</span>
+                <i class="em-shopping-cart"><span class="cart-item-count"><?php echo WC()->cart->cart_contents_count; ?></span></i>
+                <span class="mobile-hide">Warenkorb</span>
+                
             </a>
 
         <?php } ?>

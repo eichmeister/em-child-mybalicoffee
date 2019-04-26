@@ -1,29 +1,29 @@
 @font-face {
-  font-family: "Elido Bold";
+  font-family: "Elido";
   src: url("https://use.typekit.net/af/3c3614/00000000000000003b9ae360/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"), url("https://use.typekit.net/af/3c3614/00000000000000003b9ae360/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"), url("https://use.typekit.net/af/3c3614/00000000000000003b9ae360/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
   font-style: normal;
   font-weight: 700;
 }
 @font-face {
-  font-family: "Elido Book";
-  src: url("https://use.typekit.net/af/5b8066/00000000000000003b9ae362/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/5b8066/00000000000000003b9ae362/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/5b8066/00000000000000003b9ae362/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
-  font-style: normal;
-  font-weight: 400;
-}
-@font-face {
-  font-family: "Elido Regular";
+  font-family: "Elido";
   src: url("https://use.typekit.net/af/a87d23/00000000000000003b9ae367/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff2"), url("https://use.typekit.net/af/a87d23/00000000000000003b9ae367/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff"), url("https://use.typekit.net/af/a87d23/00000000000000003b9ae367/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("opentype");
   font-style: normal;
   font-weight: 500;
 }
 @font-face {
-  font-family: "Condor Bold";
+  font-family: "Elido";
+  src: url("https://use.typekit.net/af/5b8066/00000000000000003b9ae362/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/5b8066/00000000000000003b9ae362/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/5b8066/00000000000000003b9ae362/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Condor";
   src: url("https://use.typekit.net/af/03e30e/00000000000000003b9ae48a/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"), url("https://use.typekit.net/af/03e30e/00000000000000003b9ae48a/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"), url("https://use.typekit.net/af/03e30e/00000000000000003b9ae48a/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
   font-style: normal;
   font-weight: 700;
 }
 @font-face {
-  font-family: "Condor Regular";
+  font-family: "Condor";
   src: url("https://use.typekit.net/af/f47187/00000000000000003b9ae487/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/f47187/00000000000000003b9ae487/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/f47187/00000000000000003b9ae487/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
   font-style: normal;
   font-weight: 400;
@@ -179,11 +179,10 @@ h6 {
   }
 }
 .font1 {
-  font-family: 'Elido Regular', sans-serif;
+  font-family: 'Elido', sans-serif;
 }
 .font2 {
-  font-family: 'Condor Regular', sans-serif;
-  font-weight: 400;
+  font-family: 'Condor', sans-serif;
 }
 .btn {
   background-color: #033142;
@@ -196,9 +195,10 @@ h6 {
   text-align: center;
 }
 .btn:hover {
-  background-color: #FFF;
-  color: #033142;
+  background-color: #033142;
+  color: #FFF;
   border: 1px solid #033142;
+  opacity: 0.8;
 }
 .btn.btn-outline-black {
   background-color: transparent;
@@ -295,10 +295,12 @@ h6 {
   -moz-box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.15);
   box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.15);
 }
+.first-line-bold:first-line {
+  font-weight: 700;
+}
 .hl-1,
 .hl1 {
   font-size: 40px;
-  font-family: 'Elido Regular', sans-serif;
   font-weight: 400;
   line-height: 1.25;
 }
@@ -356,14 +358,9 @@ h6 {
     font-size: 80px;
   }
 }
-.hl-1:first-line,
-.hl1:first-line {
-  font-weight: 700;
-}
 .hl-2,
 .hl2 {
   font-size: 34px;
-  font-family: 'Elido Regular', sans-serif;
   font-weight: 400;
   line-height: 1.25;
 }
@@ -421,14 +418,9 @@ h6 {
     font-size: 80px;
   }
 }
-.hl-2:first-line,
-.hl2:first-line {
-  font-weight: 700;
-}
 .hl-3,
 .hl3 {
   font-size: 28px;
-  font-family: 'Elido Regular', sans-serif;
   font-weight: 400;
   line-height: 1.25;
 }
@@ -485,15 +477,10 @@ h6 {
   .hl3 {
     font-size: 60px;
   }
-}
-.hl-3:first-line,
-.hl3:first-line {
-  font-weight: 700;
 }
 .hl-4,
 .hl4 {
   font-size: 24px;
-  font-family: 'Elido Regular', sans-serif;
   font-weight: 400;
   line-height: 1.25;
 }
@@ -550,17 +537,12 @@ h6 {
   .hl4 {
     font-size: 40px;
   }
-}
-.hl-4:first-line,
-.hl4:first-line {
-  font-weight: 700;
 }
 .p,
 p,
 button {
   font-size: 14px;
   line-height: 1.4;
-  font-family: 'Elido Regular', sans-serif;
   font-weight: 400;
 }
 @media all and (min-width: 360px) and (max-width: 480px) {
@@ -625,9 +607,4 @@ button {
   button {
     font-size: 20px;
   }
-}
-.p:first-line,
-p:first-line,
-button:first-line {
-  font-weight: 700;
 }
