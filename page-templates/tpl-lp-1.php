@@ -26,16 +26,36 @@ Template Name: MyBali - LP 01
 	?>
 </section>
 
-
-
 <section id="teaser1">
 
 	<div class="wrapper-1200 padding-top-200">
+
 		<?php 
+
 		$items = get_field( 'teaser_1' )['items'];
 		include_once( locate_template("includes/em-module-content-repeater.php") );
+
 		?>
 		
+	</div>
+
+</section>
+
+<section id="products">
+
+	<div class="wrapper-1200 padding-top-100">
+
+		<?php
+
+		EM()->load( array(
+            'tpl' => 'posts_grid',
+            'posts' => get_field('products'),
+            'layout' => 'grid',
+            'columns' => 3,
+        ) );
+
+		?>
+
 	</div>
 
 </section>
