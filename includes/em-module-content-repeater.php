@@ -13,9 +13,8 @@
 				</figure>
 			</div>
 
-			<div class="item item-text col_6" style="background-color: <?php if( isset( $item['fs_bg']) ) { echo $item['bgc']; } ?>">
+			<div class="item item-text col_6" style="background-color: <?php if( isset( $item['fs_bg']) && $item['fs_bg'] != false ) { echo $item['bgc']; } ?>">
 				<?php 
-				
 				
 				echo '<div class="logo-headline">';
 

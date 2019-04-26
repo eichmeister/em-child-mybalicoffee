@@ -215,7 +215,7 @@ h6 {
   position: relative;
   display: block;
   text-align: right;
-  padding-left: 100px;
+  padding-left: 5em;
   overflow: auto;
   float: right;
 }
@@ -267,8 +267,8 @@ h6 {
 .btn-line-left:before {
   content: "";
   position: absolute;
-  height: 3px;
-  width: 80px;
+  height: 0.1em;
+  width: 4em;
   background-color: #033142;
   top: 50%;
   left: 0;
