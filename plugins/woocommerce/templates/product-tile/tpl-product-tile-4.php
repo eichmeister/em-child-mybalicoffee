@@ -21,8 +21,10 @@ if ( ! $_product->is_type('variation') ) {
 		return;
 	}
 }
+
 wp_enqueue_script( 'wc-add-to-cart-variation' );
 
+$parent 	 = $_product->get_parent_id() ;
 $em_post_id  = $_product->get_id();
 $title 		 = $_product->get_title();
 $price 		 = $_product->get_price_html();
@@ -32,14 +34,15 @@ $type 		 = $_product->get_type();
 $product_tile_grid = apply_filters( 'product_tile_grid', 'col_sm_6 col_4' );
 
 
-$region_field = get_field('gebiet_region');
+$region_field = get_field( 'gebiet_region', $parent );
 $region_term_meta = get_term_meta( $region_field->term_id ); 
 $region_background_color = $region_term_meta['background_color'][0]; 
 
-$flavor_field = get_field('bohnenart');
+$flavor_field = get_field( 'bohnenart', $parent );
 $flavor_term_meta = get_term_meta( $flavor_field->term_id ); 
 
-$product_color = get_field('product_color');
+$product_color = get_field( 'product_color', $parent );	
+
 ?>
 
 <div class="em-product-tile-4 em-product-tile <?php echo $product_tile_grid; ?>" data-em_post_id="<?php echo $em_post_id; ?>"<?php if ( isset($product_color) ) { echo ' style="background-color: ' . $product_color . '"'; } ?>>
@@ -70,8 +73,8 @@ $product_color = get_field('product_color');
 			$parent = wc_get_product($_product->get_parent_id());
 			$link = $parent->get_permalink();
 
-			if ( $product->get_image_id() ) {
-				$new_images = array( $product->get_image_id() );
+			if ( $_product->get_image_id() ) {
+				$new_images = array( $_product->get_image_id() );
 				array_push($new_images, $parent->get_gallery_image_ids());
 			} else {
 				$new_images = $parent->get_gallery_image_ids();

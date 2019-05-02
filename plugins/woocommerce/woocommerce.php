@@ -101,12 +101,14 @@
 // SINGLE PAGE LAYOUT
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-    remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 10 );
+    // Remove woocommerce images 
     remove_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
+
+    // Remove woocommerce script for single page images
     remove_action( 'after_setup_theme', 'em_wc_theme_setup', 10 );
+
+    // Add new SinglePage image layout
     add_action( 'woocommerce_before_single_product_summary', 'em_show_single_product_image', 20 );
-
-
     function em_show_single_product_image() {
 		global $product;
 		$columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 4 );
@@ -124,16 +126,24 @@
 		<?php
     }
 
+    // Reorder breadcrumb
 	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 	add_action( 'woocommerce_before_single_product_summary', 'woocommerce_breadcrumb', 5 );
+
+	// Reorder notices 
+    remove_action( 'woocommerce_before_single_product', 'woocommerce_output_all_notices', 10 );
 	add_action( 'woocommerce_before_single_product_summary', 'wc_print_notices', 6 );
 
-    // Product single page - related products headline
+    // Set SinglePage related products to 3 
+    add_filter( 'em_related_products_cols', function( $cols ) { $cols = 3; return $cols; } );
 
+    // Product single page - related products headline
     function em_related_products_headline() {
         return "Ähnliche Produkte";
     }
     add_filter( 'em_related_products_headline', 'em_related_products_headline' );
+    
+    // Dont display subheadline for related products
     add_filter( 'em_related_products_sub_headline', '__return_false' );
 
 

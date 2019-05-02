@@ -187,7 +187,7 @@ h6 {
 .btn {
   background-color: #033142;
   color: #FFF;
-  border: 1px solid #033142;
+  border: 1px solid #FFF;
   display: inline-block;
   padding: 1em 1.5em;
   outline: none;
@@ -197,8 +197,7 @@ h6 {
 .btn:hover {
   background-color: #033142;
   color: #FFF;
-  border: 1px solid #033142;
-  opacity: 0.8;
+  border: 1px solid #FFF;
 }
 .btn.btn-outline-black {
   background-color: transparent;
@@ -294,6 +293,9 @@ h6 {
   -webkit-box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.15);
   box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.15);
+}
+.first-line-bold {
+  font-weight: 400;
 }
 .first-line-bold:first-line {
   font-weight: 700;
@@ -544,6 +546,7 @@ button {
   font-size: 14px;
   line-height: 1.4;
   font-weight: 400;
+  margin-bottom: 20px;
 }
 @media all and (min-width: 360px) and (max-width: 480px) {
   .p,

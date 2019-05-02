@@ -14,6 +14,7 @@
                 'header' => $header_id,
                 'footer' => 'custom',
                 'logo_header' => get_stylesheet_directory_uri().'/assets/img/logo.svg',
+                'logo_header_1' => get_stylesheet_directory_uri().'/assets/img/logo-white-1.svg',
                 'logo_footer' => get_stylesheet_directory_uri().'/assets/img/logo-white.svg',
                 'google_api_key' => get_field('em_gmaps_apikey', 'option')
             ));

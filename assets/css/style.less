@@ -18,7 +18,12 @@
         font-size: 20px;
         line-height: 1.6;
         color: #033142;
+        font-style: normal;
         .font-size-responsive(14px, 14px, 14px, 16px, 16px, 16px, 18px, 18px);
+    }
+
+    i {
+        font-style: normal;
     }
 
     a {
@@ -34,6 +39,7 @@
         &:hover {
             text-decoration: none;
             color: @color-link-hover;
+            transform: scale( 1.1 );
         }
     }
 
@@ -102,8 +108,15 @@
 // HEADER
 ////////////////////////////////////////////////////////////////////////////////////   
 
+    body:not(.starts-with-hero) {
+        header#main-header {
+            transform: translate(-50%, 0);
+        }
+    }
+
     header#main-header {
         background-color: #fff;
+        width: 1200px;
 
         nav#main-nav {
             ul {
@@ -175,6 +188,7 @@
             }
 
             .cart-item-count {
+                font-family: sans-serif;
                 background: #033142;
             }
         }
@@ -188,6 +202,12 @@
         background-color: #0e1426;
         color: #fff;
         padding-top: 40px;
+        text-align: center;
+        margin-top: 50px;
+
+        @media all and (min-width: @breakpoint3) {
+            text-align: left;
+        }
 
         &:after {
             content: "";
@@ -198,7 +218,7 @@
             height: 90px;
             transform: rotate(180deg);
             background-image: url(../img/bali-background-2.png);
-            background-size: contain;
+            background-size: cover;
             background-repeat: repeat-x;
         }
 
@@ -212,11 +232,16 @@
             opacity: 0.5;
             background-image: url("../img/module-content-repeater.svg");
             background-size: contain;
-            background-repeat: repeat-x;
+            background-repeat: repeat;
         }
 
         a {
             color: #fff;
+            text-align: center;
+
+            @media all and (min-width: @breakpoint3) {
+                text-align: left;
+            }
         }
 
         .address {
@@ -234,6 +259,8 @@
 
             .logo {
                 margin-bottom: 20px;
+                height: 40px;
+                width: 40px;
             }
 
             .logo-color {
@@ -260,9 +287,12 @@
             line-height: 3.13;
             letter-spacing: 1.1px;
             color: #999;
-            height: 50px;
             display: block;
             text-transform: uppercase;
+
+            @media all and (min-width: @breakpoint3) {
+                height: 50px;
+            }
         }
 
         nav {
@@ -303,7 +333,8 @@
     body {
         &.starts-with-hero {
             .em-hero-simple {
-                margin-top: -102px !important;
+                margin-top: -102px;
+
                 &.bg-photo {
                     .inner-full {
                         padding-top: 102px !important;
@@ -354,9 +385,19 @@
             width: 100%;
             height: 90px;
             background-image: url(../img/bali-background-2.png);
-            background-size: contain;
+            background-size: cover;
             background-repeat: repeat-x;
             z-index: 0;
+        }
+
+        .hl-1 {
+            .first-line-bold;
+        }
+
+        .desc {
+            p {
+                margin: 0;
+            }
         }
 
         .inner-full {
@@ -373,37 +414,53 @@
 ////////////////////////////////////////////////////////////////////////////////////
 
     .em-content-repeater {
-        color: #fff;
+        color: #033142;
 
         a {
-            color: #fff;
-            margin-bottom: 40px;
             .font-size-responsive(14px,14px,16px,16px,18px,18px,20px,20px);
+            color: #033142;
+            margin-bottom: 40px;
+        }
 
-            &.btn-line-left {
-                &:before {
-                    background-color: #fff;
+        .fs-bg {
+            color: #fff;
+
+            a {
+                color: #fff;
+
+                &.btn-line-left {
+                    &:before {
+                        background-color: #fff;
+                    }
                 }
             }
         }
 
         .row {
             position: relative;
-            margin-bottom: 100px;
-
-            @media all and (min-width: @breakpoint3_mf) {    
-                left: 30px;
-            }
+            margin-bottom: 50px;
 
             &:last-child {
                 margin-bottom: 0;
+            }
+
+            @media all and (min-width: @breakpoint3_mf) {
+                left: 30px;
+                top: 30px;
             }
 
             .item {
                 order: 1;
                 position: relative;
                 background-clip: unset;
-                padding: 0;
+
+                @media all and (min-width: @breakpoint3_mf) {
+                    padding: 0;
+
+                    &:first-child {
+                        left: 30px;
+                    }
+                }
         
                 @media all and (min-width: @breakpoint3_mf) {
                     &.order-2 {
@@ -411,12 +468,19 @@
                     }
                 }
 
-                .trademark {    
-                    position: absolute;
-                    bottom: -50px;
-                    right: 20px;
-                    width: 100px;
-                    height: 100px;
+                .trademark {
+                    display: none;
+
+                    @media all and (min-width: @breakpoint3_mf) {
+                        position: absolute;
+                        bottom: -50px;
+                        left: 80%;
+                        width: 100px;
+                        height: 100px;
+                        z-index: 10;
+                        display: block;
+                        transform: translateX(-150%);
+                    }
                 }
 
                 .logo-headline {
@@ -430,7 +494,7 @@
                 }
 
                 .content {
-                    margin-bottom: 40px;
+                    margin-bottom: 20px;
                 }
             }
 
@@ -454,18 +518,23 @@
                         height: 100%;
                         position: absolute;
                         background-image: url("../img/module-content-repeater.svg");
-                        background-size: cover;
+                        background-size: contain;
                         background-repeat: repeat;
                         -webkit-transition: all 0.6s ease;
                         transition: all 0.6s ease;
                         background-position: top right;
                     }
                 }
-            }
 
-            @media all and (min-width: @breakpoint3_mf) {
                 &.flipped {
                     left: -30px;
+                    top: 0;
+
+                    .item {
+                        &:first-child {
+                            left: -30px;
+                        }
+                    }
 
                     .item-image {
                         & > figure {
@@ -479,6 +548,89 @@
                             background-position: top left;
                         }
                     }
+                }
+            }
+        }
+    }
+
+////////////////////////////////////////////////////////////////////////////////////
+// TEMPLATE - ABOUT
+////////////////////////////////////////////////////////////////////////////////////
+
+    body.page-template-tpl-about {
+        #content {
+            p {
+                .font-size-responsive(18px, 20px, 22px, 24px, 26px, 28px, 30px, 32px);
+                line-height: 1.33;
+                text-align: center;
+            }
+        }
+
+        #contact {
+            h2 {
+                margin-bottom: 50px;
+            }
+        }
+    }
+
+////////////////////////////////////////////////////////////////////////////////////
+// TEMPLATE - CONTACT 7
+////////////////////////////////////////////////////////////////////////////////////
+
+    .wpcf7 {
+
+        .row {
+            margin-left: 0;
+        }
+        
+        .fs_eichmeister {
+            padding: 0;
+
+            span.wpcf7-list-item {
+                margin: 0;
+            }
+
+            .fs-checkbox-marker {
+                margin-right: 20px;
+            }
+        }
+
+        .btn-line-left {
+            .font-size-responsive(14px, 14px, 14px, 16px, 16px, 16px, 18px, 20px);
+
+            input[type="submit"] {
+                border: 0;
+                background-color: transparent;
+                color: #033142;
+                padding: 0;
+                font-weight: bold;
+            }
+        }
+
+        .wpcf7-form-control-wrap {
+            display: block;
+            position: relative;
+            min-height: 1px;
+            background-clip: content-box;
+            margin-bottom: 30px;
+            -webkit-box-flex: 0;
+            width: 100%;
+
+            input,
+            textarea {
+                border: 0;
+                border-bottom: 1px solid #dedede;
+            }
+
+            @media all and (min-width: @breakpoint3_mf) {
+                &.first-name,
+                &.last-name,
+                &.your-email,
+                &.your-number,
+                &.acceptance-privacy {
+                    -ms-flex: 0 0 50%;
+                    flex: 0 0 50%;
+                    max-width: 50%;
                 }
             }
         }

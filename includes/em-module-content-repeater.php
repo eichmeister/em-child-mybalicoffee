@@ -2,7 +2,7 @@
 
 	<?php $flip=false; foreach ( $items as $item ): ?>
 
-		<div class="row<?php if($flip){ echo ' flipped'; } ?>">
+		<div class="row<?php if($flip){ echo ' flipped'; } ?><?php if( isset( $item['fs_bg']) && $item['fs_bg'] != false ) { echo ' fs-bg'; } ?>">
 
 			<div class="item item-image col_6 <?php if($flip){ echo 'order-2'; } ?>" style="background-color: <?php echo $item['bgc']; ?>">
 				<figure>
@@ -13,14 +13,14 @@
 				</figure>
 			</div>
 
-			<div class="item item-text col_6" style="background-color: <?php if( isset( $item['fs_bg']) && $item['fs_bg'] != false ) { echo $item['bgc']; } ?>">
+			<div class="item item-text col_6" <?php if( isset( $item['fs_bg']) && $item['fs_bg'] != false ) { echo 'style="background-color: ' . $item['bgc'] . '"'; } ?>>
 				<?php 
 				
 				echo '<div class="logo-headline">';
 
 				$hl_logo = $item['headline_logo'];
 				if ( $hl_logo == 'hl' ) {
-					echo '<h4 class="hl4">' . $item[$hl_logo] . '</h4>';
+					echo '<h4 class="hl4 first-line-bold">' . $item[$hl_logo] . '</h4>';
 				} else {
 					echo wp_get_attachment_image( $item['logo']['ID'], 'img_500' );
 				}
@@ -36,5 +36,4 @@
 
 	<?php endforeach; ?>
 
-	</div>
 </div>

@@ -30,8 +30,17 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 	body.single-product {
+		.woocommerce-message {
+			order: 0;
+			margin-left: 30px;
+		}
+		
 		.product {
 			position: relative;
+
+			.em-wc-wrapper {
+				padding-top: 102px;
+			}
 		}
 
 		/******** summary background ********/
@@ -40,8 +49,12 @@
 			top: 0;
 			left: 0;
 			width: 100%;
-			height: 90%;
+			height: 100%;
 			z-index: -10;
+
+			@media all and (min-width: @breakpoint3_mf) {
+				height: 90%;
+			}
 
 			&:before {
 				content: "";
@@ -51,19 +64,23 @@
 				width: 100%;
 				height: 100%;
   				background-image: url("../../../../assets/img/bali-background.svg");
-  				background-size: contain;
+  				background-size: cover;
   				background-repeat: repeat;
   				z-index: -5;
 			}
 		}
 
-		.em-hero-simple:after {
-			bottom: 10%;
+		@media all and (min-width: @breakpoint3_mf) {
+			.em-hero-simple:after {
+				bottom: 10%;
+			}
 		}
 
 		/******** Product summary ********/
 		.summary {
 			color: @white;
+			padding-bottom: 100px;
+			z-index: 10;
 
 			.hl1 {
 				font-family: @font2;
@@ -75,6 +92,8 @@
 
 			.woocommerce-breadcrumb {
 				color: @white;
+				width: 100%;
+				margin: 20px 0 20px 30px;
 
 				a {
 					color: @white;
@@ -98,12 +117,12 @@
 
 			.single_variation_wrap {
 				input.qty {
-					width: 60px;
+					width: 50px;
 					height: 44px;
 					background-color: transparent;
 					border: 1px solid @white;
 					color: @white;
-					padding: 13px 10px;
+					padding: 13px 5px;
 					font-size: 16px;
 					line-height: 1em;
 				}				
@@ -112,14 +131,16 @@
 					height: 44px;
 					font-size: 16px;
 					line-height: 1em;
-					padding: 13px 10px;
-					border: 1px solid transparent;
+					padding: 13px 20px;
+					border: 1px solid #fff;
 				}
 			}
 		}
 
 		/******** Product Gallery ********/
 		.woocommerce-product-gallery {
+			z-index: 10;
+
 			img {
 				margin: 0 auto;
 				display: block;
@@ -153,7 +174,7 @@
 				width: 100%;
 				height: 90px;
   				background-image: url("../../../../assets/img/bali-background-2.png");
-  				background-size: contain;
+  				background-size: cover;
   				background-repeat: repeat-x;
   				z-index: 1;
 			}
@@ -177,7 +198,7 @@
 					width: 300px;
 					height: 200px;
 	  				background-image: url("../../../../assets/img/bali-background-3.svg");
-	  				background-size: contain;
+	  				background-size: cover;
 	  				background-repeat: no-repeat;
 	  				z-index: 2;
 	  			}
@@ -186,9 +207,9 @@
 			.region {
 				.region-background {
 					position: absolute;
-					top: -20%;
-					left: -10%;
-					width: 100%;
+					top: -60px;
+					left: -30px;
+					width: 80%;
 					height: 100%;
 					z-index: 10;
 
@@ -200,7 +221,7 @@
 						width: 100%;
 						height: 100%;
 		  				background-image: url("../../../../assets/img/bali-background.svg");
-		  				background-size: contain;
+		  				background-size: cover;
 		  				background-repeat: repeat;
 					}
 				}
@@ -209,7 +230,7 @@
 
 					position: relative;
 					top: 0%;
-					left: 20%;
+					left: 30px;
 					width: 80%;
 					height: auto;
 					z-index: 20;
@@ -219,9 +240,9 @@
 			.flavor {
 				.flavor-background {
 					position: absolute;
-					top: 0;
-					left: 10%;
-					width: 100%;
+					top: 30px;
+					left: 60px;
+					width: 80%;
 					height: 100%;
 					z-index: 10;
 
@@ -233,7 +254,7 @@
 						width: 100%;
 						height: 100%;
 		  				background-image: url("../../../../assets/img/bali-background.svg");
-		  				background-size: contain;
+		  				background-size: cover;
 		  				background-repeat: repeat;
 					}
 				}
@@ -241,7 +262,7 @@
 				img {
 
 					position: relative;
-					top: -10%;
+					top: 0;
 					left: 0%;
 					width: 80%;
 					height: auto;
@@ -269,13 +290,13 @@
 
 			h4 {
 				text-align: center;
-				margin-bottom: 60px;
+				margin-bottom: 50px;
 			}
 
 			h5 {
 				text-align: center;
-	            margin-top: -40px;
-				margin-bottom: 60px;
+	            margin-top: -30px;
+				margin-bottom: 50px;
 			}
 
 			&:before,
@@ -297,6 +318,7 @@
 	
 	body.woocommerce.archive {
 		.shop-header {
+			margin-top: 50px;
 			margin-bottom: 50px;
 
 			span {
@@ -326,7 +348,7 @@
 			width: 100%;
 			height: 100%;
 			background-image: url("../../../../assets/img/bali-background.svg");
-			background-size: contain;
+			background-size: cover;
 			background-repeat: repeat;
 			-webkit-transition: all .6s ease;
 			transition: all .6s ease;
@@ -341,6 +363,7 @@
 			text-align: center;
 			color: @white;
 			display: block;
+			text-transform: uppercase;
 		}
 
 		.title {
@@ -349,6 +372,7 @@
 			color: @white;
 			display: block;
 			font-family: @font2;
+			text-transform: uppercase;
 		}
 
 		.pt-images {

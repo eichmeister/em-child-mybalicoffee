@@ -163,6 +163,7 @@
 						<?php $i++; endforeach; ?>
 					</div>
 				<?php endif; ?>
+				
 				<?php if (!empty($contents['hero_teaser_img'])): ?>
 					<div class="hero-teaser">
 						<?php echo wp_get_attachment_image( $contents['hero_teaser_img']['ID'], 'img_800' ); ?>
@@ -172,7 +173,6 @@
 							</div>
 						<?php endif; ?>
 					</div>
-
 				<?php endif; ?>
 
 			</div>

@@ -1,36 +1,132 @@
 @import (reference) url('mixins.less');
 
 ////////////////////////////////////////////////////////////////////////////////////
-// ITNRO SECTION
+// HEADER SETTINGS
+////////////////////////////////////////////////////////////////////////////////////
+	
+	body.scrolled {
+		.em-shopping-cart-white,
+		.logo-homepage {
+			display: none;
+		}
+	}
+
+	body:not(.scrolled) {
+		header#main-header {
+			background-color: transparent;
+
+
+			a {
+				color: #fff;
+
+				&:hover {
+					color: #fff;
+					border-bottom-color: #fff;
+				}
+			}
+
+			.logo-homepage-scrolled {
+				display: none;
+			}
+
+			.em-shopping-cart {
+				display: none;
+			}
+
+
+	        .c-hamburger:not(.is-active) {
+	            span {
+	                background-color: #fff;
+
+	                &:before,
+	                &:after {
+	                    background-color: #fff;
+	                }
+	            }
+	        }
+
+			.em-shopping-cart-white {
+				height: 20px;
+				width: 30px;
+				background-image: url(../img/cart-1.svg);
+				display: block;
+				position: absolute;
+				top: 12px;
+				left: 0;
+				background-size: contain;
+				background-repeat: no-repeat;
+
+				.cart-item-count {
+					background: #fff;
+					color: #033142;
+				}
+			}
+
+			nav#main-nav {
+				ul {
+					& > li {
+						a {
+							color: #fff;
+
+							&:hover {
+								color: #fff;
+								border-bottom-color: #fff;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+////////////////////////////////////////////////////////////////////////////////////
+// INTRO SECTION
 ////////////////////////////////////////////////////////////////////////////////////
 
 	section#intro {
 		position: relative;
 
-
-		.inner-full {
-			.inner-wrapper {
-				top: 60%;
+		@media all and (min-width: @breakpoint3_mf) {
+			.inner-full {
+				.inner-wrapper {
+					top: 70%;
+				}
 			}
 		}
 
 		.hero-teaser {
-			position: relative;
-			max-width: 800px;
-			margin: 0 auto;
+			display: none;
 
-			img {
+			@media all and (min-width: @breakpoint4_mf) {
 				display: block;
-				width: 100%;
-				height: auto;
+				position: relative;
+				max-width: 800px;
 				margin: 0 auto;
+
+				img {
+					display: block;
+					width: 100%;
+					height: auto;
+					margin: 0 auto;
+				}
+
+				.hero-teaser-link {
+					position: absolute;
+					display: block;
+					bottom: 0;
+					right: 0;
+					.font-size-responsive(14px, 14px, 14px, 16px, 16px, 16px, 18px, 20px);
+				}
 			}
-			.hero-teaser-link {
-				position: absolute;
-				display: block;
-				bottom: 0;
-				right: 0;
-				.font-size-responsive(14px, 14px, 14px, 16px, 16px, 16px, 18px, 20px);
-			}
+		}
+	}
+
+////////////////////////////////////////////////////////////////////////////////////
+// PRODUCT SECTION
+////////////////////////////////////////////////////////////////////////////////////
+
+	#products {
+		h2 {
+			margin-bottom: 50px;
 		}
 	}

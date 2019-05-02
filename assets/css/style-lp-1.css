@@ -1,69 +1,129 @@
+body.scrolled .em-shopping-cart-white,
+body.scrolled .logo-homepage {
+  display: none;
+}
+body:not(.scrolled) header#main-header {
+  background-color: transparent;
+}
+body:not(.scrolled) header#main-header a {
+  color: #fff;
+}
+body:not(.scrolled) header#main-header a:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+body:not(.scrolled) header#main-header .logo-homepage-scrolled {
+  display: none;
+}
+body:not(.scrolled) header#main-header .em-shopping-cart {
+  display: none;
+}
+body:not(.scrolled) header#main-header .c-hamburger:not(.is-active) span {
+  background-color: #fff;
+}
+body:not(.scrolled) header#main-header .c-hamburger:not(.is-active) span:before,
+body:not(.scrolled) header#main-header .c-hamburger:not(.is-active) span:after {
+  background-color: #fff;
+}
+body:not(.scrolled) header#main-header .em-shopping-cart-white {
+  height: 20px;
+  width: 30px;
+  background-image: url(../img/cart-1.svg);
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+body:not(.scrolled) header#main-header .em-shopping-cart-white .cart-item-count {
+  background: #fff;
+  color: #033142;
+}
+body:not(.scrolled) header#main-header nav#main-nav ul > li a {
+  color: #fff;
+}
+body:not(.scrolled) header#main-header nav#main-nav ul > li a:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
 section#intro {
   position: relative;
 }
-section#intro .inner-full .inner-wrapper {
-  top: 60%;
+@media all and (min-width: 769px) {
+  section#intro .inner-full .inner-wrapper {
+    top: 70%;
+  }
 }
 section#intro .hero-teaser {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
+  display: none;
 }
-section#intro .hero-teaser img {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
+@media all and (min-width: 1025px) {
+  section#intro .hero-teaser {
+    display: block;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  section#intro .hero-teaser img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+  section#intro .hero-teaser .hero-teaser-link {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0;
+    font-size: 14px;
+  }
 }
-section#intro .hero-teaser .hero-teaser-link {
-  position: absolute;
-  display: block;
-  bottom: 0;
-  right: 0;
-  font-size: 14px;
-}
-@media all and (min-width: 360px) and (max-width: 480px) {
+@media all and (min-width: 1025px) and all and (min-width: 360px) and (max-width: 480px) {
   section#intro .hero-teaser .hero-teaser-link {
     font-size: 14px;
   }
 }
-@media all and (min-width: 480px) and (max-width: 768px) {
+@media all and (min-width: 1025px) and all and (min-width: 480px) and (max-width: 768px) {
   section#intro .hero-teaser .hero-teaser-link {
     font-size: 14px;
   }
 }
-@media all and (min-width: 768px) and (max-width: 1024px) {
+@media all and (min-width: 1025px) and all and (min-width: 768px) and (max-width: 1024px) {
   section#intro .hero-teaser .hero-teaser-link {
     font-size: 14px;
   }
 }
-@media all and (min-width: 1024px) and (max-width: 1280px) {
+@media all and (min-width: 1025px) and all and (min-width: 1024px) and (max-width: 1280px) {
   section#intro .hero-teaser .hero-teaser-link {
     font-size: 16px;
   }
 }
-@media all and (min-width: 1280px) and (max-width: 1468px) {
+@media all and (min-width: 1025px) and all and (min-width: 1280px) and (max-width: 1468px) {
   section#intro .hero-teaser .hero-teaser-link {
     font-size: 16px;
   }
 }
-@media all and (min-width: 1468px) and (max-width: 1680px) {
+@media all and (min-width: 1025px) and all and (min-width: 1468px) and (max-width: 1680px) {
   section#intro .hero-teaser .hero-teaser-link {
     font-size: 16px;
   }
 }
-@media all and (min-width: 1680px) and (max-width: 1920px) {
+@media all and (min-width: 1025px) and all and (min-width: 1680px) and (max-width: 1920px) {
   section#intro .hero-teaser .hero-teaser-link {
     font-size: 18px;
   }
 }
-@media all and (min-width: 1920px) {
+@media all and (min-width: 1025px) and all and (min-width: 1920px) {
   section#intro .hero-teaser .hero-teaser-link {
     font-size: 18px;
   }
 }
-@media all and (min-width: 2200px) {
+@media all and (min-width: 1025px) and all and (min-width: 2200px) {
   section#intro .hero-teaser .hero-teaser-link {
     font-size: 20px;
   }
+}
+#products h2 {
+  margin-bottom: 50px;
 }

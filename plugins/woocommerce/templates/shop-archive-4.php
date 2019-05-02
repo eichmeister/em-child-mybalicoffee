@@ -1,6 +1,6 @@
 <?php 
 /**
- * The template for displaying product single page
+ * The template for displaying product archive page
  *
  * @see https://mybali-coffee.de
  */
@@ -54,13 +54,9 @@ defined( 'ABSPATH' ) || exit;
 
 <div class="em-wc-wrapper padding-ver-100">
 
-	<section id="new-module">
-
 		<?php 
 		$items = get_field( 'clone', wc_get_page_id('shop') )['items'];
 		include_once( locate_template("includes/em-module-content-repeater.php") );
 		?>
-		
-	</section>
 	
 </div>

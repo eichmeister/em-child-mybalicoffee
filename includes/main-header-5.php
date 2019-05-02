@@ -13,9 +13,15 @@
     
 	<div class="logo-nav clearfix">
 
-		<a href="<?php echo get_home_url(); ?>" class="float-left">
-			<img src="<?php echo em_theme_info()['logo_header']; ?>" class="logo" />
+        <a href="<?php echo get_home_url(); ?>" class="logo-homepage-scrolled float-left">
+            <img src="<?php echo em_theme_info()['logo_header']; ?>" class="logo" />
         </a>
+
+        <?php if (is_front_page()) : ?>
+            <a href="<?php echo get_home_url(); ?>" class="logo-homepage float-left">
+                <img src="<?php echo em_theme_info()['logo_header_1']; ?>" class="logo" />
+            </a>
+        <?php endif; ?>
         
         <?php /* ---------- MOBILE NAV MODAL BUTTON (OPEN / CLOSE) ----------*/ ?>
 		
@@ -29,6 +35,10 @@
 
             <a href="<?php echo wc_get_cart_url(); ?>" class="shopping-cart-btn float-right" alt="<?php _e('View shopping cart', 'eichmeister'); ?>" title="<?php _e('View shopping cart', 'eichmeister'); ?>">
                 <i class="em-shopping-cart"><span class="cart-item-count"><?php echo WC()->cart->cart_contents_count; ?></span></i>
+
+                <?php if (is_front_page()) : ?>
+                    <i class="em-shopping-cart-white"><span class="cart-item-count"><?php echo WC()->cart->cart_contents_count; ?></span></i>
+                <?php endif; ?>
                 <span class="mobile-hide">Warenkorb</span>
                 
             </a>
