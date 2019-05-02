@@ -52,7 +52,7 @@ defined( 'ABSPATH' ) || exit;
 
 
 
-<div class="em-wc-wrapper padding-ver-100">
+<div class="em-wc-wrapper padding-top-100 padding-bot-50">
 
 		<?php 
 		$items = get_field( 'clone', wc_get_page_id('shop') )['items'];

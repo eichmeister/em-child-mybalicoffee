@@ -6,7 +6,7 @@ Template Name: MyBali - LP 01
 
 <?php get_header(); ?>
 
-<section id="intro" class="padding-bot-100">
+<section id="intro">
 		
 	<?php
 	
@@ -28,7 +28,7 @@ Template Name: MyBali - LP 01
 
 <section id="teaser1">
 
-	<div class="wrapper-1200 padding-ver-100">
+	<div class="wrapper-1200 padding-bot-100">
 
 		<?php 
 
@@ -65,7 +65,7 @@ Template Name: MyBali - LP 01
 
 <section id="teaser2">
 
-	<div class="wrapper-1200 padding-ver-50">
+	<div class="wrapper-1200 padding-bot-100">
 
 		<?php 
 		$items = get_field( 'teaser_2' )['items'];
@@ -79,7 +79,7 @@ Template Name: MyBali - LP 01
 
 <section id="instagram">
 
-	<div class="wrapper-1200 padding-ver-50">
+	<div class="wrapper-1200 padding-bot-50">
 
 
 		<h2 class="center first-line-bold">

@@ -50,10 +50,14 @@ body:not(.scrolled) header#main-header nav#main-nav ul > li a:hover {
 section#intro {
   position: relative;
 }
-@media all and (min-width: 769px) {
-  section#intro .inner-full .inner-wrapper {
-    top: 70%;
+@media all and (min-width: 1025px) {
+  section#intro .em-hero-simple:after {
+    height: 300px;
   }
+}
+section#intro .inner-wrapper {
+  top: 0;
+  transform: translate(0);
 }
 section#intro .hero-teaser {
   display: none;
@@ -64,12 +68,17 @@ section#intro .hero-teaser {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
+    height: 400px;
   }
   section#intro .hero-teaser img {
     display: block;
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 400px;
     margin: 0 auto;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
   }
   section#intro .hero-teaser .hero-teaser-link {
     position: absolute;

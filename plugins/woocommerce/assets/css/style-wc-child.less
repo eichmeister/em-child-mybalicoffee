@@ -318,7 +318,6 @@
 	
 	body.woocommerce.archive {
 		.shop-header {
-			margin-top: 50px;
 			margin-bottom: 50px;
 
 			span {
@@ -364,21 +363,30 @@
 			color: @white;
 			display: block;
 			text-transform: uppercase;
+			font-size: .8em;
+
+			@media all and (min-width: @breakpoint3_mf) {
+				font-size: 1em;
+			}
 		}
 
 		.title {
-			font-size: 2em;
 			text-align: center;
 			color: @white;
 			display: block;
 			font-family: @font2;
 			text-transform: uppercase;
+			font-size: 1em;
+
+			@media all and (min-width: @breakpoint3_mf) {
+				font-size: 2em;
+			}
 		}
 
 		.pt-images {
 			position: relative;
 			z-index: 100;
-			padding: 20px 50px 0 50px;
+			padding: 20px 50px;
 		}
 
 		.description {

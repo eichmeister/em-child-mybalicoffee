@@ -234,7 +234,6 @@ body.single-product #related-products .btn-line-left {
   margin-top: 40px;
 }
 body.woocommerce.archive .shop-header {
-  margin-top: 50px;
   margin-bottom: 50px;
 }
 body.woocommerce.archive .shop-header span {
@@ -269,19 +268,31 @@ body.woocommerce.archive .shop-header a.active {
   color: #FFF;
   display: block;
   text-transform: uppercase;
+  font-size: 0.8em;
+}
+@media all and (min-width: 769px) {
+  .em-product-tile-4 .flavor,
+  .em-product-tile-4 .region {
+    font-size: 1em;
+  }
 }
 .em-product-tile-4 .title {
-  font-size: 2em;
   text-align: center;
   color: #FFF;
   display: block;
   font-family: 'Condor', sans-serif;
   text-transform: uppercase;
+  font-size: 1em;
+}
+@media all and (min-width: 769px) {
+  .em-product-tile-4 .title {
+    font-size: 2em;
+  }
 }
 .em-product-tile-4 .pt-images {
   position: relative;
   z-index: 100;
-  padding: 20px 50px 0 50px;
+  padding: 20px 50px;
 }
 .em-product-tile-4 .description {
   position: relative;

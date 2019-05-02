@@ -85,13 +85,18 @@
 
 	section#intro {
 		position: relative;
-
-		@media all and (min-width: @breakpoint3_mf) {
-			.inner-full {
-				.inner-wrapper {
-					top: 70%;
+		
+		.em-hero-simple {
+			&:after {
+				@media all and (min-width: @breakpoint4_mf) {
+					height: 300px;
 				}
 			}
+		}
+
+		.inner-wrapper {
+			top: 0;
+			transform: translate(0);
 		}
 
 		.hero-teaser {
@@ -102,12 +107,17 @@
 				position: relative;
 				max-width: 800px;
 				margin: 0 auto;
+				height: 400px;
 
 				img {
 					display: block;
-					width: 100%;
-					height: auto;
+					width: auto;
+					height: 400px;
 					margin: 0 auto;
+					top: 0;
+					left: 50%;
+					transform: translateX(-50%);
+					position: absolute;
 				}
 
 				.hero-teaser-link {
