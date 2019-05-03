@@ -206,6 +206,7 @@ body.single-product #custom-taxonomies .flavor img {
 }
 body.single-product #custom-taxonomies .content {
   align-self: center;
+  margin-top: 30px;
 }
 @media all and (min-width: 769px) {
   body.single-product #custom-taxonomies .order-1 {

@@ -24,7 +24,7 @@ Template Name: MyBali - About
 
 <section id="content">
 
-	<div class="wrapper-800 padding-ver-50">
+	<div class="wrapper-800 padding-bot-50">
 		<p>
 			<?php the_field('hero-teaser-txt'); ?>
 		</p>

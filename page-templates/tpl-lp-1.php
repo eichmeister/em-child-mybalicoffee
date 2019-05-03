@@ -45,7 +45,7 @@ Template Name: MyBali - LP 01
 
 	<div class="wrapper-1200 padding-bot-100">
 
-		<h2 class="center first-line-bold">
+		<h2 class="hl-2 center first-line-bold">
 			<?php the_field('products_hl'); ?>
 		</h2>
 
@@ -82,7 +82,7 @@ Template Name: MyBali - LP 01
 	<div class="wrapper-1200 padding-bot-50">
 
 
-		<h2 class="center first-line-bold">
+		<h2 class="hl-2 center first-line-bold">
 			<?php the_field('instagram_hl'); ?>
 		</h2>
 

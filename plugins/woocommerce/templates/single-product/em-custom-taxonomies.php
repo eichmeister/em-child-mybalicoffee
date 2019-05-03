@@ -8,7 +8,7 @@ $region_term_meta = get_term_meta( $region_field->term_id );
 $flavor_field = get_field('bohnenart');
 $flavor_term_meta = get_term_meta( $flavor_field->term_id ); 
 ?>
-<div class="region padding-bot-50">
+<div class="region padding-bot-100">
 	<div class="row">
 
 		<div class="col_6">
@@ -24,7 +24,7 @@ $flavor_term_meta = get_term_meta( $flavor_field->term_id );
 </div>
 
 
-<div class="flavor">
+<div class="flavor padding-bot-50">
 	<div class="row">
 
 		<div class="col_6 order-2">
