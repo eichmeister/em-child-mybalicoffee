@@ -233,8 +233,8 @@
             width: 100%;
             height: 100%;
             opacity: 0.5;
-            background-image: url("../img/module-content-repeater.svg");
-            background-size: contain;
+            background-image: url("../img/gutter-endless.svg");
+            background-size: 400px 400px;
             background-repeat: repeat;
         }
 
@@ -409,10 +409,6 @@
             z-index: 0;
         }
 
-        .hl-1 {
-            .first-line-bold;
-        }
-
         .desc {
             p {
                 margin: 0;
@@ -462,6 +458,7 @@
 
         .row {
             position: relative;
+            margin-bottom: 50px;
 
             &:last-child {
                 margin-bottom: 0;
@@ -469,21 +466,11 @@
 
             @media all and (min-width: @breakpoint3_mf) {
                 margin-bottom: 100px;
-                left: 30px;
-                top: 30px;
             }
 
             .item {
                 order: 1;
                 position: relative;
-
-                @media all and (min-width: @breakpoint3_mf) {
-                    padding: 0;
-
-                    &:first-child {
-                        left: 30px;
-                    }
-                }
         
                 @media all and (min-width: @breakpoint3_mf) {
                     &.order-2 {
@@ -497,9 +484,9 @@
                     @media all and (min-width: @breakpoint3_mf) {
                         position: absolute;
                         bottom: -50px;
-                        left: 80%;
-                        width: 100px;
-                        height: 100px;
+                        left: 100%;
+                        width: 150px;
+                        height: 150px;
                         z-index: 10;
                         display: block;
                         transform: translateX(-150%);
@@ -522,7 +509,11 @@
             }
 
             .item-text {
-                padding: 30px;
+                padding: 20px;
+
+                @media all and (min-width: @breakpoint3_mf) {
+                    padding: 50px;
+                }
             }
 
             .item-image {
@@ -534,6 +525,8 @@
 
             @media all and (min-width: @breakpoint3_mf) {
                 .item-image {
+                    left: 30px;
+
                     & > figure {
                         position: relative;
                         top: -30px;
@@ -543,45 +536,37 @@
 
                     &:before {
                         content: "";
-                        width: calc(100% + 30px);
-                        height: calc(100% + 30px);
+                        width: 100%;
+                        height: 100%;
                         position: absolute;
-                        background-image: url("../img/module-content-repeater.svg");
-                        background-size: 26%;
+                        background-image: url("../img/gutter-endless.svg");
                         background-repeat: repeat;
+                        background-size: 400px 400px;
+                        transform: rotate(180deg);
                         -webkit-transition: all 0.6s ease;
                         transition: all 0.6s ease;
-                        bottom: 0;
-                        right: 0;
-                        background-position: bottom right;
                     }
                 }
 
                 &.flipped {
-                    left: -30px;
-                    top: 0;
-
-                    .item {
-                        &:first-child {
-                            left: -30px;
-                        }
-                    }
+                    // left: -30px;
+                    // top: 0;
 
                     .item-image {
+                        left: -30px;
+
                         & > figure {
-                            top: auto;
-                            left: auto;
-                            bottom: -30px;
-                            right: -30px;
+                            top: 30px;
+                            left: 30px;
                         }
 
                         &:before {
-                            top: 0;
-                            left: 0;
-                            bottom: auto;
-                            right: auto;
-                            background-position: top left;
+                            transform: rotate(0);
                         }
+                    }
+
+                    .item-text {
+
                     }
                 }
             }

@@ -36,8 +36,8 @@ body.single-product .custom-background:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../../../../assets/img/bali-background.svg");
-  background-size: cover;
+  background-image: url("../../../../assets/img/gutter-endless.svg");
+  background-size: 400px 400px;
   background-repeat: repeat;
   z-index: -5;
 }
@@ -144,7 +144,7 @@ body.single-product #custom-taxonomies:after {
     right: 0;
     width: 300px;
     height: 200px;
-    background-image: url("../../../../assets/img/bali-background-3.svg");
+    background-image: url("../../../../assets/img/kaffeefleck.svg");
     background-size: cover;
     background-repeat: no-repeat;
     z-index: 2;
@@ -165,8 +165,8 @@ body.single-product #custom-taxonomies .region .region-background:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../../../../assets/img/bali-background.svg");
-  background-size: cover;
+  background-image: url("../../../../assets/img/gutter-endless.svg");
+  background-size: 400px 400px;
   background-repeat: repeat;
 }
 body.single-product #custom-taxonomies .region img {
@@ -192,8 +192,8 @@ body.single-product #custom-taxonomies .flavor .flavor-background:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../../../../assets/img/bali-background.svg");
-  background-size: cover;
+  background-image: url("../../../../assets/img/gutter-endless.svg");
+  background-size: 400px 400px;
   background-repeat: repeat;
 }
 body.single-product #custom-taxonomies .flavor img {
@@ -217,8 +217,99 @@ body.single-product #custom-taxonomies .content {
   }
 }
 body.single-product #related-products h4 {
+  font-size: 20px;
   text-align: center;
   margin-bottom: 50px;
+}
+@media all and (min-width: 360px) and (max-width: 480px) {
+  body.single-product #related-products h4 {
+    font-size: 24px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 768px) {
+  body.single-product #related-products h4 {
+    font-size: 24px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  body.single-product #related-products h4 {
+    font-size: 28px;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+  body.single-product #related-products h4 {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 1280px) and (max-width: 1468px) {
+  body.single-product #related-products h4 {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 1468px) and (max-width: 1680px) {
+  body.single-product #related-products h4 {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 1680px) and (max-width: 1920px) {
+  body.single-product #related-products h4 {
+    font-size: 60px;
+  }
+}
+@media all and (min-width: 1920px) {
+  body.single-product #related-products h4 {
+    font-size: 60px;
+  }
+}
+@media all and (min-width: 2200px) {
+  body.single-product #related-products h4 {
+    font-size: 60px;
+  }
+}
+@media all and (min-width: 360px) and (max-width: 480px) {
+  body.single-product #related-products h4 {
+    font-size: 24px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 768px) {
+  body.single-product #related-products h4 {
+    font-size: 24px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  body.single-product #related-products h4 {
+    font-size: 28px;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+  body.single-product #related-products h4 {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 1280px) and (max-width: 1468px) {
+  body.single-product #related-products h4 {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 1468px) and (max-width: 1680px) {
+  body.single-product #related-products h4 {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 1680px) and (max-width: 1920px) {
+  body.single-product #related-products h4 {
+    font-size: 60px;
+  }
+}
+@media all and (min-width: 1920px) {
+  body.single-product #related-products h4 {
+    font-size: 60px;
+  }
+}
+@media all and (min-width: 2200px) {
+  body.single-product #related-products h4 {
+    font-size: 60px;
+  }
 }
 body.single-product #related-products h5 {
   text-align: center;
@@ -254,8 +345,8 @@ body.woocommerce.archive .shop-header a.active {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../../../../assets/img/bali-background.svg");
-  background-size: cover;
+  background-image: url("../../../../assets/img/gutter-endless.svg");
+  background-size: 400px 400px;
   background-repeat: repeat;
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;

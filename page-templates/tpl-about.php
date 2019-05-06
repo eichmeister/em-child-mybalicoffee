@@ -52,8 +52,8 @@ Template Name: MyBali - About
 	<div class="wrapper-1200 padding-ver-50">
 
 
-		<h2 class="center first-line-bold">
-			<?php the_field('contact_hl'); ?>
+		<h2 class="hl-2 center">
+			<?php echo first_line_bold( get_field('contact_hl') ); ?>
 		</h2>
 
 		<?php echo do_shortcode('[contact-form-7 id="118" title="Kontaktformular 1"]'); ?>

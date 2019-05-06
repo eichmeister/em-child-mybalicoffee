@@ -12,6 +12,10 @@ body:not(.scrolled) header#main-header a:hover {
   color: #fff;
   border-bottom-color: #fff;
 }
+body:not(.scrolled) header#main-header .logo-homepage img {
+  height: 60px;
+  top: -5px;
+}
 body:not(.scrolled) header#main-header .logo-homepage-scrolled {
   display: none;
 }
@@ -55,8 +59,13 @@ section#intro {
     height: 300px;
   }
 }
+@media all and (min-width: 1281px) {
+  section#intro .em-hero-simple:after {
+    height: 400px;
+  }
+}
 section#intro .inner-wrapper {
-  top: 0;
+  top: 50px;
   transform: translate(0);
 }
 section#intro .hero-teaser {
@@ -66,7 +75,7 @@ section#intro .hero-teaser {
   section#intro .hero-teaser {
     display: block;
     position: relative;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     height: 400px;
   }
@@ -84,53 +93,61 @@ section#intro .hero-teaser {
     position: absolute;
     display: block;
     bottom: 0;
-    right: 0;
-    font-size: 14px;
+    right: 20px;
+    font-size: 20px;
   }
 }
 @media all and (min-width: 1025px) and all and (min-width: 360px) and (max-width: 480px) {
   section#intro .hero-teaser .hero-teaser-link {
-    font-size: 14px;
+    font-size: 24px;
   }
 }
 @media all and (min-width: 1025px) and all and (min-width: 480px) and (max-width: 768px) {
   section#intro .hero-teaser .hero-teaser-link {
-    font-size: 14px;
+    font-size: 24px;
   }
 }
 @media all and (min-width: 1025px) and all and (min-width: 768px) and (max-width: 1024px) {
   section#intro .hero-teaser .hero-teaser-link {
-    font-size: 14px;
+    font-size: 28px;
   }
 }
 @media all and (min-width: 1025px) and all and (min-width: 1024px) and (max-width: 1280px) {
   section#intro .hero-teaser .hero-teaser-link {
-    font-size: 16px;
+    font-size: 32px;
   }
 }
 @media all and (min-width: 1025px) and all and (min-width: 1280px) and (max-width: 1468px) {
   section#intro .hero-teaser .hero-teaser-link {
-    font-size: 16px;
+    font-size: 36px;
   }
 }
 @media all and (min-width: 1025px) and all and (min-width: 1468px) and (max-width: 1680px) {
   section#intro .hero-teaser .hero-teaser-link {
-    font-size: 16px;
+    font-size: 34px;
   }
 }
 @media all and (min-width: 1025px) and all and (min-width: 1680px) and (max-width: 1920px) {
   section#intro .hero-teaser .hero-teaser-link {
-    font-size: 18px;
+    font-size: 40px;
   }
 }
 @media all and (min-width: 1025px) and all and (min-width: 1920px) {
   section#intro .hero-teaser .hero-teaser-link {
-    font-size: 18px;
+    font-size: 40px;
   }
 }
 @media all and (min-width: 1025px) and all and (min-width: 2200px) {
   section#intro .hero-teaser .hero-teaser-link {
-    font-size: 20px;
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 1281px) {
+  section#intro .hero-teaser {
+    height: 600px;
+  }
+  section#intro .hero-teaser img {
+    height: 600px;
   }
 }
 #products h2 {

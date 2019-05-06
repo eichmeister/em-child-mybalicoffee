@@ -28,7 +28,7 @@ Template Name: MyBali - LP 01
 
 <section id="teaser1">
 
-	<div class="wrapper-1200 padding-bot-100">
+	<div class="wrapper-1200 padding-bot-100 padding-top-50">
 
 		<?php 
 
@@ -45,8 +45,8 @@ Template Name: MyBali - LP 01
 
 	<div class="wrapper-1200 padding-bot-100">
 
-		<h2 class="hl-2 center first-line-bold">
-			<?php the_field('products_hl'); ?>
+		<h2 class="hl-2 center">
+			<?php echo first_line_bold(get_field('products_hl')); ?>
 		</h2>
 
 		<div class="row">
@@ -82,8 +82,8 @@ Template Name: MyBali - LP 01
 	<div class="wrapper-1200 padding-bot-50">
 
 
-		<h2 class="hl-2 center first-line-bold">
-			<?php the_field('instagram_hl'); ?>
+		<h2 class="hl-2 center">
+			<?php echo first_line_bold(get_field('instagram_hl')); ?>
 		</h2>
 
 		<div class="center margin-top-25 margin-bot-50">

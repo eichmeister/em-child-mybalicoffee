@@ -20,7 +20,7 @@
 
 				$hl_logo = $item['headline_logo'];
 				if ( $hl_logo == 'hl' ) {
-					echo '<h4 class="hl4 first-line-bold">' . $item[$hl_logo] . '</h4>';
+					echo '<h4 class="hl4">' . first_line_bold($item[$hl_logo]) . '</h4>';
 				} else {
 					echo wp_get_attachment_image( $item['logo']['ID'], 'img_500' );
 				}

@@ -25,6 +25,13 @@
 				}
 			}
 
+			.logo-homepage {
+				img {
+					height: 60px;
+					top: -5px;
+				}
+			}
+
 			.logo-homepage-scrolled {
 				display: none;
 			}
@@ -91,11 +98,15 @@
 				@media all and (min-width: @breakpoint4_mf) {
 					height: 300px;
 				}
+
+				@media all and (min-width: @breakpoint5_mf) {
+					height: 400px;
+				}
 			}
 		}
 
 		.inner-wrapper {
-			top: 0;
+			top: 50px;
 			transform: translate(0);
 		}
 
@@ -105,7 +116,7 @@
 			@media all and (min-width: @breakpoint4_mf) {
 				display: block;
 				position: relative;
-				max-width: 800px;
+				max-width: 1200px;
 				margin: 0 auto;
 				height: 400px;
 
@@ -124,8 +135,16 @@
 					position: absolute;
 					display: block;
 					bottom: 0;
-					right: 0;
-					.font-size-responsive(14px, 14px, 14px, 16px, 16px, 16px, 18px, 20px);
+					right: 20px;
+        			.font-size-responsive(20px,24px,28px,32px,36px,34px,40px,40px);
+				}
+			}
+
+			@media all and (min-width: @breakpoint5_mf) {
+				height: 600px;
+
+				img {
+					height: 600px;
 				}
 			}
 		}

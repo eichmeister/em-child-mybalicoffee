@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- Page.php -->
-<div class="wrapper-1200 em-txt">
+<div class="wrapper-1200 em-txt padding-top-50">
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

@@ -86,6 +86,7 @@ h6 {
   padding: 0;
   line-height: 1;
   text-transform: uppercase;
+  font-weight: normal;
   font-size: 34px;
 }
 @media all and (min-width: 360px) and (max-width: 480px) {
@@ -294,12 +295,6 @@ h6 {
   -moz-box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.15);
   box-shadow: 2px 2px 20px 4px rgba(0, 0, 0, 0.15);
 }
-.first-line-bold {
-  font-weight: 400;
-}
-.first-line-bold:first-line {
-  font-weight: 700;
-}
 .hl-1,
 .hl1 {
   font-size: 20px;
@@ -327,37 +322,37 @@ h6 {
 @media all and (min-width: 1024px) and (max-width: 1280px) {
   .hl-1,
   .hl1 {
-    font-size: 32px;
+    font-size: 42px;
   }
 }
 @media all and (min-width: 1280px) and (max-width: 1468px) {
   .hl-1,
   .hl1 {
-    font-size: 60px;
+    font-size: 48px;
   }
 }
 @media all and (min-width: 1468px) and (max-width: 1680px) {
   .hl-1,
   .hl1 {
-    font-size: 60px;
+    font-size: 54px;
   }
 }
 @media all and (min-width: 1680px) and (max-width: 1920px) {
   .hl-1,
   .hl1 {
-    font-size: 80px;
+    font-size: 60px;
   }
 }
 @media all and (min-width: 1920px) {
   .hl-1,
   .hl1 {
-    font-size: 80px;
+    font-size: 60px;
   }
 }
 @media all and (min-width: 2200px) {
   .hl-1,
   .hl1 {
-    font-size: 80px;
+    font-size: 60px;
   }
 }
 .hl-2,
@@ -387,37 +382,37 @@ h6 {
 @media all and (min-width: 1024px) and (max-width: 1280px) {
   .hl-2,
   .hl2 {
-    font-size: 32px;
+    font-size: 36px;
   }
 }
 @media all and (min-width: 1280px) and (max-width: 1468px) {
   .hl-2,
   .hl2 {
-    font-size: 60px;
+    font-size: 42px;
   }
 }
 @media all and (min-width: 1468px) and (max-width: 1680px) {
   .hl-2,
   .hl2 {
-    font-size: 60px;
+    font-size: 48px;
   }
 }
 @media all and (min-width: 1680px) and (max-width: 1920px) {
   .hl-2,
   .hl2 {
-    font-size: 80px;
+    font-size: 54px;
   }
 }
 @media all and (min-width: 1920px) {
   .hl-2,
   .hl2 {
-    font-size: 80px;
+    font-size: 54px;
   }
 }
 @media all and (min-width: 2200px) {
   .hl-2,
   .hl2 {
-    font-size: 80px;
+    font-size: 60px;
   }
 }
 .hl-3,
@@ -453,7 +448,7 @@ h6 {
 @media all and (min-width: 1280px) and (max-width: 1468px) {
   .hl-3,
   .hl3 {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 @media all and (min-width: 1468px) and (max-width: 1680px) {
@@ -465,19 +460,19 @@ h6 {
 @media all and (min-width: 1680px) and (max-width: 1920px) {
   .hl-3,
   .hl3 {
-    font-size: 60px;
+    font-size: 44px;
   }
 }
 @media all and (min-width: 1920px) {
   .hl-3,
   .hl3 {
-    font-size: 60px;
+    font-size: 44px;
   }
 }
 @media all and (min-width: 2200px) {
   .hl-3,
   .hl3 {
-    font-size: 60px;
+    font-size: 48px;
   }
 }
 .hl-4,
@@ -519,25 +514,25 @@ h6 {
 @media all and (min-width: 1468px) and (max-width: 1680px) {
   .hl-4,
   .hl4 {
-    font-size: 34px;
+    font-size: 40px;
   }
 }
 @media all and (min-width: 1680px) and (max-width: 1920px) {
   .hl-4,
   .hl4 {
-    font-size: 40px;
+    font-size: 44px;
   }
 }
 @media all and (min-width: 1920px) {
   .hl-4,
   .hl4 {
-    font-size: 40px;
+    font-size: 44px;
   }
 }
 @media all and (min-width: 2200px) {
   .hl-4,
   .hl4 {
-    font-size: 40px;
+    font-size: 48px;
   }
 }
 .p,

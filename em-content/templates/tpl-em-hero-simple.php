@@ -75,7 +75,7 @@
 									<?php $i=1; foreach ($slide['headline'] as $headline): ?>
 										<?php if ( $headline['txt'] ): ?>
 											<div class="hl hl-<?php echo $i; ?>">
-												<?php echo $headline['txt']; ?>
+												<?php echo first_line_bold($headline['txt']); ?>
 											</div>
 										<?php endif; ?>
 									<?php $i++; endforeach; ?>
@@ -161,15 +161,6 @@
 								</a>
 							<?php endif; ?>
 						<?php $i++; endforeach; ?>
-					</div>
-				<?php endif; ?>
-				
-				<?php if (!empty($contents['hero_teaser_img'])): ?>
-					<div class="hero-teaser">
-						<?php echo wp_get_attachment_image( $contents['hero_teaser_img']['ID'], 'img_1200' ); ?>
-						<?php if (!empty($contents['hero_teaser_link'])): ?>
-							<?php printf( '<a href="%s" target="%s" class="hero-teaser-link btn-line-left">%s</a>', $contents['hero_teaser_link']['url'], $contents['hero_teaser_link']['target'], $contents['hero_teaser_link']['title'] ); ?>
-						<?php endif; ?>
 					</div>
 				<?php endif; ?>
 
