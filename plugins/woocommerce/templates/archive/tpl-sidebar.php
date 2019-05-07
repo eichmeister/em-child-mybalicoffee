@@ -22,7 +22,7 @@ $tr_data = em_get_session_data();
 	printf( '<a class="%s" href="%s">%s</a>', $active, get_permalink( wc_get_page_id( 'shop' ) ), 'Alle');
 	foreach ($cats as $cat) {
 		$active = ( (get_queried_object()->term_id) == ($cat->term_id) ) ? 'active' : '';
-		printf( '<a class="%s" href="%s">%s</a>', $active, get_term_link( $cat->term_id, 'product_cat' ), $cat->name);
+		printf( '<a data-value="%s" data-type="%s" class="%s" href="%s">%s</a>', $cat->term_id, 'product_cat', $active, get_term_link( $cat->term_id, 'product_cat' ), $cat->name);
 	}
 	?>
 </div>

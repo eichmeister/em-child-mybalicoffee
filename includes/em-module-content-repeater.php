@@ -1,11 +1,14 @@
-<div class="em-content-repeater">
+<div class="em-content-repeater padding-ver-50">
 
 	<?php $flip=false; foreach ( $items as $item ): ?>
 
 		<div class="row<?php if($flip){ echo ' flipped'; } ?><?php if( isset( $item['fs_bg']) && $item['fs_bg'] != false ) { echo ' fs-bg'; } ?>">
 
-			<div class="item item-image col_6 <?php if($flip){ echo 'order-2'; } ?>" style="background-color: <?php echo $item['bgc']; ?>">
-				<figure>
+			<div class="item item-image col_6 <?php if($flip){ echo 'order-2'; } ?>" data-start="top" style="background-color: <?php echo $item['bgc']; ?>">
+				<figure
+			    data-bottom-top="transform:translateY(100px);"
+			    data-top-bottom="transform:translateY(-30px);"
+			    >
 					<?php echo wp_get_attachment_image( $item['image']['ID'], 'img_800' ); ?>
 					<?php if( isset($item['trademark']['ID']) ) { ?>
 						<div class="trademark"><?php echo wp_get_attachment_image( $item['trademark']['ID'], 'img_500' ); ?></div>

@@ -30,6 +30,9 @@
         wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/assets/css/style.css' );
         wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/assets/css/style.css', array('parent-style') );
 
+        // Main child js
+        wp_enqueue_script( 'main-child-js', get_stylesheet_directory_uri()."/assets/js/main-child.js", array(), '1.0.0', true );
+
         // New woocommerce styles
         wp_enqueue_style( 'style-wc-child-css', get_stylesheet_directory_uri()."/plugins/woocommerce/assets/css/style-wc-child.css" );
         wp_enqueue_script( 'script-wc-child-js', get_stylesheet_directory_uri()."/plugins/woocommerce/assets/js/script-wc-child.js", array(), '1.0.0', true );

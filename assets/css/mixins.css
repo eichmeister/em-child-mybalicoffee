@@ -210,7 +210,7 @@ h6 {
   color: #FFF;
 }
 .btn-line-left {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   position: relative;
   display: block;
@@ -241,27 +241,27 @@ h6 {
 }
 @media all and (min-width: 1280px) and (max-width: 1468px) {
   .btn-line-left {
-    font-size: 34px;
+    font-size: 32px;
   }
 }
 @media all and (min-width: 1468px) and (max-width: 1680px) {
   .btn-line-left {
-    font-size: 34px;
+    font-size: 32px;
   }
 }
 @media all and (min-width: 1680px) and (max-width: 1920px) {
   .btn-line-left {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 @media all and (min-width: 1920px) {
   .btn-line-left {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 @media all and (min-width: 2200px) {
   .btn-line-left {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 .btn-line-left:before {
@@ -394,25 +394,25 @@ h6 {
 @media all and (min-width: 1468px) and (max-width: 1680px) {
   .hl-2,
   .hl2 {
-    font-size: 48px;
+    font-size: 42px;
   }
 }
 @media all and (min-width: 1680px) and (max-width: 1920px) {
   .hl-2,
   .hl2 {
-    font-size: 54px;
+    font-size: 48px;
   }
 }
 @media all and (min-width: 1920px) {
   .hl-2,
   .hl2 {
-    font-size: 54px;
+    font-size: 48px;
   }
 }
 @media all and (min-width: 2200px) {
   .hl-2,
   .hl2 {
-    font-size: 60px;
+    font-size: 48px;
   }
 }
 .hl-3,
@@ -454,25 +454,25 @@ h6 {
 @media all and (min-width: 1468px) and (max-width: 1680px) {
   .hl-3,
   .hl3 {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 @media all and (min-width: 1680px) and (max-width: 1920px) {
   .hl-3,
   .hl3 {
-    font-size: 44px;
+    font-size: 40px;
   }
 }
 @media all and (min-width: 1920px) {
   .hl-3,
   .hl3 {
-    font-size: 44px;
+    font-size: 40px;
   }
 }
 @media all and (min-width: 2200px) {
   .hl-3,
   .hl3 {
-    font-size: 48px;
+    font-size: 40px;
   }
 }
 .hl-4,
@@ -502,37 +502,37 @@ h6 {
 @media all and (min-width: 1024px) and (max-width: 1280px) {
   .hl-4,
   .hl4 {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 @media all and (min-width: 1280px) and (max-width: 1468px) {
   .hl-4,
   .hl4 {
-    font-size: 36px;
+    font-size: 32px;
   }
 }
 @media all and (min-width: 1468px) and (max-width: 1680px) {
   .hl-4,
   .hl4 {
-    font-size: 40px;
+    font-size: 32px;
   }
 }
 @media all and (min-width: 1680px) and (max-width: 1920px) {
   .hl-4,
   .hl4 {
-    font-size: 44px;
+    font-size: 36px;
   }
 }
 @media all and (min-width: 1920px) {
   .hl-4,
   .hl4 {
-    font-size: 44px;
+    font-size: 36px;
   }
 }
 @media all and (min-width: 2200px) {
   .hl-4,
   .hl4 {
-    font-size: 48px;
+    font-size: 36px;
   }
 }
 .p,

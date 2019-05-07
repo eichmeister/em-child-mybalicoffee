@@ -211,7 +211,7 @@ h6 {
   color: #FFF;
 }
 .btn-line-left {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   position: relative;
   display: block;
@@ -242,27 +242,27 @@ h6 {
 }
 @media all and (min-width: 1280px) and (max-width: 1468px) {
   .btn-line-left {
-    font-size: 34px;
+    font-size: 32px;
   }
 }
 @media all and (min-width: 1468px) and (max-width: 1680px) {
   .btn-line-left {
-    font-size: 34px;
+    font-size: 32px;
   }
 }
 @media all and (min-width: 1680px) and (max-width: 1920px) {
   .btn-line-left {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 @media all and (min-width: 1920px) {
   .btn-line-left {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 @media all and (min-width: 2200px) {
   .btn-line-left {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 .btn-line-left:before {
@@ -395,25 +395,25 @@ h6 {
 @media all and (min-width: 1468px) and (max-width: 1680px) {
   .hl-2,
   .hl2 {
-    font-size: 48px;
+    font-size: 42px;
   }
 }
 @media all and (min-width: 1680px) and (max-width: 1920px) {
   .hl-2,
   .hl2 {
-    font-size: 54px;
+    font-size: 48px;
   }
 }
 @media all and (min-width: 1920px) {
   .hl-2,
   .hl2 {
-    font-size: 54px;
+    font-size: 48px;
   }
 }
 @media all and (min-width: 2200px) {
   .hl-2,
   .hl2 {
-    font-size: 60px;
+    font-size: 48px;
   }
 }
 .hl-3,
@@ -455,25 +455,25 @@ h6 {
 @media all and (min-width: 1468px) and (max-width: 1680px) {
   .hl-3,
   .hl3 {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 @media all and (min-width: 1680px) and (max-width: 1920px) {
   .hl-3,
   .hl3 {
-    font-size: 44px;
+    font-size: 40px;
   }
 }
 @media all and (min-width: 1920px) {
   .hl-3,
   .hl3 {
-    font-size: 44px;
+    font-size: 40px;
   }
 }
 @media all and (min-width: 2200px) {
   .hl-3,
   .hl3 {
-    font-size: 48px;
+    font-size: 40px;
   }
 }
 .hl-4,
@@ -503,37 +503,37 @@ h6 {
 @media all and (min-width: 1024px) and (max-width: 1280px) {
   .hl-4,
   .hl4 {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 @media all and (min-width: 1280px) and (max-width: 1468px) {
   .hl-4,
   .hl4 {
-    font-size: 36px;
+    font-size: 32px;
   }
 }
 @media all and (min-width: 1468px) and (max-width: 1680px) {
   .hl-4,
   .hl4 {
-    font-size: 40px;
+    font-size: 32px;
   }
 }
 @media all and (min-width: 1680px) and (max-width: 1920px) {
   .hl-4,
   .hl4 {
-    font-size: 44px;
+    font-size: 36px;
   }
 }
 @media all and (min-width: 1920px) {
   .hl-4,
   .hl4 {
-    font-size: 44px;
+    font-size: 36px;
   }
 }
 @media all and (min-width: 2200px) {
   .hl-4,
   .hl4 {
-    font-size: 48px;
+    font-size: 36px;
   }
 }
 .p,
@@ -617,6 +617,7 @@ body {
   line-height: 1.6;
   color: #033142;
   font-style: normal;
+  font-variant: lining-nums;
   font-size: 14px;
 }
 @media all and (min-width: 360px) and (max-width: 480px) {
@@ -735,11 +736,13 @@ body:not(.starts-with-hero):not(.scrolled) header#main-header {
 header#main-header {
   background-color: #fff;
   width: 1200px;
+  box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.15);
 }
 header#main-header nav#main-nav ul > li a {
   color: #033142;
   font-size: 18px;
   padding: 22px 0;
+  text-transform: uppercase;
 }
 header#main-header nav#main-nav ul > li a:hover {
   color: #033142;
@@ -791,7 +794,6 @@ header#main-header .shopping-cart-btn .em-shopping-cart {
   background-repeat: no-repeat;
 }
 header#main-header .shopping-cart-btn .cart-item-count {
-  font-family: sans-serif;
   background: #033142;
 }
 footer#main-footer {
@@ -1038,6 +1040,27 @@ body.woocommerce-checkout .woocommerce {
     margin-bottom: 100px;
   }
 }
+@media all and (min-width: 769px) {
+  .em-content-repeater .row .item-image {
+    left: 30px;
+  }
+  .em-content-repeater .row .item-image > figure {
+    position: relative;
+    top: -30px;
+    left: -30px;
+    z-index: 5;
+  }
+  .em-content-repeater .row.flipped .item-image {
+    left: -30px;
+  }
+  .em-content-repeater .row.flipped .item-image > figure {
+    top: 30px;
+    left: 30px;
+  }
+  .em-content-repeater .row.flipped .item-image:before {
+    transform: rotate(0);
+  }
+}
 .em-content-repeater .row .item {
   order: 1;
   position: relative;
@@ -1087,15 +1110,6 @@ body.woocommerce-checkout .woocommerce {
   }
 }
 @media all and (min-width: 769px) {
-  .em-content-repeater .row .item-image {
-    left: 30px;
-  }
-  .em-content-repeater .row .item-image > figure {
-    position: relative;
-    top: -30px;
-    left: -30px;
-    z-index: 5;
-  }
   .em-content-repeater .row .item-image:before {
     content: "";
     width: 100%;
@@ -1108,21 +1122,25 @@ body.woocommerce-checkout .woocommerce {
     -webkit-transition: all 0.6s ease;
     transition: all 0.6s ease;
   }
-  .em-content-repeater .row.flipped .item-image {
-    left: -30px;
-  }
-  .em-content-repeater .row.flipped .item-image > figure {
-    top: 30px;
-    left: 30px;
-  }
-  .em-content-repeater .row.flipped .item-image:before {
-    transform: rotate(0);
-  }
+}
+body.page-template-tpl-about #content {
+  position: relative;
+}
+body.page-template-tpl-about #content:after {
+  position: absolute;
+  content: "";
+  height: 50px;
+  width: 2px;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  background-color: #000;
 }
 body.page-template-tpl-about #content p {
   font-size: 18px;
   line-height: 1.33;
   text-align: center;
+  font-weight: 500;
 }
 @media all and (min-width: 360px) and (max-width: 480px) {
   body.page-template-tpl-about #content p {
@@ -1185,59 +1203,105 @@ body.page-template-tpl-about #contact h2 {
   margin-right: 20px;
 }
 .wpcf7 .btn-line-left {
-  font-size: 14px;
+  font-size: 20px;
 }
 @media all and (min-width: 360px) and (max-width: 480px) {
   .wpcf7 .btn-line-left {
-    font-size: 14px;
+    font-size: 24px;
   }
 }
 @media all and (min-width: 480px) and (max-width: 768px) {
   .wpcf7 .btn-line-left {
-    font-size: 14px;
+    font-size: 24px;
   }
 }
 @media all and (min-width: 768px) and (max-width: 1024px) {
   .wpcf7 .btn-line-left {
-    font-size: 14px;
+    font-size: 28px;
   }
 }
 @media all and (min-width: 1024px) and (max-width: 1280px) {
   .wpcf7 .btn-line-left {
-    font-size: 16px;
+    font-size: 28px;
   }
 }
 @media all and (min-width: 1280px) and (max-width: 1468px) {
   .wpcf7 .btn-line-left {
-    font-size: 16px;
+    font-size: 32px;
   }
 }
 @media all and (min-width: 1468px) and (max-width: 1680px) {
   .wpcf7 .btn-line-left {
-    font-size: 16px;
+    font-size: 32px;
   }
 }
 @media all and (min-width: 1680px) and (max-width: 1920px) {
   .wpcf7 .btn-line-left {
-    font-size: 18px;
+    font-size: 36px;
   }
 }
 @media all and (min-width: 1920px) {
   .wpcf7 .btn-line-left {
-    font-size: 18px;
+    font-size: 36px;
   }
 }
 @media all and (min-width: 2200px) {
   .wpcf7 .btn-line-left {
-    font-size: 20px;
+    font-size: 36px;
   }
 }
 .wpcf7 .btn-line-left input[type="submit"] {
+  font-size: 20px;
   border: 0;
   background-color: transparent;
   color: #033142;
   padding: 0;
   font-weight: bold;
+}
+@media all and (min-width: 360px) and (max-width: 480px) {
+  .wpcf7 .btn-line-left input[type="submit"] {
+    font-size: 24px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .wpcf7 .btn-line-left input[type="submit"] {
+    font-size: 24px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .wpcf7 .btn-line-left input[type="submit"] {
+    font-size: 28px;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+  .wpcf7 .btn-line-left input[type="submit"] {
+    font-size: 28px;
+  }
+}
+@media all and (min-width: 1280px) and (max-width: 1468px) {
+  .wpcf7 .btn-line-left input[type="submit"] {
+    font-size: 32px;
+  }
+}
+@media all and (min-width: 1468px) and (max-width: 1680px) {
+  .wpcf7 .btn-line-left input[type="submit"] {
+    font-size: 32px;
+  }
+}
+@media all and (min-width: 1680px) and (max-width: 1920px) {
+  .wpcf7 .btn-line-left input[type="submit"] {
+    font-size: 36px;
+  }
+}
+@media all and (min-width: 1920px) {
+  .wpcf7 .btn-line-left input[type="submit"] {
+    font-size: 36px;
+  }
+}
+@media all and (min-width: 2200px) {
+  .wpcf7 .btn-line-left input[type="submit"] {
+    font-size: 36px;
+  }
 }
 .wpcf7 .wpcf7-form-control-wrap {
   display: block;
@@ -1257,10 +1321,33 @@ body.page-template-tpl-about #contact h2 {
   .wpcf7 .wpcf7-form-control-wrap.first-name,
   .wpcf7 .wpcf7-form-control-wrap.last-name,
   .wpcf7 .wpcf7-form-control-wrap.your-email,
-  .wpcf7 .wpcf7-form-control-wrap.your-number,
-  .wpcf7 .wpcf7-form-control-wrap.acceptance-privacy {
+  .wpcf7 .wpcf7-form-control-wrap.your-number {
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
     max-width: 50%;
   }
+}
+.wpcf7 .col_privacy {
+  display: block;
+  position: relative;
+  min-height: 1px;
+  background-clip: content-box;
+  margin-bottom: 30px;
+  -webkit-box-flex: 0;
+  width: 100%;
+}
+@media all and (min-width: 769px) {
+  .wpcf7 .col_privacy {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+.wpcf7 .col_privacy span.wpcf7-list-item {
+  margin: 0;
+}
+.wpcf7 .col_privacy .acceptance-privacy {
+  width: auto;
+  display: inline-block;
+  margin-bottom: 0;
 }

@@ -1,5 +1,7 @@
 <?php
+$region_field = get_field( 'gebiet_region', $product->get_id() );
+$flavor_field = get_field( 'bohnenart', $product->get_id() );
 
-echo '<h2 class="hl3">' . $region_field->name . '</h2>';
+echo '<h2 class="span">' . $flavor_field->name . '</h2>';
 the_title( '<h1 class="hl1">', '</h1>' );
-echo '<h3 class="hl3">' . $flavor_field->name . '</h3>';
+echo '<h3 class="span">' . $region_field->name . '</h3>';

@@ -28,7 +28,7 @@ Template Name: MyBali - LP 01
 
 <section id="teaser1">
 
-	<div class="wrapper-1200 padding-bot-100 padding-top-50">
+	<div class="wrapper-1200 padding-bot-50">
 
 		<?php 
 
@@ -43,7 +43,7 @@ Template Name: MyBali - LP 01
 
 <section id="products">
 
-	<div class="wrapper-1200 padding-bot-100">
+	<div class="wrapper-1200 padding-bot-50">
 
 		<h2 class="hl-2 center">
 			<?php echo first_line_bold(get_field('products_hl')); ?>
@@ -59,13 +59,16 @@ Template Name: MyBali - LP 01
 			?>
 
 		</div>
+
+		<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>" class="btn-line-left">ALLE PRODUKTE</a>
+		
 	</div>
 
 </section>
 
-<section id="teaser2">
+<section id="instagram">
 
-	<div class="wrapper-1200 padding-bot-100">
+	<div class="wrapper-1200 padding-bot-50">
 
 		<?php 
 		$items = get_field( 'teaser_2' )['items'];
@@ -74,10 +77,6 @@ Template Name: MyBali - LP 01
 		?>
 		
 	</div>
-
-</section>
-
-<section id="instagram">
 
 	<div class="wrapper-1200 padding-bot-50">
 

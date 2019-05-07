@@ -147,3 +147,97 @@
     add_filter( 'em_related_products_sub_headline', '__return_false' );
 
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// ARCHIVE AJAX
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+    add_action('wp_ajax_em_shop_archive_filter', 'em_shop_archive_filter' );
+    add_action('wp_ajax_nopriv_em_shop_archive_filter', 'em_shop_archive_filter' );
+
+    function em_shop_archive_filter() {
+
+        $em_wc_args = em_shop_archive_filter_query();
+
+        $em_wc_ajax_query = new WP_Query( $em_wc_args );
+
+		?>
+
+		<div class="products-wrapper em-wc-wrapper">
+			<div class="products row">
+
+				<?php
+				if ( $em_wc_ajax_query->have_posts() ) {
+					while ( $em_wc_ajax_query->have_posts() ) {
+						$em_wc_ajax_query->the_post();
+						/**
+						 * Hook: woocommerce_shop_loop.
+						 *
+						 * @hooked WC_Structured_Data::generate_product_data() - 10
+						 */
+						do_action( 'woocommerce_shop_loop' );
+
+
+						global $product;
+						// Ensure visibility.
+						if ( ! empty( $product ) || $product->is_visible() ) {
+							include( get_product_tile() );
+						}
+					}
+				} else {
+					wc_no_products_found();
+				}
+				?>
+
+			</div>
+		</div>
+
+		<?php
+        wp_die();
+    }
+
+    function em_shop_archive_filter_query() {
+        $_SESSION["tr_data"] = array();
+        $product_array = array();
+        $new_args = $_POST['query'];
+        $wc_query = new WC_Query();
+
+        // unset product cat pages
+        unset($new_args['product_cat']);
+        unset($new_args['taxonomy']);
+        unset($new_args['term']);
+        
+        $new_args['orderby'] = $wc_query->get_catalog_ordering_args($_POST['query']['orderby'],$_POST['query']['order'])['orderby'];
+        $new_args['order'] = $wc_query->get_catalog_ordering_args($_POST['query']['orderby'],$_POST['query']['order'])['order'];
+        if ( isset( $wc_query->get_catalog_ordering_args($_POST['query']['orderby'],$_POST['query']['order'])['meta_key'] ) ) {
+            $new_args['meta_key'] = $wc_query->get_catalog_ordering_args($_POST['query']['orderby'],$_POST['query']['order'])['meta_key'];
+        }
+        $tax_query = array(
+            array(
+                'taxonomy'  => 'product_visibility',
+                'field'    => 'term_id',
+                'terms'    => array(7,9),
+                'operator' => 'NOT IN',
+            )
+        );
+
+        if( isset($_POST['tr_data']) && !empty($_POST['tr_data']) ) {
+        	if ($_POST['tr_data'][0]['type'] == 'product_cat') {
+	        	$tax_query[] = array(
+	                'taxonomy'  => 'product_cat',
+	                'field'    => 'term_id',
+	                'terms'    => $_POST['tr_data'][0]['value'],
+	                'operator' => 'IN',
+	        	);
+	        }
+        }
+
+        if ( isset($_POST['em_page'])) {
+            $new_args['paged'] = $_POST['em_page'];
+            $_SESSION["paged"] = $_POST['em_page'];
+        }
+        $new_args['post_status'] = 'publish';
+        $new_args['tax_query'] = $tax_query;
+        $_SESSION['tr_data'] = ( isset($_POST['tr_data']) && !empty($_POST['tr_data']) ) ? $_POST['tr_data'] : array();
+        return $new_args;
+    }

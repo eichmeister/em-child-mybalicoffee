@@ -54,4 +54,73 @@ jQuery(document).ready(function($) {
     };
 
     about.init();
+
+    var widgets = {
+
+        // AJAX PHP FUNCTION NAME
+        $em_page: '',
+        $tr_data: [],
+        $elementScrollTo: $('#em-wc-container'),
+        $loader:          $('.em-wc-archive-loader'),
+
+        // Filters
+        $filter:          $('#em-shop-archive-wrapper #em-shop-archive-sidebar a'),
+
+        //mobile 
+
+        init: function() {
+            this.$filter.on( 'click', function(e) {
+                e.preventDefault();
+                if ( ! $(this).hasClass('active') ) {
+                    $('#em-shop-archive-wrapper #em-shop-archive-sidebar a').removeClass('active');
+                    $(this).addClass('active');
+                    widgets.$tr_data = [];
+                    widgets.$tr_data.push({
+                        type: $(this).data('type'),
+                        value: $(this).data('value'),
+                    })
+                    widgets.triggerAjaxFilter( widgets.$em_page, widgets.$tr_data );
+                }
+            });
+        },
+
+        triggerAjaxFilter: function(em_page, data) {
+            widgets.$loader.fadeIn(200);
+            var em_data = {};
+            em_data['em_page']    = em_page;
+            em_data['tr_data']    = data;
+            em_data['query']      = emsaq.query;
+            console.log(em_data);
+            
+            em_data['action']     = 'em_shop_archive_filter';
+            $.ajax({
+                type: 'POST',
+                data: em_data,
+                url: emsaq.ajaxurl,
+
+                beforeSend: function() {
+                    $('#em-shop-archive-wrapper .products-wrapper').html("");
+
+                    $("html, body").animate({
+                        scrollTop: widgets.$elementScrollTo.offset().top - 80
+                    }, 600);
+                },
+
+                success: function(response) {
+                    if ( $('#em-shop-archive-wrapper .products-wrapper').length ) {
+                        $('#em-shop-archive-wrapper .products-wrapper').replaceWith(response);
+                    } else if( $('#em-shop-archive-wrapper p.woocommerce-info').length ) {
+                        $('#em-shop-archive-wrapper p.woocommerce-info').replaceWith(response);
+                    }
+                    // archive.init();
+                    // EmMain.formstone.initFormstone();
+                    // quickview.init();
+                    // EmMain.lazyLoad.init();
+                }
+
+            });
+        },
+    };
+
+    widgets.init();
 });

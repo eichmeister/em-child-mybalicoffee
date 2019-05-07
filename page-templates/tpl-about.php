@@ -52,7 +52,7 @@ Template Name: MyBali - About
 	<div class="wrapper-1200 padding-ver-50">
 
 
-		<h2 class="hl-2 center">
+		<h2 class="hl-4 center">
 			<?php echo first_line_bold( get_field('contact_hl') ); ?>
 		</h2>
 

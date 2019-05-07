@@ -3,6 +3,7 @@ body.scrolled .logo-homepage {
   display: none;
 }
 body:not(.scrolled) header#main-header {
+  box-shadow: none;
   background-color: transparent;
 }
 body:not(.scrolled) header#main-header a {
@@ -64,9 +65,12 @@ section#intro {
     height: 400px;
   }
 }
+section#intro .inner-full {
+  padding-bottom: 120px;
+}
 section#intro .inner-wrapper {
-  top: 50px;
   transform: translate(0);
+  top: 50px;
 }
 section#intro .hero-teaser {
   display: none;
@@ -152,4 +156,40 @@ section#intro .hero-teaser {
 }
 #products h2 {
   margin-bottom: 50px;
+}
+#products .wrapper-1200:after,
+#products .wrapper-1200:before {
+  display: table;
+  content: "";
+  clear: both;
+}
+#products .wrapper-1200 > .btn-line-left {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+#instagram {
+  position: relative;
+  background-image: url(../img/bali-background-4.jpg);
+  background-size: cover;
+  z-index: -10;
+}
+#instagram:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0), #ffffff);
+  z-index: -5;
+}
+#instagram:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
+  z-index: -5;
 }

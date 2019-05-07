@@ -51,12 +51,13 @@ defined( 'ABSPATH' ) || exit;
 <?php } ?>
 
 
+<div class="trade-vibe">
+	<div class="em-wc-wrapper padding-top-150 padding-bot-50">
 
-<div class="em-wc-wrapper padding-top-100 padding-bot-50">
-
-		<?php 
-		$items = get_field( 'clone', wc_get_page_id('shop') )['items'];
-		include_once( locate_template("includes/em-module-content-repeater.php") );
-		?>
-	
+			<?php 
+			$items = get_field( 'clone', wc_get_page_id('shop') )['items'];
+			include_once( locate_template("includes/em-module-content-repeater.php") );
+			?>
+		
+	</div>
 </div>
