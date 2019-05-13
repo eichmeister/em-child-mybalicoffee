@@ -1,6 +1,19 @@
 <?php
 
 //////////////////////////////////////////////////////////////////////////////////////
+// ADD CONTACT TO MAIN MENU AND FOOTER MENU 2
+//////////////////////////////////////////////////////////////////////////////////////
+    function new_nav_menu_items($items, $args) {
+        if ( $args->menu == 'main' || $args->menu == 'Footer2' ) {
+            $homelink = '<li class="home"><a href="' . get_permalink( '117' ) . '/#contact' . '">' . __('Kontakt') . '</a></li>';
+            // add the home link to the end of the menu
+            $items = $items . $homelink;
+        }
+        return $items;
+    }
+    add_filter( 'wp_nav_menu_items', 'new_nav_menu_items', 10, 2 );
+
+//////////////////////////////////////////////////////////////////////////////////////
 // EICHMEISTER THEME SETTINGS (manual / options pages)
 //////////////////////////////////////////////////////////////////////////////////////
 

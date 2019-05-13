@@ -171,7 +171,6 @@ section#intro .hero-teaser {
   position: relative;
   background-image: url(../img/bali-background-4.jpg);
   background-size: cover;
-  z-index: -10;
 }
 #instagram:before {
   content: "";
@@ -181,7 +180,6 @@ section#intro .hero-teaser {
   width: 100%;
   height: 200px;
   background-image: linear-gradient(to top, rgba(255, 255, 255, 0), #ffffff);
-  z-index: -5;
 }
 #instagram:after {
   content: "";
@@ -191,5 +189,4 @@ section#intro .hero-teaser {
   width: 100%;
   height: 50px;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
-  z-index: -5;
 }

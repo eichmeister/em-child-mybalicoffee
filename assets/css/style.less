@@ -206,7 +206,7 @@
     footer#main-footer {
         background-color: #0e1426;
         color: #fff;
-        padding-top: 60px;
+        padding-top: 80px;
         text-align: center;
 
         @media all and (min-width: @breakpoint3) {
@@ -219,12 +219,10 @@
             top: -2px;
             left: 0;
             width: 100%;
-            height: 80px;
+            height: 120px;
             transform: rotate(180deg);
             background-image: url(../img/bali-background-2.png);
-            background-size: contain;
-            background-repeat: repeat-x;
-            background-position: bottom
+            background-size: cover;
         }
 
         &:before {
@@ -364,7 +362,7 @@
         }
 
         div#main {
-            overflow: unset;
+            overflow-y: hidden;
 
             section {
                 &:first-child {
@@ -403,12 +401,16 @@
             bottom: -2px;
             left: 0;
             width: 100%;
-            height: 80px;
+            height: 100px;
             background-image: url(../img/bali-background-2.png);
-            background-size: contain;
-            background-repeat: repeat-x;
-            background-position: bottom;
+            background-size: cover;
+            // background-repeat: repeat-x;
+            // background-position: bottom;
             z-index: 0;
+
+            @media all and (min-width: @breakpoint8_mf) {
+                height: 160px;
+            }
         }
 
         .desc {
@@ -418,7 +420,7 @@
         }
 
         .inner-full {
-            padding-bottom: 80px;
+            padding-bottom: 100px;
 
             .inner-wrapper {
                 width: 1200px;
@@ -439,6 +441,11 @@
             .font-size-responsive(14px,14px,16px,16px,18px,18px,20px,20px);
             color: #033142;
             // margin-bottom: 40px;
+        }
+
+        img {
+            max-height: 600px;
+            width: auto;
         }
 
         .fs-bg {

@@ -799,7 +799,7 @@ header#main-header .shopping-cart-btn .cart-item-count {
 footer#main-footer {
   background-color: #0e1426;
   color: #fff;
-  padding-top: 60px;
+  padding-top: 80px;
   text-align: center;
 }
 @media all and (min-width: 768px) {
@@ -813,12 +813,10 @@ footer#main-footer:after {
   top: -2px;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 120px;
   transform: rotate(180deg);
   background-image: url(../img/bali-background-2.png);
-  background-size: contain;
-  background-repeat: repeat-x;
-  background-position: bottom;
+  background-size: cover;
 }
 footer#main-footer:before {
   content: "";
@@ -921,7 +919,7 @@ body.starts-with-hero .em-hero-simple.bg-photo .inner-full {
   padding-top: 102px !important;
 }
 body div#main {
-  overflow: unset;
+  overflow-y: hidden;
 }
 body div#main section:first-child {
   padding-top: 102px !important;
@@ -949,18 +947,21 @@ body.woocommerce-checkout .woocommerce {
   bottom: -2px;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 100px;
   background-image: url(../img/bali-background-2.png);
-  background-size: contain;
-  background-repeat: repeat-x;
-  background-position: bottom;
+  background-size: cover;
   z-index: 0;
+}
+@media all and (min-width: 1921px) {
+  .em-hero-simple:after {
+    height: 160px;
+  }
 }
 .em-hero-simple .desc p {
   margin: 0;
 }
 .em-hero-simple .inner-full {
-  padding-bottom: 80px;
+  padding-bottom: 100px;
 }
 .em-hero-simple .inner-full .inner-wrapper {
   width: 1200px;
@@ -1018,6 +1019,10 @@ body.woocommerce-checkout .woocommerce {
   .em-content-repeater a {
     font-size: 20px;
   }
+}
+.em-content-repeater img {
+  max-height: 600px;
+  width: auto;
 }
 .em-content-repeater .fs-bg {
   color: #fff;

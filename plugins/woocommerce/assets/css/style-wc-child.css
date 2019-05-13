@@ -347,6 +347,11 @@ body.single-product #custom-taxonomies:after {
   background-image: linear-gradient(to top, rgba(255, 255, 255, 0), #ffffff);
   z-index: 1;
 }
+body.single-product #custom-taxonomies img {
+  width: auto;
+  height: auto;
+  max-height: 600px;
+}
 body.single-product #custom-taxonomies .hl3 {
   margin-bottom: 20px;
 }
@@ -362,6 +367,13 @@ body.single-product #custom-taxonomies .hl3 {
     background-repeat: no-repeat;
     z-index: 2;
   }
+}
+body.single-product #custom-taxonomies .region figure {
+  position: relative;
+  z-index: 20;
+  top: 0;
+  left: 30px;
+  width: 80%;
 }
 body.single-product #custom-taxonomies .region .region-background {
   position: absolute;
@@ -382,14 +394,6 @@ body.single-product #custom-taxonomies .region .region-background:before {
   background-size: 400px 400px;
   background-repeat: repeat;
 }
-body.single-product #custom-taxonomies .region img {
-  position: relative;
-  top: 0%;
-  left: 30px;
-  width: 80%;
-  height: auto;
-  z-index: 20;
-}
 body.single-product #custom-taxonomies .flavor .flavor-background {
   position: absolute;
   top: 30px;
@@ -409,13 +413,12 @@ body.single-product #custom-taxonomies .flavor .flavor-background:before {
   background-size: 400px 400px;
   background-repeat: repeat;
 }
-body.single-product #custom-taxonomies .flavor img {
+body.single-product #custom-taxonomies .flavor figure {
   position: relative;
-  top: 0;
-  left: 0%;
-  width: 80%;
-  height: auto;
   z-index: 20;
+  top: 0;
+  left: 0;
+  width: 80%;
 }
 body.single-product #custom-taxonomies .content {
   align-self: center;
@@ -539,6 +542,7 @@ body.single-product #related-products .btn-line-left {
   margin-top: 40px;
 }
 body.woocommerce.archive .shop-header {
+  margin-top: 20px;
   margin-bottom: 50px;
 }
 body.woocommerce.archive .shop-header span {

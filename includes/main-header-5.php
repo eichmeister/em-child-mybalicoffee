@@ -83,6 +83,7 @@
                     'container_id' => 'main',
                     'menu' => 'main',
                     'menu_class' => 'sf-menu',
+                    'menu_id' => '1',
                     'theme_location' => 'primary' 
                     )); 
                 ?>
