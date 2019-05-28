@@ -253,12 +253,12 @@ body.single-product .custom-background:before {
 }
 @media all and (min-width: 769px) {
   body.single-product .em-hero-simple:after {
-    bottom: 50px;
+    bottom: 98px;
   }
 }
 body.single-product .summary {
   color: #FFF;
-  padding-bottom: 100px;
+  padding-bottom: 150px;
   z-index: 10;
 }
 body.single-product .summary .hl1 {

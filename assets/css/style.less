@@ -44,6 +44,19 @@
         }
     }
 
+    .em-txt {
+        margin-bottom: -10px;
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            .font-size-responsive(16px,20px,20px,24px,24px,24px,28px,28px);
+            margin: 40px 0 20px 0;
+        }
+    }
+
     .mobile-hide {
         @media all and (max-width: @breakpoint3) {
             display: none;
@@ -581,8 +594,34 @@
 ////////////////////////////////////////////////////////////////////////////////////
 
     body.page-template-tpl-about {
+
+        #intro {
+            .inner-full {
+            }
+        }
+
         #content {
             position: relative;
+
+            @media all and (min-width: @breakpoint4_mf) {
+                .wrapper-800 {
+                    position: relative;
+
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: 429px;
+                        height: 283px;
+                        background-image: url(../img/kaffeefleck.svg);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        z-index: 11;
+                        transform: translate(50%, -75%) rotate(180deg);
+                    }
+                }
+            }
 
             &:after {
                 position: absolute;

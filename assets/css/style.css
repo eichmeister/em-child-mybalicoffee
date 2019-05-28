@@ -683,6 +683,111 @@ a:hover {
   color: #333;
   transform: scale(1.1);
 }
+.em-txt {
+  margin-bottom: -10px;
+}
+.em-txt p {
+  margin-bottom: 10px;
+}
+.em-txt h1,
+.em-txt h2,
+.em-txt h3,
+.em-txt h4,
+.em-txt h5,
+.em-txt h6 {
+  font-size: 16px;
+  margin: 40px 0 20px 0;
+}
+@media all and (min-width: 360px) and (max-width: 480px) {
+  .em-txt h1,
+  .em-txt h2,
+  .em-txt h3,
+  .em-txt h4,
+  .em-txt h5,
+  .em-txt h6 {
+    font-size: 20px;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 768px) {
+  .em-txt h1,
+  .em-txt h2,
+  .em-txt h3,
+  .em-txt h4,
+  .em-txt h5,
+  .em-txt h6 {
+    font-size: 20px;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .em-txt h1,
+  .em-txt h2,
+  .em-txt h3,
+  .em-txt h4,
+  .em-txt h5,
+  .em-txt h6 {
+    font-size: 20px;
+  }
+}
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+  .em-txt h1,
+  .em-txt h2,
+  .em-txt h3,
+  .em-txt h4,
+  .em-txt h5,
+  .em-txt h6 {
+    font-size: 24px;
+  }
+}
+@media all and (min-width: 1280px) and (max-width: 1468px) {
+  .em-txt h1,
+  .em-txt h2,
+  .em-txt h3,
+  .em-txt h4,
+  .em-txt h5,
+  .em-txt h6 {
+    font-size: 24px;
+  }
+}
+@media all and (min-width: 1468px) and (max-width: 1680px) {
+  .em-txt h1,
+  .em-txt h2,
+  .em-txt h3,
+  .em-txt h4,
+  .em-txt h5,
+  .em-txt h6 {
+    font-size: 24px;
+  }
+}
+@media all and (min-width: 1680px) and (max-width: 1920px) {
+  .em-txt h1,
+  .em-txt h2,
+  .em-txt h3,
+  .em-txt h4,
+  .em-txt h5,
+  .em-txt h6 {
+    font-size: 28px;
+  }
+}
+@media all and (min-width: 1920px) {
+  .em-txt h1,
+  .em-txt h2,
+  .em-txt h3,
+  .em-txt h4,
+  .em-txt h5,
+  .em-txt h6 {
+    font-size: 28px;
+  }
+}
+@media all and (min-width: 2200px) {
+  .em-txt h1,
+  .em-txt h2,
+  .em-txt h3,
+  .em-txt h4,
+  .em-txt h5,
+  .em-txt h6 {
+    font-size: 28px;
+  }
+}
 @media all and (max-width: 768px) {
   .mobile-hide {
     display: none;
@@ -1130,6 +1235,24 @@ body.woocommerce-checkout .woocommerce {
 }
 body.page-template-tpl-about #content {
   position: relative;
+}
+@media all and (min-width: 1025px) {
+  body.page-template-tpl-about #content .wrapper-800 {
+    position: relative;
+  }
+  body.page-template-tpl-about #content .wrapper-800:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 429px;
+    height: 283px;
+    background-image: url(../img/kaffeefleck.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 11;
+    transform: translate(50%, -75%) rotate(180deg);
+  }
 }
 body.page-template-tpl-about #content:after {
   position: absolute;
