@@ -88,39 +88,47 @@ $product_color = get_field( 'product_color', $parent );
 		        <span class="flavor"><?php echo $flavor_field->name; ?></span>
 		        <span class="title"><?php echo $title; ?></span>
 
+				<?php if ( get_field('product_settings_availability', $_product->get_parent_id()) ): ?>
 
-		        <?php
-			    if( $parent->is_type('variable') ){
-			        $default_attributes = $parent->get_default_attributes();
-			        foreach($parent->get_available_variations() as $variation_values ){
-			            foreach($variation_values['attributes'] as $key => $attribute_value ){
-			                $attribute_name = str_replace( 'attribute_', '', $key );
-			                $default_value = $parent->get_variation_default_attribute($attribute_name);
-			                if( $default_value == $attribute_value ){
-			                    $is_default_variation = true;
-			                } else {
-			                    $is_default_variation = false;
-			                    break; // Stop this loop to start next main lopp
-			                }
-			            }
-			            if( $is_default_variation ){
-			                $variation_id = $variation_values['variation_id'];
-			                break; // Stop the main loop
-			            }
-			        }
+					<?php
+				    if( $parent->is_type('variable') ){
+				        $default_attributes = $parent->get_default_attributes();
+				        foreach($parent->get_available_variations() as $variation_values ){
+				            foreach($variation_values['attributes'] as $key => $attribute_value ){
+				                $attribute_name = str_replace( 'attribute_', '', $key );
+				                $default_value = $parent->get_variation_default_attribute($attribute_name);
+				                if( $default_value == $attribute_value ){
+				                    $is_default_variation = true;
+				                } else {
+				                    $is_default_variation = false;
+				                    break; // Stop this loop to start next main lopp
+				                }
+				            }
+				            if( $is_default_variation ){
+				                $variation_id = $variation_values['variation_id'];
+				                break; // Stop the main loop
+				            }
+				        }
 
-			        // Now we get the default variation data
-			        if( $is_default_variation ){
-			            // Get the "default" WC_Product_Variation object to use available methods
-			            $default_variation = wc_get_product($variation_id);
+				        // Now we get the default variation data
+				        if( $is_default_variation ){
+				            // Get the "default" WC_Product_Variation object to use available methods
+				            $default_variation = wc_get_product($variation_id);
 
-			            // Raw output of available "default" variation details data
-			            echo '<span class="price">' . ($parent->get_default_attributes())['pa_gewicht'] . ' - ' . wc_price( $default_variation->get_price() ) . '</span>';
-			        }
-			    }
-		        ?>
-		        <!-- <span class="region"><?php echo $region_field->name; ?></span> -->
+				            // Raw output of available "default" variation details data
+				            echo '<span class="not-available price">' . ($parent->get_default_attributes())['pa_gewicht'] . ' - ' . wc_price( $default_variation->get_price() ) . '</span>';
+				        }
+				    }
+			        ?>
+
+				<?php else: ?>
+
+					<div class="price"><?php _e('nicht vorrätig', 'eichmeister'); ?></div>
+
+				<?php endif; ?>
+
 		    </div>
+
 		    <div class="more-information">
 		    	<a href="<?php echo $link; ?>" class="btn">Mehr erfahren</a>
 		    </div>
