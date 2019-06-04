@@ -216,7 +216,7 @@
             array(
                 'taxonomy'  => 'product_visibility',
                 'field'    => 'term_id',
-                'terms'    => array(7,9),
+                'terms'    => array(7),
                 'operator' => 'NOT IN',
             )
         );
