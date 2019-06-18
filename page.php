@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php if (is_checkout() || is_cart()) { ?>
+<?php if ( is_checkout() || is_cart() || is_account_page() ) { ?>
 	<div class="wrapper-1200">
 <?php } else { ?>
 	<div class="wrapper-1200 em-txt padding-top-50">

@@ -32,7 +32,9 @@
 
 				echo '<div class="content">' . $item['content'] . '</div>';
 				?>
-				<a href="<?php echo $item['link']['url']; ?>" target="<?php echo $item['link']['target']; ?>" title="<?php echo $item['link']['title']; ?>" class="btn-line-left"><?php echo $item['link']['title']; ?></a>
+				<?php if ( isset($item['link']) && !empty($item['link']) ) { ?>
+					<a href="<?php echo $item['link']['url']; ?>" target="<?php echo $item['link']['target']; ?>" title="<?php echo $item['link']['title']; ?>" class="btn-line-left"><?php echo $item['link']['title']; ?></a>
+				<?php } ?>
 			</div>
 		</div>
 		<?php $flip = $flip ? false : true; ?>
