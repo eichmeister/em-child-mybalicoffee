@@ -1,1 +1,214 @@
-body.scrolled .em-shopping-cart-white,body.scrolled .logo-homepage{display:none}body:not(.scrolled) header#main-header{box-shadow:none;background-color:transparent}body:not(.scrolled) header#main-header a{color:#fff}body:not(.scrolled) header#main-header a:hover{color:#fff;border-bottom-color:#fff}body:not(.scrolled) header#main-header .logo-homepage img{height:60px;top:-5px}body:not(.scrolled) header#main-header .logo-homepage-scrolled{display:none}body:not(.scrolled) header#main-header .em-shopping-cart{display:none}body:not(.scrolled) header#main-header .c-hamburger:not(.is-active) span{background-color:#fff}body:not(.scrolled) header#main-header .c-hamburger:not(.is-active) span:after,body:not(.scrolled) header#main-header .c-hamburger:not(.is-active) span:before{background-color:#fff}body:not(.scrolled) header#main-header .em-shopping-cart-white{height:20px;width:30px;background-image:url(../img/cart-1.svg);display:block;position:absolute;top:12px;left:0;background-size:contain;background-repeat:no-repeat}body:not(.scrolled) header#main-header .em-shopping-cart-white .cart-item-count{background:#fff;color:#033142}body:not(.scrolled) header#main-header nav#main-nav ul>li a{color:#fff}body:not(.scrolled) header#main-header nav#main-nav ul>li a:hover{color:#fff;border-bottom-color:#fff}section#intro{position:relative}@media all and (min-width:1025px){section#intro .em-hero-simple:after{height:300px}}@media all and (min-width:1281px){section#intro .em-hero-simple:after{height:400px}}section#intro .inner-full{padding-bottom:120px}section#intro .inner-wrapper{transform:translate(0);top:50px}section#intro .hero-teaser .hero-teaser-link{display:none}@media all and (min-width:1025px){section#intro .hero-teaser{display:block;position:relative;max-width:1200px;margin:0 auto;height:400px}section#intro .hero-teaser img{display:block;width:auto;height:400px;margin:0 auto;top:0;left:50%;transform:translateX(-50%);position:absolute}section#intro .hero-teaser .hero-teaser-link{position:absolute;display:block;bottom:0;right:20px;font-size:20px}}@media all and (min-width:1025px) and all and (min-width:360px) and (max-width:480px){section#intro .hero-teaser .hero-teaser-link{font-size:24px}}@media all and (min-width:1025px) and all and (min-width:480px) and (max-width:768px){section#intro .hero-teaser .hero-teaser-link{font-size:24px}}@media all and (min-width:1025px) and all and (min-width:768px) and (max-width:1024px){section#intro .hero-teaser .hero-teaser-link{font-size:28px}}@media all and (min-width:1025px) and all and (min-width:1024px) and (max-width:1280px){section#intro .hero-teaser .hero-teaser-link{font-size:32px}}@media all and (min-width:1025px) and all and (min-width:1280px) and (max-width:1468px){section#intro .hero-teaser .hero-teaser-link{font-size:36px}}@media all and (min-width:1025px) and all and (min-width:1468px) and (max-width:1680px){section#intro .hero-teaser .hero-teaser-link{font-size:34px}}@media all and (min-width:1025px) and all and (min-width:1680px) and (max-width:1920px){section#intro .hero-teaser .hero-teaser-link{font-size:40px}}@media all and (min-width:1025px) and all and (min-width:1920px){section#intro .hero-teaser .hero-teaser-link{font-size:40px}}@media all and (min-width:1025px) and all and (min-width:2200px){section#intro .hero-teaser .hero-teaser-link{font-size:40px}}@media all and (min-width:1281px){section#intro .hero-teaser{height:600px}section#intro .hero-teaser img{height:600px}}#teaser1 .em-content-repeater{padding-top:0}#products h2{margin-bottom:50px}#products .wrapper-1200:after,#products .wrapper-1200:before{display:table;content:"";clear:both}#products .wrapper-1200>.btn-line-left{margin-top:20px;margin-bottom:40px}#instagram{position:relative;background-image:url(../img/bali-background-4.jpg);background-size:cover}#instagram:before{content:"";position:absolute;top:0;left:0;width:100%;height:200px;background-image:linear-gradient(to top,rgba(255,255,255,0),#fff)}#instagram:after{content:"";position:absolute;bottom:0;left:0;width:100%;height:50px;background-image:linear-gradient(to bottom,rgba(255,255,255,0),#fff)}
+body.scrolled .em-shopping-cart-white,
+body.scrolled .logo-homepage {
+  display: none;
+}
+body:not(.scrolled) header#main-header {
+  box-shadow: none;
+  background-color: transparent;
+}
+body:not(.scrolled) header#main-header a {
+  color: #fff;
+}
+body:not(.scrolled) header#main-header a:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+body:not(.scrolled) header#main-header .logo-homepage img {
+  height: 60px;
+  top: -5px;
+}
+body:not(.scrolled) header#main-header .logo-homepage-scrolled {
+  display: none;
+}
+body:not(.scrolled) header#main-header .em-shopping-cart {
+  display: none;
+}
+body:not(.scrolled) header#main-header .c-hamburger:not(.is-active) span {
+  background-color: #fff;
+}
+body:not(.scrolled) header#main-header .c-hamburger:not(.is-active) span:before,
+body:not(.scrolled) header#main-header .c-hamburger:not(.is-active) span:after {
+  background-color: #fff;
+}
+body:not(.scrolled) header#main-header .em-shopping-cart-white {
+  height: 20px;
+  width: 30px;
+  background-image: url(../img/cart-1.svg);
+  display: block;
+  position: absolute;
+  top: 12px;
+  left: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+body:not(.scrolled) header#main-header .em-shopping-cart-white .cart-item-count {
+  background: #fff;
+  color: #033142;
+}
+body:not(.scrolled) header#main-header nav#main-nav ul > li a {
+  color: #fff;
+}
+body:not(.scrolled) header#main-header nav#main-nav ul > li a:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+section#intro {
+  position: relative;
+}
+@media all and (min-width: 1025px) {
+  section#intro .em-hero-simple:after {
+    height: 300px;
+  }
+}
+@media all and (min-width: 1281px) {
+  section#intro .em-hero-simple:after {
+    height: 400px;
+  }
+}
+section#intro .inner-full {
+  padding-bottom: 120px;
+}
+section#intro .inner-wrapper {
+  transform: translate(0);
+  top: 50px;
+}
+section#intro .inner-wrapper .cta {
+  background-color: #EF9D3C;
+  color: #FFF;
+  border: 1px solid #EF9D3C;
+  display: inline-block;
+  padding: 1em 3em;
+  outline: none;
+  text-decoration: none;
+  text-align: center;
+  z-index: 0;
+  transition: all ease-in-out 0.5s;
+  overflow: hidden;
+  position: relative;
+  border: 0;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+}
+section#intro .inner-wrapper .cta:hover {
+  transform: scale(1.1);
+}
+section#intro .hero-teaser .hero-teaser-link {
+  display: none;
+}
+@media all and (min-width: 1025px) {
+  section#intro .hero-teaser {
+    display: block;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 400px;
+  }
+  section#intro .hero-teaser img {
+    display: block;
+    width: auto;
+    height: 400px;
+    margin: 0 auto;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+  }
+  section#intro .hero-teaser .hero-teaser-link {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 20px;
+    font-size: 20px;
+  }
+}
+@media all and (min-width: 1025px) and all and (min-width: 360px) and (max-width: 480px) {
+  section#intro .hero-teaser .hero-teaser-link {
+    font-size: 24px;
+  }
+}
+@media all and (min-width: 1025px) and all and (min-width: 480px) and (max-width: 768px) {
+  section#intro .hero-teaser .hero-teaser-link {
+    font-size: 24px;
+  }
+}
+@media all and (min-width: 1025px) and all and (min-width: 768px) and (max-width: 1024px) {
+  section#intro .hero-teaser .hero-teaser-link {
+    font-size: 28px;
+  }
+}
+@media all and (min-width: 1025px) and all and (min-width: 1024px) and (max-width: 1280px) {
+  section#intro .hero-teaser .hero-teaser-link {
+    font-size: 32px;
+  }
+}
+@media all and (min-width: 1025px) and all and (min-width: 1280px) and (max-width: 1468px) {
+  section#intro .hero-teaser .hero-teaser-link {
+    font-size: 36px;
+  }
+}
+@media all and (min-width: 1025px) and all and (min-width: 1468px) and (max-width: 1680px) {
+  section#intro .hero-teaser .hero-teaser-link {
+    font-size: 34px;
+  }
+}
+@media all and (min-width: 1025px) and all and (min-width: 1680px) and (max-width: 1920px) {
+  section#intro .hero-teaser .hero-teaser-link {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 1025px) and all and (min-width: 1920px) {
+  section#intro .hero-teaser .hero-teaser-link {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 1025px) and all and (min-width: 2200px) {
+  section#intro .hero-teaser .hero-teaser-link {
+    font-size: 40px;
+  }
+}
+@media all and (min-width: 1281px) {
+  section#intro .hero-teaser {
+    height: 600px;
+  }
+  section#intro .hero-teaser img {
+    height: 600px;
+  }
+}
+#teaser1 .em-content-repeater {
+  padding-top: 0;
+}
+#products h2 {
+  margin-bottom: 50px;
+}
+#products .wrapper-1200:after,
+#products .wrapper-1200:before {
+  display: table;
+  content: "";
+  clear: both;
+}
+#products .wrapper-1200 > .btn-line-left {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+#instagram {
+  position: relative;
+  background-image: url(../img/bali-background-4.jpg);
+  background-size: cover;
+}
+#instagram:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0), #ffffff);
+}
+#instagram:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
+}

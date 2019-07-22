@@ -50,6 +50,18 @@
                 ?>
             </nav>
         </div>
+        <!-- <div class="col_12">
+            <?php if( have_rows('payments', 'options') ): ?>
+                <div class="payments">
+                    <strong>Zahlungsmöglichkeiten</strong>
+                    <?php while ( have_rows('payments', 'options') ) : the_row(); ?>
+                        <figure>
+                            <img src="<?php echo get_sub_field('img', 'options')['sizes']['img_500']; ?>">
+                        </figure>
+                    <?php endwhile; ?>
+                </div>
+            <?php endif; ?>
+        </div> -->
     </div>
 </div>
 

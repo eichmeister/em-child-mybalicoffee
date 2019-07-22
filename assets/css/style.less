@@ -44,6 +44,25 @@
         }
     }
 
+    .em-wc-terms {
+        background-color: rgba(0,0,0,0.1);
+        border: 1px solid rgba(0,0,0,0.2);
+        padding: 10px;
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+
+        p, li, a {
+            font-size: 0.8rem;
+            margin-bottom: 6px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            .font-size-responsive(14px,14px,16px,16px,16px,18px,20px,22px);
+            line-height: 1.6;
+            margin: 12px 0 6px 0;
+        }
+    }
+
     .em-txt {
         margin-bottom: -10px;
 
@@ -52,8 +71,9 @@
         }
 
         h1, h2, h3, h4, h5, h6 {
-            .font-size-responsive(16px,20px,20px,24px,24px,24px,28px,28px);
+            .font-size-responsive(16px,16px,20px,24px,24px,24px,28px,28px);
             margin: 40px 0 20px 0;
+            line-height: 1.6;
         }
     }
 
@@ -337,6 +357,30 @@
                             color: #999;
                         }
                     }
+                }
+            }
+        }
+
+        .payments {
+            strong {
+                height: auto;
+            }
+
+            figure {
+                display: inline-block;
+                width: 50px;
+                background-color: #fff;
+                margin-right: 20px;
+                padding: 2px;
+                text-align: center;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+
+                @media all and (min-width: @breakpoint3) {
+                    text-align: left;
                 }
             }
         }

@@ -584,6 +584,13 @@ body.woocommerce.archive .trade-vibe:after {
   height: 50px;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
 }
+body.woocommerce-checkout .em_send_order_top {
+  margin-top: 1rem;
+}
+body.woocommerce-checkout .widerruf {
+  text-align: right;
+  text-decoration: underline;
+}
 .em-product-tile-4:before {
   content: "";
   position: absolute;
