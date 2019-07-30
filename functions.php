@@ -9,6 +9,7 @@
 //////////////////////////////////////////////////////////////////////////////////////
 // ADD CONTACT TO MAIN MENU AND FOOTER MENU 2
 //////////////////////////////////////////////////////////////////////////////////////
+
     function new_nav_menu_items($items, $args) {
         if ( $args->menu == 'main' || $args->menu == 'Footer2' ) {
             $homelink = '<li class="home"><a href="' . get_permalink( '117' ) . '/#contact' . '">' . __('Kontakt') . '</a></li>';
@@ -67,7 +68,19 @@
             wp_enqueue_script( 'odometer-js', get_template_directory_uri()."/assets/js/lib/odometer.min.js", array(), '1.0.0', true );
             wp_enqueue_script( 'typed-js', get_template_directory_uri()."/assets/js/lib/typed.min.js", array(), '1.0.0', true );
 
-    	}
+    	} else if ( is_singular('location') ) {
+
+            // SINGLE LOCATION
+
+            wp_enqueue_style( 'style-single-location-css', get_stylesheet_directory_uri()."/assets/css/style-single-location.css" );
+
+        } else if ( is_page_template('page-templates/tpl-locations.php') ) {
+
+            // LOCATION OVERVIEW
+
+            wp_enqueue_style( 'style-locations-css', get_stylesheet_directory_uri()."/assets/css/style-locations.css" );
+
+        }
 
     }
     add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles', PHP_INT_MAX );
@@ -89,9 +102,7 @@
     function load_typekit() {
         ?>
 
-        <!--
-        <script>    (function(d)  {        var  config  =  {            kitId:  'cur4mtc',            scriptTimeout:  3000,            async:  true        },       h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)    })(document);</script>
-        -->
+ 
 
         <?php
     }
@@ -122,6 +133,170 @@
             $fs->put_contents( $dir, $text);
         }
         add_action( 'after_setup_theme', 'em_update_ref_less' );
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////
+// REGISTER POST TYPE(S)
+//////////////////////////////////////////////////////////////////////////////////////
+
+    add_action( 'init', 'em_mybali_custom_post_types', 0 );
+
+    function em_mybali_custom_post_types() {
+
+        // LOCATION POST TYPE
+
+        $labels = array(
+            'name'                  => _x( 'Locations', 'Post Type General Name', 'eichmeister' ),
+            'singular_name'         => _x( 'Location', 'Post Type Singular Name', 'eichmeister' ),
+            'menu_name'             => __( 'Locations', 'eichmeister' ),
+            'name_admin_bar'        => __( 'Location', 'eichmeister' ),
+            'archives'              => __( 'Location Archives', 'eichmeister' ),
+            'attributes'            => __( 'Location Attributes', 'eichmeister' ),
+            'parent_item_colon'     => __( 'Parent Location:', 'eichmeister' ),
+            'all_items'             => __( 'All Locations', 'eichmeister' ),
+            'add_new_item'          => __( 'Add New Location', 'eichmeister' ),
+            'add_new'               => __( 'Add New', 'eichmeister' ),
+            'new_item'              => __( 'New Location', 'eichmeister' ),
+            'edit_item'             => __( 'Edit Location', 'eichmeister' ),
+            'update_item'           => __( 'Update Location', 'eichmeister' ),
+            'view_item'             => __( 'View Location', 'eichmeister' ),
+            'view_items'            => __( 'View Locations', 'eichmeister' ),
+            'search_items'          => __( 'Search Locations', 'eichmeister' ),
+            'not_found'             => __( 'Not found', 'eichmeister' ),
+            'not_found_in_trash'    => __( 'Not found in Trash', 'eichmeister' ),
+            'featured_image'        => __( 'Featured Image', 'eichmeister' ),
+            'set_featured_image'    => __( 'Set featured image', 'eichmeister' ),
+            'remove_featured_image' => __( 'Remove featured image', 'eichmeister' ),
+            'use_featured_image'    => __( 'Use as featured image', 'eichmeister' ),
+            'insert_into_item'      => __( 'Insert into item', 'eichmeister' ),
+            'uploaded_to_this_item' => __( 'Uploaded to this item', 'eichmeister' ),
+            'items_list'            => __( 'Locations list', 'eichmeister' ),
+            'items_list_navigation' => __( 'Locations list navigation', 'eichmeister' ),
+            'filter_items_list'     => __( 'Filter Locations list', 'eichmeister' ),
+        );
+        $args = array(
+            'label'                 => __( 'Location', 'eichmeister' ),
+            'description'           => __( 'Post Type Description', 'eichmeister' ),
+            'labels'                => $labels,
+            'supports'              => array( 'title', 'editor' ),
+            'taxonomies'            => array( 'category', 'post_tag' ),
+            'hierarchical'          => false,
+            'public'                => true,
+            'show_ui'               => true,
+            'show_in_menu'          => true,
+            'menu_position'         => 5,
+            'show_in_admin_bar'     => true,
+            'show_in_nav_menus'     => true,
+            'can_export'            => true,
+            'has_archive'           => false,
+            'exclude_from_search'   => false,
+            'publicly_queryable'    => true,
+            'capability_type'       => 'page',
+        );
+        register_post_type( 'location', $args );
+
+        // MERCHANT POST TYPE
+
+        $labels = array(
+            'name'                  => _x( 'Merchants', 'Post Type General Name', 'eichmeister' ),
+            'singular_name'         => _x( 'Merchant', 'Post Type Singular Name', 'eichmeister' ),
+            'menu_name'             => __( 'Merchants', 'eichmeister' ),
+            'name_admin_bar'        => __( 'Merchant', 'eichmeister' ),
+            'archives'              => __( 'Merchant Archives', 'eichmeister' ),
+            'attributes'            => __( 'Merchant Attributes', 'eichmeister' ),
+            'parent_item_colon'     => __( 'Parent Merchant:', 'eichmeister' ),
+            'all_items'             => __( 'All Merchants', 'eichmeister' ),
+            'add_new_item'          => __( 'Add New Merchant', 'eichmeister' ),
+            'add_new'               => __( 'Add New', 'eichmeister' ),
+            'new_item'              => __( 'New Merchant', 'eichmeister' ),
+            'edit_item'             => __( 'Edit Merchant', 'eichmeister' ),
+            'update_item'           => __( 'Update Merchant', 'eichmeister' ),
+            'view_item'             => __( 'View Merchant', 'eichmeister' ),
+            'view_items'            => __( 'View Merchants', 'eichmeister' ),
+            'search_items'          => __( 'Search Merchants', 'eichmeister' ),
+            'not_found'             => __( 'Not found', 'eichmeister' ),
+            'not_found_in_trash'    => __( 'Not found in Trash', 'eichmeister' ),
+            'featured_image'        => __( 'Featured Image', 'eichmeister' ),
+            'set_featured_image'    => __( 'Set featured image', 'eichmeister' ),
+            'remove_featured_image' => __( 'Remove featured image', 'eichmeister' ),
+            'use_featured_image'    => __( 'Use as featured image', 'eichmeister' ),
+            'insert_into_item'      => __( 'Insert into item', 'eichmeister' ),
+            'uploaded_to_this_item' => __( 'Uploaded to this item', 'eichmeister' ),
+            'items_list'            => __( 'Merchants list', 'eichmeister' ),
+            'items_list_navigation' => __( 'Merchants list navigation', 'eichmeister' ),
+            'filter_items_list'     => __( 'Filter Merchants list', 'eichmeister' ),
+        );
+        $args = array(
+            'label'                 => __( 'Merchant', 'eichmeister' ),
+            'description'           => __( 'Post Type Description', 'eichmeister' ),
+            'labels'                => $labels,
+            'supports'              => array( 'title', 'editor' ),
+            'taxonomies'            => array( 'category', 'post_tag' ),
+            'hierarchical'          => false,
+            'public'                => true,
+            'show_ui'               => true,
+            'show_in_menu'          => true,
+            'menu_position'         => 5,
+            'show_in_admin_bar'     => true,
+            'show_in_nav_menus'     => true,
+            'can_export'            => true,
+            'has_archive'           => false,
+            'exclude_from_search'   => false,
+            'publicly_queryable'    => true,
+            'capability_type'       => 'page',
+        );
+        register_post_type( 'merchant', $args );
+
+//////////////////////////////////////////////////////////////////////////////////////
+// TAXONOMIES
+////////////////////////////////////////////////////////////////////////////////////// 
+
+    add_action( 'init', 'em_place_taxonomy_init' );
+
+    function em_place_taxonomy_init() {
+
+        // General categorization
+        register_taxonomy(
+            'place',
+            array('location', 'merchant'),
+            array(
+                'label' => __( 'Places' ),
+                'rewrite' => array( 'slug' => 'place' ),
+                'capabilities' => array(
+                    'manage_terms' => 'manage_categories',
+                    'edit_terms' => 'manage_categories',
+                    'delete_terms' => 'manage_categories',
+                    'assign_terms' => 'edit_posts'
+                ),
+                'hierarchical' => true
+            )
+        );     
+    }
+
+
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////
+// GOOGLE ANALYTICS
+//////////////////////////////////////////////////////////////////////////////////////
+
+    add_action('em_wp_head', 'mybali_google_analytics');
+
+    function mybali_google_analytics() {
+
+        ?>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124334568-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-122470977-1', { 'anonymize_ip': true });
+        </script>
+
+        <?php 
     }
 
 ?>

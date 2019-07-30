@@ -1,0 +1,96 @@
+@import (reference) url('mixins.less');
+
+////////////////////////////////////////////////////////////////////////////////////
+// INTRO SECTION
+////////////////////////////////////////////////////////////////////////////////////
+
+	section#intro {
+
+		.em-hero-simple .inner-full .inner-wrapper .desc {
+			width: 600px;
+			max-width: 92%;
+			margin: 30px auto 0 auto;
+		}
+	}
+
+////////////////////////////////////////////////////////////////////////////////////
+// CAFES SECTION
+////////////////////////////////////////////////////////////////////////////////////
+
+	section#cafes {
+		background-image: url(../img/bali-background-4.jpg);
+		background-size: cover;
+
+		.em-location-tile {
+			background: #FFF;
+
+			a {
+				display: block;
+
+				figure {
+					position: relative;
+					overflow: hidden;
+
+					img {
+						max-width: 100%;
+						height: auto;
+						transition: all ease-in-out .3s;
+					}
+				}
+
+				.inner {
+					padding: 20px;
+					text-align: center;
+
+					.place {
+						text-transform: uppercase;
+					}
+
+					h3 {
+						font-size: 1.2em;
+						text-transform: none;
+						font-weight: 700;
+						display: block;
+						margin: 5px 0;
+						color: @darkblue;
+					}
+
+					.btn-line-left {
+						float: none;
+						font-size: 1em;
+						display: inline-block;
+						margin-top: 15px;
+					}
+				}
+
+				&:hover {
+					transform: none;
+
+					figure {
+
+						img {
+							transform: scale(1.2);
+						}
+					}
+				}
+			}
+		}
+	}
+
+////////////////////////////////////////////////////////////////////////////////////
+// MERCHANTS SECTION
+////////////////////////////////////////////////////////////////////////////////////
+
+	section#merchants {
+
+		
+	}
+
+////////////////////////////////////////////////////////////////////////////////////
+// CONTACT SECTION
+////////////////////////////////////////////////////////////////////////////////////
+
+	section#contact {
+
+		
+	}
