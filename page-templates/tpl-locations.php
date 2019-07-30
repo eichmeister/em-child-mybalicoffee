@@ -70,12 +70,10 @@ Template Name: MyBali - Locations
 	    
 		    $member_group_query = new WP_Query( array(
 		        'post_type' => 'merchant',
-		        'tax_query' => array(
+		        'meta_query' => array(
 		            array(
-		                'taxonomy' => 'place',
-		                'field' => 'slug',
-		                'terms' => array( $term->slug ),
-		                'operator' => 'IN'
+		                'key' => 'place',
+		                'value' => array( $term->term_id ),
 		            )
 		        )
 		    ) );
