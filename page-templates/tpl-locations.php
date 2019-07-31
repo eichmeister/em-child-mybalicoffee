@@ -26,7 +26,7 @@ Template Name: MyBali - Locations
 </section>
 
 <section id="cafes">
-	<div class="wrapper-1200 padding-top-50 padding-bot-100">
+	<div class="wrapper-1200 padding-bot-150">
 		
 		<h2 class="hl-4 margin-bot-50 center">
 			<?php echo first_line_bold( get_field('cafes_hl') ); ?>
@@ -53,62 +53,103 @@ Template Name: MyBali - Locations
 </section>
 
 <section id="merchants">
-	<div class="wrapper-1200 padding-ver-100">
+	<div class="wrapper-1200">
 		
 		<h2 class="hl-4 margin-bot-50 center">
 			<?php echo first_line_bold( get_field('merchants_hl') ); ?>
 		</h2>
 
-		<?php
+		<div class="em-masonry margin-bot-50">
 
-		$place_terms = get_terms( array(
-		    'taxonomy' => 'place',
-		    'hide_empty' => false,
-		) );
+			<?php
 
-		foreach ( $place_terms as $term ) {
-	    
-		    $member_group_query = new WP_Query( array(
-		        'post_type' => 'merchant',
-		        'meta_query' => array(
-		            array(
-		                'key' => 'place',
-		                'value' => array( $term->term_id ),
-		            )
-		        )
-		    ) );
+			$google_maps = array();
 
-		    ?>
+			$place_terms = get_terms( array(
+			    'taxonomy' => 'place',
+			    'hide_empty' => false,
+			) );
 
-		    <h2><?php echo $term->name; ?></h2>
+			foreach ( $place_terms as $term ) {
 		    
-		    <ul>
-			    <?php
-			    if ( $member_group_query->have_posts() ) : while ( $member_group_query->have_posts() ) : $member_group_query->the_post(); ?>
-			        <li><?php echo the_title(); ?></li>
-			    <?php endwhile; endif; ?>	
-		    </ul>
+			    $place_group_query = new WP_Query( array(
+			        'post_type' => 'merchant',
+			        'meta_query' => array(
+			            array(
+			                'key' => 'place',
+			                'value' => array( $term->term_id ),
+			            )
+			        )
+			    ) );
 
-		    <?php
+			    ?>
 
-		}
+			    <div class="em-masonry-item">
 
-		wp_reset_postdata();
+				    <h3>
+				    	<?php echo $term->name; ?>
+			    	</h3>
+				    
+				    <ul>
+					    
+					    <?php 
 
-		?>
+					    if ( $place_group_query->have_posts() ) : while ( $place_group_query->have_posts() ) : $place_group_query->the_post(); 
+
+					    	$google_maps[] = array('location' => get_field('google_maps')); 
+
+					   	?>
+					        
+					        <li>
+					        	<strong><?php echo the_title(); ?></strong>
+					        	<div><?php the_field('address'); ?> <?php the_field('zip_code'); ?>, <?php echo get_term( get_field('place'), 'place' )->name; ?></div>
+				        	</li>
+
+					    <?php endwhile; endif; ?>	
+				    
+				    </ul>
+
+				</div>
+
+			<?php
+
+			}
+
+			wp_reset_postdata();
+
+			?>
+
+		</div>
 
 	</div>
 </section>
 
-<section id="contact">
-	<div class="wrapper-1200 padding-ver-50">
+<section id="google-maps-contact">
+	<div class="wrapper-1200 padding-bot-50">
 
-		<h2 class="hl-4 margin-bot-50 center">
-			<?php echo first_line_bold( get_field('contact_hl') ); ?>
-		</h2>
+		<div class="google-maps">
 
-		<?php echo do_shortcode('[contact-form-7 id="118" title="Kontaktformular 1"]'); ?>
-		
+			<?php
+
+	        EM()->Load( array(
+	            'tpl' => 'google_maps',
+	            'locations' => $google_maps
+	        ) );
+
+	        ?>
+
+	    </div>
+
+		<div class="contact">
+
+			<h2 class="hl-4 margin-bot-50 center">
+				<?php echo first_line_bold( get_field('contact_hl') ); ?>
+			</h2>
+
+			<?php echo do_shortcode('[contact-form-7 id="437" title="Kooperationsanfrage"]'); ?>
+
+		</div>
+
 	</div>
 </section>
 
