@@ -1,4 +1,5 @@
 <?php
+
 if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
@@ -45,13 +46,45 @@ acf_add_local_field_group(array(
 			'default_value' => '#fff',
 		),
 		array(
+			'key' => 'field_5d41936e9afda',
+			'label' => 'Produkttemplate',
+			'name' => 'product_template',
+			'type' => 'radio',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				1 => 'Café',
+				2 => 'Other',
+			),
+			'allow_null' => 0,
+			'other_choice' => 0,
+			'default_value' => '',
+			'layout' => 'vertical',
+			'return_format' => 'value',
+			'save_other_choice' => 0,
+		),
+		array(
 			'key' => 'field_5cac8e6d83f76',
 			'label' => 'Gebiet / Region',
 			'name' => 'gebiet_region',
 			'type' => 'taxonomy',
 			'instructions' => '',
 			'required' => 1,
-			'conditional_logic' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_5d41936e9afda',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
 			'wrapper' => array(
 				'width' => '50',
 				'class' => '',
@@ -73,7 +106,15 @@ acf_add_local_field_group(array(
 			'type' => 'taxonomy',
 			'instructions' => '',
 			'required' => 1,
-			'conditional_logic' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_5d41936e9afda',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
 			'wrapper' => array(
 				'width' => '50',
 				'class' => '',
@@ -95,7 +136,15 @@ acf_add_local_field_group(array(
 			'type' => 'group',
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_5d41936e9afda',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
 			'wrapper' => array(
 				'width' => '',
 				'class' => '',
@@ -155,7 +204,15 @@ acf_add_local_field_group(array(
 			'type' => 'group',
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_5d41936e9afda',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
 			'wrapper' => array(
 				'width' => '',
 				'class' => '',
@@ -215,7 +272,15 @@ acf_add_local_field_group(array(
 			'type' => 'group',
 			'instructions' => '',
 			'required' => 0,
-			'conditional_logic' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_5d41936e9afda',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
 			'wrapper' => array(
 				'width' => '',
 				'class' => '',
@@ -268,6 +333,97 @@ acf_add_local_field_group(array(
 				),
 			),
 		),
+		array(
+			'key' => 'field_5d419468dfd94',
+			'label' => 'Info Accordions',
+			'name' => 'info_accordions',
+			'type' => 'repeater',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => array(
+				array(
+					array(
+						'field' => 'field_5d41936e9afda',
+						'operator' => '==',
+						'value' => '2',
+					),
+				),
+			),
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'collapsed' => '',
+			'min' => 0,
+			'max' => 3,
+			'layout' => 'row',
+			'button_label' => '',
+			'sub_fields' => array(
+				array(
+					'key' => 'field_5d419491dfd95',
+					'label' => 'Image',
+					'name' => 'image',
+					'type' => 'image',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'return_format' => 'array',
+					'preview_size' => 'thumbnail',
+					'library' => 'all',
+					'min_width' => '',
+					'min_height' => '',
+					'min_size' => '',
+					'max_width' => '',
+					'max_height' => '',
+					'max_size' => '',
+					'mime_types' => '',
+				),
+				array(
+					'key' => 'field_5d419496dfd96',
+					'label' => 'Title',
+					'name' => 'title',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+					'maxlength' => '',
+				),
+				array(
+					'key' => 'field_5d41949bdfd97',
+					'label' => 'Text',
+					'name' => 'text',
+					'type' => 'textarea',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => '',
+					'placeholder' => '',
+					'maxlength' => '',
+					'rows' => '',
+					'new_lines' => 'br',
+				),
+			),
+		),
 	),
 	'location' => array(
 		array(
@@ -289,3 +445,5 @@ acf_add_local_field_group(array(
 ));
 
 endif;
+
+?>
