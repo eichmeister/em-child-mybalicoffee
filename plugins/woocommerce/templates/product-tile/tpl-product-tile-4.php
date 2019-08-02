@@ -85,7 +85,15 @@ $product_color = get_field( 'product_color', $parent );
 		?>
 		<div class="description">
 			<div class="wrapper">
-		        <span class="flavor"><?php echo $flavor_field->name; ?></span>
+
+				<span class="flavor">
+			        <?php if ( get_field('product_template') == 1 ): ?>
+			        	<?php echo $flavor_field->name; ?>
+			        <?php else: ?>
+						&nbsp;
+			        <?php endif; ?>
+			    </span>
+
 		        <span class="title"><?php echo $title; ?></span>
 
 				<?php if ( get_field('product_settings_availability', $_product->get_parent_id()) ): ?>
