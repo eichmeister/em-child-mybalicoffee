@@ -101,6 +101,7 @@ $product_color = get_field( 'product_color', $parent );
 					<?php
 				    if( $parent->is_type('variable') ){
 				        $default_attributes = $parent->get_default_attributes();
+				        $default_attributes_key = key($default_attributes);
 				        foreach($parent->get_available_variations() as $variation_values ){
 				            foreach($variation_values['attributes'] as $key => $attribute_value ){
 				                $attribute_name = str_replace( 'attribute_', '', $key );
@@ -122,9 +123,18 @@ $product_color = get_field( 'product_color', $parent );
 				        if( $is_default_variation ){
 				            // Get the "default" WC_Product_Variation object to use available methods
 				            $default_variation = wc_get_product($variation_id);
-
 				            // Raw output of available "default" variation details data
-				            echo '<span class="not-available price">' . ($parent->get_default_attributes())['pa_gewicht'] . ' - ' . wc_price( $default_variation->get_price() ) . '</span>';
+				        	$em_attribute = "";
+
+				            if ( ($parent->get_default_attributes())['pa_gewicht'] ) {
+				            	$term = get_term_by('slug', ($parent->get_default_attributes())['pa_gewicht'], 'pa_gewicht');
+				            	$em_attribute = $term->name . ' - ';
+				            } else {
+				            	$term = get_term_by('slug', ($parent->get_default_attributes())['pa_groesse'], 'pa_groesse');
+				            	$em_attribute = $term->name . ' - ';
+				            }
+				            // br(($parent->get_default_attributes())['pa_groesse']);
+				            echo '<span class="not-available price">' . $em_attribute . wc_price( $default_variation->get_price() ) . '</span>';
 				        }
 				    }
 			        ?>
