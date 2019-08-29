@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
 
     singleProduct.init();
 
-
+    /*
     var about = {
         init: function() {
             $('.wpcf7-form .fs-checkbox').on('click', function(e) {
@@ -54,6 +54,7 @@ jQuery(document).ready(function($) {
     };
 
     about.init();
+    */
 
     var widgets = {
 
