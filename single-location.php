@@ -1,6 +1,3 @@
-
-<?php if ( !is_user_logged_in() ) exit; ?>
-
 <?php get_header(); ?>
 
 <section id="intro">

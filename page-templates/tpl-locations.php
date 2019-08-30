@@ -4,8 +4,6 @@ Template Name: MyBali - Locations
 */
 ?>
 
-<?php if ( !is_user_logged_in() ) exit; ?>
-
 <?php get_header(); ?>
 
 <section id="intro">
@@ -34,18 +32,29 @@ Template Name: MyBali - Locations
 
 		<?php
 
-		$args = array(
-			'post_type' => 'location',
-			'post_status' => 'publish',
-			'posts_per_page' => -1
-		);
+		$count_posts = wp_count_posts('location');
+		$location_count = $count_posts->publish;
 
-		EM()->load( array(
-			'tpl' => 'posts_grid',
-			'posts' => get_posts( $args ),
-			'layout' => 'grid',
-            'columns' => 2,
-		) );
+		if ( $location_count > 0 ):
+
+			$args = array(
+				'post_type' => 'location',
+				'post_status' => 'publish',
+				'posts_per_page' => -1
+			);
+
+			EM()->load( array(
+				'tpl' => 'posts_grid',
+				'posts' => get_posts( $args ),
+				'layout' => 'grid',
+	            'columns' => 2,
+			) );
+
+		else:
+
+			echo '<div class="coming-soon">Coming Soon</div>';
+
+		endif;
 
 		?>
 
@@ -82,36 +91,42 @@ Template Name: MyBali - Locations
 			        )
 			    ) );
 
+			    if ( $place_group_query->have_posts() ):
+
 			    ?>
 
-			    <div class="em-masonry-item">
+				    <div class="em-masonry-item">
 
-				    <h3>
-				    	<?php echo $term->name; ?>
-			    	</h3>
-				    
-				    <ul>
+					    <h3>
+					    	<?php echo $term->name; ?>
+				    	</h3>
 					    
-					    <?php 
+					    <ul>
+						    
+						    <?php 
 
-					    if ( $place_group_query->have_posts() ) : while ( $place_group_query->have_posts() ) : $place_group_query->the_post(); 
+						    $i=0;
 
-					    	$google_maps[] = array('location' => get_field('google_maps')); 
+						   while ( $place_group_query->have_posts() ) : $place_group_query->the_post(); 
 
-					   	?>
-					        
-					        <li>
-					        	<strong><?php echo the_title(); ?></strong>
-					        	<div><?php the_field('address'); ?> <?php the_field('zip_code'); ?>, <?php echo get_term( get_field('place'), 'place' )->name; ?></div>
-				        	</li>
+						    	$google_maps[] = array('title' => get_the_title(), 'location' => get_field('google_maps') ); 
 
-					    <?php endwhile; endif; ?>	
-				    
-				    </ul>
+						   	?>
+						        
+						        <li>
+						        	<strong><?php echo the_title(); ?></strong>
+						        	<div><?php the_field('address'); ?> <?php the_field('zip_code'); ?>, <?php echo get_term( get_field('place'), 'place' )->name; ?></div>
+					        	</li>
 
-				</div>
+						    <?php $i++; endwhile; ?>	
+					    
+					    </ul>
+
+					</div>
 
 			<?php
+
+				endif;
 
 			}
 
