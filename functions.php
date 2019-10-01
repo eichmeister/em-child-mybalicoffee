@@ -80,7 +80,24 @@
 
             wp_enqueue_style( 'style-locations-css', get_stylesheet_directory_uri()."/assets/css/style-locations.css" );
 
+        } else if (is_singular('post')) {
+
+            // SINGLE POST PAGE
+
+            wp_dequeue_style( 'style-blog-masonry-css' );
+            wp_dequeue_style( 'single-post-css' );
+
+            // load single post detail stylesheet
+            wp_enqueue_style( 'single-post-child-css', get_stylesheet_directory_uri() . "/assets/css/style-single-post.css" );
+
+        } else if ( is_page_template() ) {
+
+            // BLOG ARCHIVE
+
+            wp_enqueue_style( 'blog-css', get_stylesheet_directory_uri() . "/assets/css/style-blog.css" );
+
         }
+
 
     }
     add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles', PHP_INT_MAX );

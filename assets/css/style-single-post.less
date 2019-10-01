@@ -1,0 +1,158 @@
+@import (reference) url('mixins.less');
+
+////////////////////////////////////////////////////////////////////////////////////
+// INTRO HERO SECTION
+////////////////////////////////////////////////////////////////////////////////////
+
+	section#intro {
+		position: relative;
+		
+		.em-hero-simple {
+			height: 70vh;
+
+			&:before {
+				content: '';
+				position: absolute;
+				z-index: 0;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, .4);
+			}
+
+			.categories {
+				display: block;
+				margin-bottom: 25px;
+				color: #FFF;
+				text-transform: uppercase;
+				font-size: 1.5em;
+			}
+
+			h1 {
+				font-weight: 700;
+			}
+		}
+		
+	}
+
+////////////////////////////////////////////////////////////////////////////////////
+// POST CONTENT
+////////////////////////////////////////////////////////////////////////////////////
+
+	section#post-content {
+		background-image: url(../img/bali-background-4.jpg);
+		background-size: cover;
+		position: relative;
+
+		&:before {
+			content: "";
+			position: absolute;
+			z-index: 0;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 400px;
+			background: linear-gradient(to top, rgba(255, 255, 255, 0), #ffffff);
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			z-index: 0;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 400px;
+			background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
+		}
+
+		article#post {
+			position: relative;
+			z-index: 1;
+			box-shadow: 0 0 25px rgba(0, 0, 0, .1);
+			margin-top: -25px;
+
+			@media all and (min-width: @breakpoint3_mf) {
+				margin-top: 25px;
+			}
+
+			.box {
+				background: #FFF;
+				padding: 0 25px 25px 25px;
+				position: relative;
+
+				&:before {
+					content: '';
+					background: #FFF;
+					position: absolute;
+					z-index: 2;
+					top: -20px;
+					left: 0;
+					width: 100%;
+					height: 25px;
+				}
+
+				@media all and (min-width: @breakpoint3_mf) {
+					padding: 0 50px 50px 50px;
+				}
+
+				.meta {
+					margin-bottom: 50px;
+
+					span {
+						font-weight: 700;
+						color: @darkblue;
+					}
+				}
+
+				.em-photo-grid {
+					[class*=col_] {
+						position: relative;
+						overflow: hidden;
+					}
+				}
+
+				.em-content-blocks {
+
+					.em-block {
+
+						
+					}
+				}
+			}
+
+			.sources,
+			.photo-copyright {
+				
+				h4 {
+					font-size: 1.2em;
+					margin-bottom: 10px;
+					font-weight: 700;
+				}
+			}
+
+			.photo-copyright {
+				margin-top: 25px;
+			}
+		}
+
+	}
+
+////////////////////////////////////////////////////////////////////////////////////
+// RELATED POSTS
+////////////////////////////////////////////////////////////////////////////////////
+
+	div#related-posts {
+		position: relative;
+		z-index: 1;
+
+		.em-related-posts {
+			margin-top: 100px;
+			
+			h2 {
+				text-align: center;
+				font-weight: 700;
+			}
+		}
+	}
