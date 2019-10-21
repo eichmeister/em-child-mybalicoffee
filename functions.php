@@ -1,10 +1,44 @@
 <?php
 
-    // add_filter( "woocommerce_email_settings", "max_new_test" );
-    // function max_new_test( $array ) {
-    //     br($array);
-    //     return $array;
-    // }
+    add_filter( "woocommerce_order_get_total_discount", "em_wc_order_get_total_discount", 10, 2 );
+    function em_wc_order_get_total_discount( $discount, $object ) {
+        $tax_display = $tax_display ? $tax_display : get_option( 'woocommerce_tax_display_cart' );
+        $subtotal    = 0;
+
+        if ( ! $compound ) {
+            foreach ( $object->get_items() as $item ) {
+                $subtotal += $item->get_subtotal();
+
+                if ( 'incl' === $tax_display ) {
+                    $subtotal += $item->get_subtotal_tax();
+                }
+            }
+        } else {
+            if ( 'incl' === $tax_display ) {
+                return '';
+            }
+
+            foreach ( $object->get_items() as $item ) {
+                $subtotal += $item->get_subtotal();
+            }
+
+            // Add Shipping Costs.
+            $subtotal += $object->get_shipping_total();
+
+            // Remove non-compound taxes.
+            foreach ( $object->get_taxes() as $tax ) {
+                if ( $tax->is_compound() ) {
+                    continue;
+                }
+                $subtotal = $subtotal + $tax->get_tax_total() + $tax->get_shipping_tax_total();
+            }
+
+            // Remove discounts.
+            $subtotal = $subtotal - $this->get_total_discount();
+        }
+        $discount = ($subtotal - $object->get_total());
+        return $discount;
+    }
 
 //////////////////////////////////////////////////////////////////////////////////////
 // ADD CONTACT TO MAIN MENU AND FOOTER MENU 2
