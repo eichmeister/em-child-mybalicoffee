@@ -133,7 +133,11 @@
 						<tr class="<?php echo $key; ?>">
 							<td class="no-borders"></td>
 							<th class="description"><?php echo $total['label']; ?></th>
-							<td class="price"><span class="totals-price"><?php echo $total['value']; ?></span></td>
+							<?php if ( $key == "cart_subtotal" ) { ?>
+								<td class="price"><span class="totals-price"><?php echo WC()->cart->get_cart_subtotal(); ?></span></td>
+							<?php  } else { ?>
+								<td class="price"><span class="totals-price"><?php echo $total['value']; ?></span></td>
+							<?php } ?>
 						</tr>
 						<?php endforeach; ?>
 					</tfoot>
