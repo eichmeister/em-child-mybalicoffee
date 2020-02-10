@@ -293,26 +293,44 @@
     }
 
 //////////////////////////////////////////////////////////////////////////////////////
-// GOOGLE ANALYTICS
+// GOOGLE TAG MANAGER - ANALYTICS & FB Pixel
 //////////////////////////////////////////////////////////////////////////////////////
 
-    add_action('em_wp_head', 'mybali_google_analytics');
+    // GOOGLE TAG MANAGER
 
-    function mybali_google_analytics() {
+    add_action('em_wp_head', 'mybali_global_tracking');
+
+    function mybali_global_tracking() {
 
         ?>
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122470977-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'UA-122470977-1', { 'anonymize_ip': true });
-        </script>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-NK4HLMK');</script>
+        <!-- End Google Tag Manager -->
 
         <?php 
+    }
+
+
+    // GOOGLE TAG MANAGER (NOSCRIPT) FALLBACK
+
+    add_action('em_body_start', 'mybali_global_tracking_noscript');
+
+    function mybali_global_tracking_noscript() {
+
+        ?>
+
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NK4HLMK"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+        <?php
+
     }
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -326,6 +344,7 @@
         ?>
 
         <!-- Facebook Pixel Code -->
+        <!--
         <script>
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -346,6 +365,28 @@
         <!-- End Facebook Pixel Code -->
 
         <?php 
+    }
+
+//////////////////////////////////////////////////////////////////////////////////////
+// THANK YOU PAGE TRACKING
+//////////////////////////////////////////////////////////////////////////////////////
+
+    add_action( 'woocommerce_thankyou', 'mybali_thankyou_page_tracking' );
+
+    function mybali_thankyou_page_tracking( $order_id ) {
+
+        ?>
+
+        <!-- Event snippet for Conversion - Sale conversion page -->
+        <script>
+          gtag('event', 'conversion', {
+              'send_to': 'AW-722172369/jWGhCIu8l8ABENHzrdgC',
+              'transaction_id': $order_id
+          });
+        </script>
+
+        <?php
+
     }
 
 //////////////////////////////////////////////////////////////////////////////////////
