@@ -293,11 +293,12 @@
     }
 
 //////////////////////////////////////////////////////////////////////////////////////
-// GOOGLE TAG MANAGER - ANALYTICS & FB Pixel
+// GOOGLE TAG MANAGER - ANALYTICS & FB Pixel - NEEDS CONFIGURATION SO WE CAN REMOVE SINGLE TRACKING CODES
 //////////////////////////////////////////////////////////////////////////////////////
 
     // GOOGLE TAG MANAGER
 
+    /*
     add_action('em_wp_head', 'mybali_global_tracking');
 
     function mybali_global_tracking() {
@@ -332,6 +333,40 @@
         <?php
 
     }
+    */
+
+//////////////////////////////////////////////////////////////////////////////////////
+// GOOGLE ANALYTICS
+//////////////////////////////////////////////////////////////////////////////////////
+
+    add_action('em_wp_head', 'mybali_google_analytics');
+
+    function mybali_google_analytics() {
+
+        ?>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122470977-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-122470977-1', { 'anonymize_ip': true });
+        </script>
+
+        <!-- Global site tag (gtag.js) - Google Ads: 722172369 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-722172369"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'AW-722172369', { 'anonymize_ip': true });
+        </script>
+
+        <?php 
+    }
 
 //////////////////////////////////////////////////////////////////////////////////////
 // FACEBOOK PIXEL
@@ -344,7 +379,6 @@
         ?>
 
         <!-- Facebook Pixel Code -->
-        <!--
         <script>
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -381,9 +415,11 @@
         <script>
           gtag('event', 'conversion', {
               'send_to': 'AW-722172369/jWGhCIu8l8ABENHzrdgC',
-              'transaction_id': $order_id
+              'transaction_id': <?php echo $order_id; ?>
           });
         </script>
+
+        
 
         <?php
 
