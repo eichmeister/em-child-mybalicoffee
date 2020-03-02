@@ -62,11 +62,13 @@
             // LP01
             
             wp_enqueue_style( 'style-lp-1-css', get_stylesheet_directory_uri()."/assets/css/style-lp-1.css" );
-            wp_enqueue_style( 'style-odometer-css', get_template_directory_uri()."/assets/css/lib/odometer_default.css" );
-            wp_enqueue_script( 'page-lp-1-js', get_stylesheet_directory_uri()."/assets/js/page-lp-1.js", array(), '1.0.0', true );
+            // wp_enqueue_style( 'style-odometer-css', get_template_directory_uri()."/assets/css/lib/odometer_default.css" );
+            // wp_enqueue_script( 'page-lp-1-js', get_stylesheet_directory_uri()."/assets/js/page-lp-1.js", array(), '1.0.0', true );
 
-            wp_enqueue_script( 'odometer-js', get_template_directory_uri()."/assets/js/lib/odometer.min.js", array(), '1.0.0', true );
-            wp_enqueue_script( 'typed-js', get_template_directory_uri()."/assets/js/lib/typed.min.js", array(), '1.0.0', true );
+            wp_enqueue_script( 'lp1-getresponse-js', "https://app.getresponse.com/view_webform_v2.js?u=GOPHD&webforms_id=33291405", array(), '1.0.0', true );
+
+            // wp_enqueue_script( 'odometer-js', get_template_directory_uri()."/assets/js/lib/odometer.min.js", array(), '1.0.0', true );
+            // wp_enqueue_script( 'typed-js', get_template_directory_uri()."/assets/js/lib/typed.min.js", array(), '1.0.0', true );
 
         } else if ( is_singular('location') ) {
 
@@ -372,13 +374,18 @@
 // FACEBOOK PIXEL
 //////////////////////////////////////////////////////////////////////////////////////
 
-    add_action('em_wp_head', 'mybali_facebook_pixel');
+    // add_action('em_wp_head', 'mybali_facebook_pixel');
 
     function mybali_facebook_pixel() {
 
         ?>
 
+        <?php
+
+        /*
+
         <!-- Facebook Pixel Code -->
+        <!--
         <script>
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -396,7 +403,12 @@
             src="https://www.facebook.com/tr?id=1975264845901190&ev=PageView
             &noscript=1"/>
         </noscript>
+        -->
         <!-- End Facebook Pixel Code -->
+
+        */
+
+        ?>
 
         <?php 
     }
