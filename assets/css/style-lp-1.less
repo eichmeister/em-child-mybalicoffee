@@ -392,11 +392,18 @@
 			}
 		}
 
-		img {
-
+		.col_3 {
 			@media all and (max-width: @breakpoint3_mf) {
-				margin: 0 auto;
-				height: 100px;
+				display: none;
+			}
+
+			img {
+
+				@media all and (max-width: @breakpoint3_mf) {
+					margin: 0 auto;
+					height: 100px;
+					display: none;
+				}
 			}
 		}
 	}
