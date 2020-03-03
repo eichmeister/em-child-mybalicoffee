@@ -99,4 +99,40 @@ Template Name: MyBali - LP 01
 
 </section>
 
+<div id="mybali-newsletter-overlay" class="overlay-full" data-open="auto" data-open-delay="3000">
+    <div class="box wrapper-800">
+        <div class="header">
+            <a href="#" class="close-overlay"><i class="fa fa-close"></i></a>
+        </div>
+        <div class="content">
+
+        	<h4 class="center margin-top-15">
+				Sichere dir jetzt 10% Rabatt
+        	</h4>
+
+        	<div class="row">
+        		<div class="col_3">
+
+					<figure class="margin-top-25">
+		        		<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/mybalicoffe_signet_blue.png" />
+		        	</figure>
+
+				</div>
+				<div class="col_9">
+
+					<div class="margin-ver-25">
+						Newsletter abonnieren und <strong>sofort sparen</strong>
+					</div>
+
+					<?php echo do_shortcode('[contact-form-7 id="581" title="Newsletter GetResponse"]'); ?>
+
+				</div>
+			</div>
+
+			</div>
+
+        </div>
+    </div>
+</div>
+
 <?php get_footer(); ?>
