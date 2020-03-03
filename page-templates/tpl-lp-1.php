@@ -99,7 +99,7 @@ Template Name: MyBali - LP 01
 
 </section>
 
-<div id="mybali-newsletter-overlay" class="overlay-full" data-open="auto" data-open-delay="3000">
+<div id="mybali-newsletter-overlay" class="overlay-full" data-open="auto" data-open-delay="15000">
     <div class="box wrapper-800">
         <div class="header">
             <a href="#" class="close-overlay"><i class="fa fa-close"></i></a>
@@ -124,7 +124,15 @@ Template Name: MyBali - LP 01
 						Newsletter abonnieren und <strong>sofort sparen</strong>
 					</div>
 
-					<?php echo do_shortcode('[contact-form-7 id="581" title="Newsletter GetResponse"]'); ?>
+					<?php 
+
+					// DEV ENVIRONMANT
+					// echo do_shortcode('[contact-form-7 id="581" title="Newsletter GetResponse"]');
+
+					// LIVE ENVIRONMENT
+					echo do_shortcode('[contact-form-7 id="1727" title="Newsletter GetResponse"]');
+
+					?>
 
 				</div>
 			</div>
