@@ -705,6 +705,111 @@
                 font-weight: 500;
             }
         }
+      
+        #team {
+          position: relative;
+          padding-bottom: 30px;
+
+          .row.one-last {
+            .col_4 {
+              &:nth-last-of-type(1) {
+                @media screen and (min-width: @breakpoint3) {
+                  margin-left: 33.3333333%;
+                }
+              }
+            }
+          }
+
+          .row.two-last {
+            .col_4 {
+              &:nth-last-of-type(2) {
+                @media screen and (min-width: @breakpoint3) {
+                  margin-left: 16.6666666%;
+                }
+              }
+            }
+          }
+          
+          .teamrow {
+            margin-top: 30px;
+            
+            @media screen and (min-width: @breakpoint3) {
+              margin-left: -20px;
+                
+              .col_4 {
+                border-left-width: 20px;
+              }
+
+            }
+           }
+
+          .col_4 {
+            margin-top: 30px;
+
+            @media screen and (min-width: @breakpoint2) {
+              width: 50%;
+              border-left-width: 10px;
+              margin-top: 30px;
+
+              
+            }
+
+//            @media screen and (min-width: @breakpoint3) {
+//              width: 100%;
+//              border-left-width: 30px;
+//              border-right-width: 0;
+//
+//              &:nth-child(2n-1) {
+//                border-right-width: 0;
+//              }
+//
+//              &:nth-child(2n+0) {
+//                border-left-width: 30px;
+//              }
+//            }
+
+            &:first-child {
+              margin-top: 20px;
+
+              @media screen and (min-width: @breakpoint2) {
+                margin-top: 30px;
+              }
+            }
+
+            figure {
+              height: 0;
+              padding-bottom: 66.66666%;
+            }
+
+            .inner {
+//              width: 1400px;
+//              max-width: 92%;
+//              margin-left: auto;
+//              margin-right: auto;
+              padding: 0 20px;
+              
+              @media screen and (min-width: @breakpoint2) {
+                padding: 0;
+              }
+
+              h4 {
+                margin-top: 25px;
+                margin-bottom: 5px;
+                font-size: 20px;
+                font-family: @font1;
+                font-weight: 600;
+                color: @darkblue;
+                text-transform: none;
+              }
+
+              p {
+                font-family: @font2;
+                font-weight: 300;
+                color: @darkblue;
+              }
+            }
+          }
+        }
 
         #contact {
             h2 {
