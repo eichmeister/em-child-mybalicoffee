@@ -62,7 +62,7 @@ Template Name: MyBali - About
 					</div>
 				</div>
 				
-				<div class="row teamrow">
+				<div class="row teamrow teamviewer">
 
 					<?php $i = 0; ?>	
 					<?php if ( have_rows('team') ): ?>

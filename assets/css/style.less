@@ -709,6 +709,10 @@
         #team {
           position: relative;
           padding-bottom: 30px;
+          
+          @media screen and (min-width: @breakpoint3) {
+            padding-bottom: 50px;
+          }
 
           .row.one-last {
             .col_4 {
@@ -754,20 +758,6 @@
               
             }
 
-//            @media screen and (min-width: @breakpoint3) {
-//              width: 100%;
-//              border-left-width: 30px;
-//              border-right-width: 0;
-//
-//              &:nth-child(2n-1) {
-//                border-right-width: 0;
-//              }
-//
-//              &:nth-child(2n+0) {
-//                border-left-width: 30px;
-//              }
-//            }
-
             &:first-child {
               margin-top: 20px;
 
@@ -782,10 +772,6 @@
             }
 
             .inner {
-//              width: 1400px;
-//              max-width: 92%;
-//              margin-left: auto;
-//              margin-right: auto;
               padding: 0 20px;
               
               @media screen and (min-width: @breakpoint2) {
