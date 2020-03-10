@@ -42,9 +42,9 @@ Template Name: MyBali - Company
 					<div class="col_6" style="background-color:<?php the_sub_field('color'); ?>">
 						
 						<figure>
-							<?php if( isset(get_sub_field('stamp')) ) { ?>
+							<?php if(get_sub_field('stamp')): ?>
 								<div class="stamp"><?php echo wp_get_attachment_image( get_sub_field('stamp'), 'img_500' ); ?></div>
-							<?php } ?>
+							<?php endif; ?>
 							<?php echo wp_get_attachment_image( get_sub_field('img'), 'img_800' ); ?>
 						</figure>
 						
