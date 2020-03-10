@@ -26,7 +26,7 @@ Template Name: MyBali - Company
 
 	<div class="wrapper-800 padding-bot-50">
 		<p>
-			<?php the_field('hero-teaser-txt'); ?>
+			<?php the_field('content-txt'); ?>
 		</p>
 	</div>
 
@@ -42,8 +42,8 @@ Template Name: MyBali - Company
 					<div class="col_6" style="background-color:<?php the_sub_field('color'); ?>">
 						
 						<figure>
-							<?php if( isset(get_sub_field('bestseller')) ) { ?>
-								<div class="bestseller"><?php echo wp_get_attachment_image( get_sub_field('bestseller'), 'img_500' ); ?></div>
+							<?php if( isset(get_sub_field('stamp')) ) { ?>
+								<div class="stamp"><?php echo wp_get_attachment_image( get_sub_field('stamp'), 'img_500' ); ?></div>
 							<?php } ?>
 							<?php echo wp_get_attachment_image( get_sub_field('img'), 'img_800' ); ?>
 						</figure>
@@ -74,7 +74,7 @@ Template Name: MyBali - Company
 		</div>
 		
 		<div class="col_6" style="background-color:<?php the_field('all_products_color'); ?>">
-			<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>" class="btn-line-left"><?php the_field('all_products_link'); ?></a>
+			<a href="<?php get_field('all_products_link')['url']; ?>" class="btn-line-left"><?php get_field('all_products_link')['title']; ?></a>
 		</div>
 		
 		<a href="#contact" class="btn"><?php the_field('all_products_btn'); ?></a>
@@ -87,12 +87,12 @@ Template Name: MyBali - Company
 
 		<h2 class="hl-2 center">
 			<?php echo first_line_bold(get_field('highlight_hl')); ?>
-		</h2>
+		</h2>pr
 		
 		<div class="row">
 		
-			<?php if ( have_rows('products') ): ?>
-				<?php while ( have_rows('products') ) : the_row(); ?>
+			<?php if ( have_rows('repeater') ): ?>
+				<?php while ( have_rows('repeater') ) : the_row(); ?>
 
 					<div class="col_3">
 
@@ -144,8 +144,8 @@ Template Name: MyBali - Company
 			<?php echo first_line_bold( get_field('contacts_hl') ); ?>
 		</h2>
 
-		<?php if ( have_rows('products') ): ?>
-			<?php while ( have_rows('products') ) : the_row(); ?>
+		<?php if ( have_rows('contacts') ): ?>
+			<?php while ( have_rows('contacts') ) : the_row(); ?>
 
 				<div class="col_6">
 
