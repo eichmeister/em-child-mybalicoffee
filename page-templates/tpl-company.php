@@ -34,50 +34,53 @@ Template Name: MyBali - Company
 
 <section id="product-showcase">
 
-	<div class="wrapper-800 padding-bot-50">
+	<div class="wrapper-800 padding-ver-50">
+		<div class="row">
 		
-		<?php if ( have_rows('products') ): ?>
-			<?php while ( have_rows('products') ) : the_row(); ?>
-					
-					<div class="col_6" style="background-color:<?php the_sub_field('color'); ?>">
-						
-						<figure>
-							<?php if(get_sub_field('stamp')): ?>
-								<div class="stamp"><?php echo wp_get_attachment_image( get_sub_field('stamp'), 'img_500' ); ?></div>
-							<?php endif; ?>
-							<?php echo wp_get_attachment_image( get_sub_field('img'), 'img_800' ); ?>
-						</figure>
-						
-						<div class="content">
-							<h4><?php the_sub_field('type'); ?></h4>
-							<h3><?php the_sub_field('name'); ?></h3>
-							<p><?php the_sub_field('pricing'); ?></p>
-							<p class="body-txt"><?php the_sub_field('desc'); ?></p>
+			<?php if ( have_rows('products') ): ?>
+				<?php while ( have_rows('products') ) : the_row(); ?>
+
+						<div class="col_6" style="background-color:<?php the_sub_field('color'); ?>">
+
+							<figure>
+								<?php if(get_sub_field('stamp')): ?>
+									<div class="stamp"><?php echo wp_get_attachment_image( get_sub_field('stamp')['ID'], 'img_500' ); ?></div>
+								<?php endif; ?>
+								<?php echo wp_get_attachment_image( get_sub_field('img')['ID'], 'img_800' ); ?>
+							</figure>
+
+							<div class="content">
+								<h4><?php the_sub_field('type'); ?></h4>
+								<h3><?php the_sub_field('name'); ?></h3>
+								<p><?php the_sub_field('pricing'); ?></p>
+								<p class="body-txt"><?php the_sub_field('desc'); ?></p>
+							</div>
+
 						</div>
-						
-					</div>
-			
-			<?php endwhile; ?>
-		<?php endif; ?>
+
+				<?php endwhile; ?>
+			<?php endif; ?>
 		
+		</div>
 	</div>
 
 </section>
 
 <section id="all-products">
 	<div class="wrapper-800 padding-bot-50">
+		<div class="row">
 		
-		<?php echo wp_get_attachment_image( get_sub_field('all_products_img'), 'img_1200' ); ?>
+			<div class="col_6 pattern" style="background-color:<?php the_field('all_products_color'); ?>">
+				<?php echo wp_get_attachment_image( get_field('all_products_img')['ID'], 'img_1200' ); ?>
+			</div>
+
+			<div class="col_6" style="background-color:<?php the_field('all_products_color'); ?>">
+				<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>" class="btn-line-left">Alle Produkte entdecken</a>
+			</div>
 		
-		<div class="col_6" style="background-color:<?php the_field('all_products_color'); ?>">
-			
+			<div class="col_12 btn-wrapper"><a href="#contact" class="btn"><?php the_field('all_products_btn'); ?></a></div>
+	
 		</div>
-		
-		<div class="col_6" style="background-color:<?php the_field('all_products_color'); ?>">
-			<a href="<?php get_field('all_products_link')['url']; ?>" class="btn-line-left"><?php get_field('all_products_link')['title']; ?></a>
-		</div>
-		
-		<a href="#contact" class="btn"><?php the_field('all_products_btn'); ?></a>
 	</div>
 </section>
 
@@ -87,18 +90,16 @@ Template Name: MyBali - Company
 
 		<h2 class="hl-2 center">
 			<?php echo first_line_bold(get_field('highlight_hl')); ?>
-		</h2>pr
+		</h2>
 		
 		<div class="row">
 		
 			<?php if ( have_rows('repeater') ): ?>
 				<?php while ( have_rows('repeater') ) : the_row(); ?>
 
-					<div class="col_3">
+					<div class="col_3 profiles">
 
-						<figure>
-							<?php echo wp_get_attachment_image( get_sub_field('img'), 'img_500' ); ?>
-						</figure>
+						<figure <?php EM()->Template->bg_cover(get_sub_field('img'), 'img_500'); ?>></figure>
 
 						<div class="content">
 							<?php the_sub_field('txt'); ?>
@@ -109,15 +110,14 @@ Template Name: MyBali - Company
 				<?php endwhile; ?>
 			<?php endif; ?>
 
-
-			<?php 
-
-			$items = get_field( 'teaser_1' )['items'];
-			include( locate_template("includes/em-module-content-repeater.php") );
-
-			?>
-		
 		</div>
+		
+		<?php 
+
+		$items = get_field( 'teaser_1' )['items'];
+		include( locate_template("includes/em-module-content-repeater.php") );
+
+		?>
 		
 	</div>
 </section>
@@ -139,32 +139,31 @@ Template Name: MyBali - Company
 <section id="contacts">
 
 	<div class="wrapper-1200 padding-ver-50">
+		<div class="row">
+			
+			<h2 class="hl-4 center">
+				<?php echo first_line_bold( get_field('contacts_hl') ); ?>
+			</h2>
 
-		<h2 class="hl-4 center">
-			<?php echo first_line_bold( get_field('contacts_hl') ); ?>
-		</h2>
+			<?php if ( have_rows('contacts') ): ?>
+				<?php while ( have_rows('contacts') ) : the_row(); ?>
 
-		<?php if ( have_rows('contacts') ): ?>
-			<?php while ( have_rows('contacts') ) : the_row(); ?>
+					<div class="col_6">
 
-				<div class="col_6">
+						<figure <?php EM()->Template->bg_cover(get_sub_field('img'), 'img_1200'); ?>></figure>
 
-					<figure>
-						<?php echo wp_get_attachment_image( get_sub_field('img'), 'img_1200' ); ?>
-					</figure>
+						<div class="content">
+							<h4><?php the_sub_field('role'); ?></h4>
+							<h3><?php the_sub_field('name'); ?></h3>
+							<p>Telefon:<a href="tel:<?php the_sub_field('number'); ?>"><?php the_sub_field('number'); ?></a></p>
+							<a href="mailto:<?php the_sub_field('email'); ?>" class="btn-line-left">E-Mail schreiben</a>
+						</div>
 
-					<div class="content">
-						<span><?php the_sub_field('role'); ?></span>
-						<span><?php the_sub_field('name'); ?></span>
-						<span>Telefon:<a href="tel:<?php the_sub_field('number'); ?>"><?php the_sub_field('number'); ?></a></span>
-						<a href="mailto:<?php the_sub_field('email'); ?>" class="btn-line-left">E-Mail schreiben</a>
 					</div>
 
-				</div>
-
-			<?php endwhile; ?>
-		<?php endif; ?>
-
+				<?php endwhile; ?>
+			<?php endif; ?>
+		</div>
 	</div>
 
 </section>

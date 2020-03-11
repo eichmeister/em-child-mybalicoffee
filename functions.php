@@ -82,7 +82,12 @@
 
             wp_enqueue_style( 'style-locations-css', get_stylesheet_directory_uri()."/assets/css/style-locations.css" );
 
-        } else if (is_singular('post')) {
+		} else if ( is_page_template('page-templates/tpl-company.php') ) {
+
+			// COMPANY PAGE
+			wp_enqueue_style( 'style-company-css', get_stylesheet_directory_uri()."/assets/css/style-company.css" );
+
+		} else if (is_singular('post')) {
 
             // SINGLE POST PAGE
 
