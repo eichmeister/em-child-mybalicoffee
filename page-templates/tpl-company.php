@@ -34,7 +34,7 @@ Template Name: MyBali - Company
 
 <section id="product-showcase">
 
-	<div class="wrapper-800 padding-ver-50">
+	<div class="wrapper-1200 padding-ver-50">
 		<div class="row">
 		
 			<?php if ( have_rows('products') ): ?>
@@ -67,14 +67,14 @@ Template Name: MyBali - Company
 </section>
 
 <section id="all-products">
-	<div class="wrapper-800 padding-bot-50">
+	<div class="wrapper-1200 padding-bot-50">
 		<div class="row">
 		
 			<div class="col_6 pattern" style="background-color:<?php the_field('all_products_color'); ?>">
 				<?php echo wp_get_attachment_image( get_field('all_products_img')['ID'], 'img_1200' ); ?>
 			</div>
 
-			<div class="col_6" style="background-color:<?php the_field('all_products_color'); ?>">
+			<div class="col_6 no-pattern" style="background-color:<?php the_field('all_products_color'); ?>">
 				<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>" class="btn-line-left">Alle Produkte entdecken</a>
 			</div>
 		
@@ -86,7 +86,7 @@ Template Name: MyBali - Company
 
 
 <section id="highlight">
-	<div class="wrapper-800 padding-bot-50">
+	<div class="wrapper-1200 padding-ver-50">
 
 		<h2 class="hl-2 center">
 			<?php echo first_line_bold(get_field('highlight_hl')); ?>
@@ -124,7 +124,7 @@ Template Name: MyBali - Company
 
 <section id="contact">
 
-	<div class="wrapper-1200 padding-ver-50">
+	<div class="wrapper-1200 padding-ver-100">
 
 		<h2 class="hl-4 center">
 			<?php echo first_line_bold( get_field('contact_hl') ); ?>
