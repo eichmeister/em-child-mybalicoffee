@@ -26,7 +26,7 @@ Template Name: MyBali - Company
 
 	<div class="wrapper-800 padding-bot-50">
 		<p>
-			<?php the_field('content-txt'); ?>
+			<?php the_field('hero-teaser-txt'); ?>
 		</p>
 	</div>
 
