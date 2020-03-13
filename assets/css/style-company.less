@@ -406,66 +406,77 @@ section#contacts {
 			[class*="col_"] { 
 				background-color: @white;
 				
-				figure {
-					height: 0;
-					padding-bottom: 60%;
+				.box {
+					-webkit-box-shadow: 0 0 25px rgba(0,0,0,0.1);
+					box-shadow: 0 0 25px rgba(0,0,0,0.1);
 					
-					@media screen and (min-width: @breakpoint3) {
-						padding-bottom: 70%;
-					}
-				}
-				
-				.content {
-					padding: 30px 20px;
-					text-align: center;
 
-					h4 {
-						margin-top: 0;
-						text-transform: uppercase;
-						font-size: 14px;
-						color: fade(@black, 80%);
-					}
+					figure {
+						height: 0;
+						padding-bottom: 60%;
 
-					h3 {
-						margin-top: 13px;
-						font-family: @font1;
-						font-weight: 500;
-						text-transform: none;
-						font-size: 25px;
-						
 						@media screen and (min-width: @breakpoint3) {
-							margin-top: 15px;
+							padding-bottom: 70%;
 						}
 					}
 
-					p {
-						margin: 0;
-						margin-top: 10px;
-						font-size: 15px;
-						.p;
-						color: fade(@black, 80%);
-						
-						@media screen and (min-width: @breakpoint3) {
-							margin-top: 12px;
+					.content {
+						padding: 30px 20px;
+						text-align: center;
+
+						h4 {
+							margin-top: 0;
+							text-transform: uppercase;
+							font-size: 14px;
+							color: fade(@black, 80%);
+						}
+
+						h3 {
+							margin-top: 13px;
+							font-family: @font1;
+							font-weight: 500;
+							text-transform: none;
+							font-size: 25px;
+
+							@media screen and (min-width: @breakpoint3) {
+								margin-top: 15px;
+							}
+						}
+
+						p {
+							margin: 0;
+							margin-top: 10px;
+							font-size: 15px;
+							.p;
+							color: fade(@black, 80%);
+
+							@media screen and (min-width: @breakpoint3) {
+								margin-top: 12px;
+							}
+
+							a {
+								margin: 0;
+								font-weight: 400;
+								color: fade(@black, 80%);
+
+								&:hover {
+									-webkit-transform: scale(1);transform: scale(1);
+									text-decoration: underline;
+								}
+							}
 						}
 
 						a {
-							margin: 0;
-							font-weight: 400;
-							color: fade(@black, 80%);
-						}
-					}
-					
-					a {
-						display: inline-block;
-						margin-top: 10px;
-//						.p;
-						float: none;
-						font-weight: bold;
-						font-size: 19px;
-						
-						@media screen and (min-width: @breakpoint3) {
-							margin-top: 12px;
+							display: inline-block;
+							margin-top: 10px;
+							float: none;
+							font-weight: bold;
+							font-size: 19px;
+
+							@media screen and (min-width: @breakpoint3) {
+								margin-top: 12px;
+							}
+
 						}
 					}
 				}

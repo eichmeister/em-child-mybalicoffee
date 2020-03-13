@@ -149,16 +149,16 @@ Template Name: MyBali - Company
 				<?php while ( have_rows('contacts') ) : the_row(); ?>
 
 					<div class="col_6">
+						<div class="box">
+							<figure <?php EM()->Template->bg_cover(get_sub_field('img'), 'img_1200'); ?>></figure>
 
-						<figure <?php EM()->Template->bg_cover(get_sub_field('img'), 'img_1200'); ?>></figure>
-
-						<div class="content">
-							<h4><?php the_sub_field('role'); ?></h4>
-							<h3><?php the_sub_field('name'); ?></h3>
-							<p>Telefon:<a href="tel:<?php the_sub_field('number'); ?>"><?php the_sub_field('number'); ?></a></p>
-							<a href="mailto:<?php the_sub_field('email'); ?>" class="btn-line-left">E-Mail schreiben</a>
+							<div class="content">
+								<h4><?php the_sub_field('role'); ?></h4>
+								<h3><?php the_sub_field('name'); ?></h3>
+								<p>Telefon:<a href="tel:<?php the_sub_field('number'); ?>"><?php the_sub_field('number'); ?></a></p>
+								<a href="mailto:<?php the_sub_field('email'); ?>" class="btn-line-left">E-Mail schreiben</a>
+							</div>
 						</div>
-
 					</div>
 
 				<?php endwhile; ?>

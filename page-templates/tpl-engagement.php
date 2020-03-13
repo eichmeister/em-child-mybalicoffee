@@ -47,4 +47,46 @@ Template Name: MyBali - Engagement
 
 </section>
 
+<section id="news">
+
+	<div class="wrapper-1200 padding-ver-100">
+
+		<h2 class="hl-2 center">
+			<?php echo first_line_bold(get_field('news_hl')); ?>
+		</h2>
+		
+		<?php
+
+		// FETCH 4 MOST RECENT BLOG POSTS
+
+		$posts_per_page = 4;
+		$published_post_count = wp_count_posts('post')->publish;
+
+		EM()->load( array(
+			'tpl' => 'posts_grid',
+			'posts' => get_posts( array(
+				'post_type' => 'post',
+				'post_status' => 'publish',
+				'posts_per_page' => 4,
+				'orderby'  => 'date',
+				'order'    => 'DESC',
+				'fields' => 'ids'
+			) ),
+			'post_count' => $published_post_count,
+			'layout' => 'grid',
+			'columns' => 2,
+			'filters' => array(
+				'taxonomy' => 'category',
+			),
+		) ); 
+
+		?>
+
+
+		<div class="col_12 btn-wrapper"><a href="/blog/" class="btn-line-left">Alle Beiträge</a></div>
+	</div>
+
+</section>
+
+
 <?php get_footer(); ?>
