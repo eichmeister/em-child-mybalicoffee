@@ -11,4 +11,21 @@ jQuery(document).ready(function() {
 	        });
 	    }
 	}
+  
+  /* ---------- TEAM MEMBERS ----------*/
+  
+  (function teamMemberViewer () {
+    
+    var $teamViewer = $('.teamviewer');
+    
+    if ($teamViewer) {
+      var $team = $teamViewer.find('.col_4');
+      var r = $team.length % 3;
+      if ( r == 0 ) return;
+      var tag = r == 1 ? 'one-last' : 'two-last';
+      $teamViewer.addClass(tag);
+    }
+    
+  })();
+  
 });
