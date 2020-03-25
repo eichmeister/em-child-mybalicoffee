@@ -232,19 +232,40 @@
 		}
 	}
 	
+	.owl-dot {
+		border: 1px solid @darkblue;
+
+		&.active {
+			background: @darkblue;
+		}
+	}
+	
 	.em-testimonial-tile {
 		display: none;
 		text-align: center;
 		
+		figure {
+			width: 100%;
+			text-align: center;
+			
+			img {
+				display: inline-block;
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+			}
+		}
+		
 		.name-position {
+			margin: 5px 0;
 			
 			span {
-				margin-top: 25px;
-				margin-bottom: 5px;
+//				margin-top: 25px;
+//				margin-bottom: 5px;
 				font-size: 20px;
 				.font1;
 				font-weight: 600;
-				color: #033142;
+				color: @darkblue;
 				text-transform: none;
 				
 				&.name {}
@@ -260,11 +281,15 @@
 			font-size: 20px;
 			.font2;
 			font-weight: 300;
-			color: #033142;
+			color: @darkblue;
 		}
 
 		.statement {
 			margin-top: 10px;
+			
+			@media screen and (min-width: @breakpoint2) {
+				padding: 0 15%;
+			}
 		}
 	}
 }
