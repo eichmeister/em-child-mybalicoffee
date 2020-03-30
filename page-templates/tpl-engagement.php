@@ -57,10 +57,7 @@ Template Name: MyBali - Engagement
 		
 		<?php
 
-		// FETCH 4 MOST RECENT BLOG POSTS
-
-		$posts_per_page = 4;
-		$published_post_count = wp_count_posts('post')->publish;
+		// FETCH 4 MOST RECENT BLOG POSTS OF CATEGORY ENGAGEMENT
 
 		EM()->load( array(
 			'tpl' => 'posts_grid',
@@ -70,18 +67,14 @@ Template Name: MyBali - Engagement
 				'posts_per_page' => 4,
 				'orderby'  => 'date',
 				'order'    => 'DESC',
-				'fields' => 'ids'
+				'fields' => 'ids',
+				'category' => 120
 			) ),
-			'post_count' => $published_post_count,
 			'layout' => 'grid',
 			'columns' => 2,
-			'filters' => array(
-				'taxonomy' => 'category',
-			),
 		) ); 
 
 		?>
-
 
 		<div class="col_12 btn-wrapper"><a href="/blog/" class="btn-line-left">Alle Beiträge</a></div>
 	</div>
