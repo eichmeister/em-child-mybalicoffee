@@ -88,7 +88,8 @@ Template Name: MyBali - Locations
 			                'key' => 'place',
 			                'value' => array( $term->term_id ),
 			            )
-			        )
+			        ),
+			        'posts_per_page' => -1
 			    ) );
 
 			    if ( $place_group_query->have_posts() ):
