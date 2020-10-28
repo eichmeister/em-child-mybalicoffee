@@ -26,9 +26,52 @@ Template Name: MyBali - LP 01
 	?>
 </section>
 
-<section id="teaser1">
+<?php if ( is_user_logged_in() ): ?>
+	<?php if ( current_user_can( 'edit_pages' ) ): ?>
+		<?php if ( get_field('video') ): ?>
+			
+			<section id="video-teaser">
+				<div class="wrapper-800 padding-ver-50">
 
-	<div class="wrapper-1200 padding-bot-50">
+					<div class="video-container">
+						<?php the_field('video'); ?>
+					</div>
+
+				</div>
+			</section>
+		<?php endif; ?>
+	<?php endif; ?>
+<?php endif; ?>
+
+<?php if ( is_user_logged_in() ): ?>
+	<?php if ( current_user_can( 'edit_pages' ) ): ?>
+
+		<section id="testimonials">
+			<div class="wrapper-800 padding-ver-100">
+
+				<h2 class="hl-4 center">
+					<?php echo first_line_bold( get_field('testimonials_hl') ); ?>
+				</h2>
+
+				<?php
+				EM()->load( array(
+					'tpl' => 'posts_grid',
+					'posts' => get_field('testimonials'),
+					'layout' => 'slider',
+					'columns' => 1,
+					//'post_tpl_suffix' => 'photo'
+				) );
+				?>
+
+			</div>
+		</section>
+
+	<?php endif; ?>
+<?php endif; ?>
+
+<section id="teaser1">
+	
+	<div class="wrapper-1200 padding-ver-50">
 
 		<?php 
 
@@ -38,7 +81,7 @@ Template Name: MyBali - LP 01
 		?>
 		
 	</div>
-
+	
 </section>
 
 <section id="products">
@@ -62,6 +105,30 @@ Template Name: MyBali - LP 01
 
 		<a href="<?php echo get_permalink( wc_get_page_id( 'shop' ) ); ?>" class="btn-line-left">ALLE PRODUKTE</a>
 		
+	</div>
+
+</section>
+
+<section id="newsletter">
+
+	<div class="wrapper-800 padding-ver-100">
+		<div class="row">
+
+			<div class="col_12">
+				<h2 class="hl-2 center">
+					<?php echo first_line_bold( get_field('newsletter_hl') ); ?>
+				</h2>
+			</div>
+
+			<div class="col_12">
+				<?php if( get_field('newsletter_sub_hl') ): ?>
+					<p class="sub"><?php the_field('newsletter_sub_hl'); ?></p>
+				<?php endif; ?>
+
+				<?php echo do_shortcode('[contact-form-7 id="1727" title="Newsletter GetResponse"]'); ?>
+			</div>
+
+		</div>
 	</div>
 
 </section>

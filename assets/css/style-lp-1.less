@@ -181,6 +181,120 @@
 	}
 
 ////////////////////////////////////////////////////////////////////////////////////
+// VIDEO
+////////////////////////////////////////////////////////////////////////////////////
+
+#video-teaser {
+	.video-container { 
+		position: relative; 
+		padding-bottom: 56.25%;
+		overflow: hidden;
+		max-width: 100%;
+		height: auto;
+	} 
+
+	.video-container iframe,
+	.video-container object,
+	.video-container embed { 
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+// TESTIMONIALS
+////////////////////////////////////////////////////////////////////////////////////
+
+#testimonials {
+	position: relative;
+	
+	h2 {
+		position: relative;
+		margin-bottom: 60px;
+	}
+	
+	p {
+		margin-bottom: 0;
+
+		&.sub {
+			margin-bottom: 20px;
+		}
+	}
+	
+	.owl-item {
+		.slide {
+			.em-testimonial-tile {
+				display: block;
+			}
+		}
+	}
+	
+	.owl-dot {
+		border: 1px solid @darkblue;
+
+		&.active {
+			background: @darkblue;
+		}
+	}
+	
+	.em-testimonial-tile {
+		display: none;
+		text-align: center;
+		
+		figure {
+			width: 100%;
+			text-align: center;
+			
+			img {
+				display: inline-block;
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+			}
+		}
+		
+		.name-position {
+			margin: 5px 0;
+			
+			span {
+//				margin-top: 25px;
+//				margin-bottom: 5px;
+				font-size: 20px;
+				.font1;
+				font-weight: 600;
+				color: @darkblue;
+				text-transform: none;
+				
+				&.name {}
+				&.position {
+					font-size: 18px;
+					font-weight: 400;
+					color: fade(@darkblue, 50%);
+				}
+			}
+		}
+		
+		.company {
+			font-size: 20px;
+			.font2;
+			font-weight: 300;
+			color: @darkblue;
+		}
+
+		.statement {
+			margin-top: 10px;
+			
+			@media screen and (min-width: @breakpoint2) {
+				padding: 0 15%;
+			}
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////////
 // TEASER SECTION
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -214,6 +328,141 @@
 			}
 		}
 	}
+
+////////////////////////////////////////////////////////////////////////////////////
+// NEWSLETTER 
+////////////////////////////////////////////////////////////////////////////////////
+
+#newsletter {
+	position: relative;
+	
+	p {
+		margin-bottom: 0;
+		
+		&.sub {
+			margin-bottom: 20px;
+		}
+	}
+	
+	h2 {
+		margin-bottom: 20px;
+		
+//		@media all and (max-width: @breakpoint3) {
+//			margin-bottom: 30px;
+//		}
+		
+		b {
+			color: @blue;
+		}
+	}
+
+	.wpcf7-form-control-wrap.your-email {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+
+	input[type="email"] {
+		border: 1px solid #dedede;
+		padding: 10px 10px;
+		max-width: 100%;
+		border-radius: 0;
+		background: #FFF;
+		box-shadow: none !important;
+		-webkit-appearance: none;
+		box-sizing: border-box;
+		width: 100%;
+		margin: 0;
+		outline: 0;
+		line-height: 1;
+		height: auto;
+	}
+
+	input[type="submit"] {
+		.btn;
+		.btn.btn-orange;
+//		width: 100%;
+		font-size: 1.2em;
+		font-weight: 700;
+		margin: 0 auto;
+		display: block;
+	}
+
+	.wpcf7-not-valid-tip {
+		margin-top: 5px;
+		font-size: .8rem;
+	}
+
+	div.wpcf7-validation-errors {
+		margin: 0;
+		background: #ed745b;
+		border: 0;
+		color: #FFF;
+		padding: .9em 1em;
+	}
+
+	.wpcf7-form.sent {
+
+		p {
+			display: none;
+		}
+
+		.wpcf7-mail-sent-ok {
+			background: #689340;
+			color: #FFF;
+			padding: .9em 1em;
+		}
+	}
+
+	.privacy-policy-wrapper {
+		position: relative;
+		font-size: .85em;
+		margin: 25px 0;
+
+		@media all and (min-width: @breakpoint3_mf) {
+			margin: 25px 0 10px 0;
+		}
+
+		.col_1,
+		.col_11 {
+			border-left: 0;
+		}
+
+		.col_1 {
+			max-width: 35px;
+
+			span.wpcf7-list-item {
+				margin-left: 0;
+
+			}
+		}
+
+		@media all and (max-width: 768px) {
+
+			.col_1 {
+				max-width: 35px;
+			}
+
+			.col_11 {
+				max-width: 80%;
+			}
+		}
+
+		a {
+			color: @blue;
+		}
+
+		.wpcf7-form-control-wrap.privacy-policy {
+			position: initial;
+
+			.wpcf7-not-valid-tip {
+				position: absolute;
+				bottom: -28px;
+				font-size: .8rem;
+				width: 200px;
+			}
+		}
+	}
+}
 
 ////////////////////////////////////////////////////////////////////////////////////
 // INSTAGRAM SECTION
