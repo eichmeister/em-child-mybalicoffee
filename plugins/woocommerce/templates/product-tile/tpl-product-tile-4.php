@@ -56,17 +56,31 @@ $product_color = get_field( 'product_color', $parent );
 			$attribute = $_product->get_data()['attributes']['pa_farbe'];
 			$parent = wc_get_product($_product->get_parent_id());
 			$link = add_query_arg( 'attribute_pa_farbe', $attribute, $parent->get_permalink() );
-            foreach ($parent->get_gallery_image_ids() as $attachment_id) {
-            	if ( !empty( get_field('img_color', $attachment_id, false) ) ) {
-            		$img_color = get_term( get_field('img_color', $attachment_id, false), 'pa_farbe' )->slug;
-                    if ( $attribute == $img_color ) {
-                    	$images[$em_post_id] = $attachment_id;
-                    	break;
-                    }
-            	}
-            }
-            $new_images = !empty($images) ? $images : array();
-			echo em_display_images_lazyload( $link, $new_images );
+
+			if ( $parent->get_gallery_image_ids() ) {
+	            foreach ($parent->get_gallery_image_ids() as $attachment_id) {
+	            	print_r($attachment_id);
+
+	            	if ( !empty( get_field('img_color', $attachment_id, false) ) ) {
+	            		$img_color = get_term( get_field('img_color', $attachment_id, false), 'pa_farbe' )->slug;
+	                    if ( $attribute == $img_color ) {
+	                    	$images[$em_post_id] = $attachment_id;
+	                    	break;
+	                    }
+	            	}
+	            }
+	            $new_images = !empty($images) ? $images : array();
+				echo em_display_images_lazyload( $link, $new_images );
+			} else {
+				if ( $_product->get_image_id() ) {
+					$new_images = array( $_product->get_image_id() );
+					array_push($new_images, $parent->get_gallery_image_ids());
+				} else {
+					$new_images = $parent->get_gallery_image_ids();
+				}
+				
+				echo em_display_images_lazyload( $link, $new_images );
+			}
 
 		} else {
 
