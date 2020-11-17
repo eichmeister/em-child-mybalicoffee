@@ -107,7 +107,7 @@
 		<div class="wrapper-1200">
 
 			<h2 class="hl-2">
-				<?php _e('Menü Highlights'); ?>
+				<?php _e('Store Highlights'); ?>
 			</h2>
 
 			<?php while ( have_rows('menu_highlights') ) : the_row(); ?>
