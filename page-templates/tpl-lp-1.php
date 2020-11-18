@@ -39,25 +39,30 @@ Template Name: MyBali - LP 01
 	</section>
 <?php endif; ?>
 
-<section id="testimonials">
-	<div class="wrapper-800 padding-ver-100">
 
-		<h2 class="hl-4 center">
-			<?php echo first_line_bold( get_field('testimonials_hl') ); ?>
-		</h2>
+<?php if ( is_user_logged_in() ): ?>
+	<?php if ( current_user_can( 'edit_pages' ) ): ?>
+		<section id="testimonials">
+			<div class="wrapper-800 padding-ver-100">
 
-		<?php
-		EM()->load( array(
-			'tpl' => 'posts_grid',
-			'posts' => get_field('testimonials'),
-			'layout' => 'slider',
-			'columns' => 1,
-			//'post_tpl_suffix' => 'photo'
-		) );
-		?>
+				<h2 class="hl-4 center">
+					<?php echo first_line_bold( get_field('testimonials_hl') ); ?>
+				</h2>
 
-	</div>
-</section>
+				<?php
+				EM()->load( array(
+					'tpl' => 'posts_grid',
+					'posts' => get_field('testimonials'),
+					'layout' => 'slider',
+					'columns' => 1,
+					//'post_tpl_suffix' => 'photo'
+				) );
+				?>
+
+			</div>
+		</section>
+	<?php endif; ?>
+<?php endif; ?>
 
 <section id="teaser1">
 	
