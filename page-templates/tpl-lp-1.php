@@ -26,48 +26,38 @@ Template Name: MyBali - LP 01
 	?>
 </section>
 
-<?php if ( is_user_logged_in() ): ?>
-	<?php if ( current_user_can( 'edit_pages' ) ): ?>
-		<?php if ( get_field('video') ): ?>
-			
-			<section id="video-teaser">
-				<div class="wrapper-800 padding-ver-50">
+<?php if ( get_field('video') ): ?>
+	
+	<section id="video-teaser">
+		<div class="wrapper-800 padding-ver-50">
 
-					<div class="video-container">
-						<?php the_field('video'); ?>
-					</div>
-
-				</div>
-			</section>
-		<?php endif; ?>
-	<?php endif; ?>
-<?php endif; ?>
-
-<?php if ( is_user_logged_in() ): ?>
-	<?php if ( current_user_can( 'edit_pages' ) ): ?>
-
-		<section id="testimonials">
-			<div class="wrapper-800 padding-ver-100">
-
-				<h2 class="hl-4 center">
-					<?php echo first_line_bold( get_field('testimonials_hl') ); ?>
-				</h2>
-
-				<?php
-				EM()->load( array(
-					'tpl' => 'posts_grid',
-					'posts' => get_field('testimonials'),
-					'layout' => 'slider',
-					'columns' => 1,
-					//'post_tpl_suffix' => 'photo'
-				) );
-				?>
-
+			<div class="video-container">
+				<?php the_field('video'); ?>
 			</div>
-		</section>
 
-	<?php endif; ?>
+		</div>
+	</section>
 <?php endif; ?>
+
+<section id="testimonials">
+	<div class="wrapper-800 padding-ver-100">
+
+		<h2 class="hl-4 center">
+			<?php echo first_line_bold( get_field('testimonials_hl') ); ?>
+		</h2>
+
+		<?php
+		EM()->load( array(
+			'tpl' => 'posts_grid',
+			'posts' => get_field('testimonials'),
+			'layout' => 'slider',
+			'columns' => 1,
+			//'post_tpl_suffix' => 'photo'
+		) );
+		?>
+
+	</div>
+</section>
 
 <section id="teaser1">
 	
