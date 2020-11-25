@@ -1,10 +1,20 @@
 <?php
 
-    // add_filter( "woocommerce_email_settings", "max_new_test" );
-    // function max_new_test( $array ) {
-    //     br($array);
-    //     return $array;
-    // }
+//////////////////////////////////////////////////////////////////////////////////////
+// AUTOMATICALLY ADD GRATIS COUPON CODE TO CART
+//////////////////////////////////////////////////////////////////////////////////////
+
+    add_action('woocommerce_before_cart_table', 'em_add_free_coupon_code');
+    function em_add_free_coupon_code( $cart ) {
+        global $woocommerce;
+        
+        $coupon_code = 'gratis';
+        $applied_coupons  = $woocommerce->cart->get_applied_coupons();
+
+        if( ! in_array($coupon_code, $applied_coupons) ) {
+            $woocommerce->cart->add_discount( sanitize_text_field( $coupon_code ));
+        }
+    }
 
 //////////////////////////////////////////////////////////////////////////////////////
 // ADD CONTACT TO MAIN MENU AND FOOTER MENU 2
