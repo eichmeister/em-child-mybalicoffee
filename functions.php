@@ -8,11 +8,14 @@
     function em_add_free_coupon_code( $cart ) {
         global $woocommerce;
         
-        $coupon_code = 'gratis';
+        $coupon_code = sanitize_text_field('gratis');
+        $coupon_code_exists = sanitize_text_field('bestsecret15');
         $applied_coupons  = $woocommerce->cart->get_applied_coupons();
 
-        if( ! in_array($coupon_code, $applied_coupons) ) {
-            $woocommerce->cart->add_discount( sanitize_text_field( $coupon_code ));
+        if( ! in_array($coupon_code, $applied_coupons) && in_array($coupon_code_exists, $applied_coupons)  ) {
+            $woocommerce->cart->add_discount( $coupon_code );
+        } else {
+            $woocommerce->cart->remove_coupon( $coupon_code );
         }
     }
 
