@@ -103,7 +103,7 @@ Template Name: MyBali - LP 01
 
 <section id="teaser1">
 	
-	<div class="wrapper-1200 padding-ver-50">
+	<div class="wrapper-1200">
 
 		<?php 
 
@@ -117,7 +117,7 @@ Template Name: MyBali - LP 01
 </section>
 
 <section id="teaser2">
-	<div class="wrapper-1200 padding-bot-50">
+	<div class="wrapper-1200">
 
 		<?php
 		 
