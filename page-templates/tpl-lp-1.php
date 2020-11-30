@@ -24,65 +24,61 @@ Template Name: MyBali - LP 01
 	) );
 
 	?>
+	
 </section>
 
-<?php if ( is_user_logged_in() ): ?>
-	<?php if ( current_user_can( 'edit_pages' ) ): ?>
+<section id="partners">
+	<div class="wrapper-1200">
 
-		<?php if ( get_field('video') ): ?>
-			
-			<section id="video-teaser">
-				<div class="wrapper-800 padding-ver-50">
+		<h2>
+			Unsere Partner
+		</h2>
 
-					<div class="video-container">
-						<?php the_field('video'); ?>
-					</div>
-
-				</div>
-			</section>
-		<?php endif; ?>
-
-		<section id="testimonials">
-			<div class="wrapper-800 padding-ver-100">
-
-				<h2 class="hl-4 center">
-					<?php echo first_line_bold( get_field('testimonials_hl') ); ?>
-				</h2>
-
-				<?php
-				EM()->load( array(
-					'tpl' => 'posts_grid',
-					'posts' => get_field('testimonials'),
-					'layout' => 'slider',
-					'columns' => 1,
-					//'post_tpl_suffix' => 'photo'
-				) );
-				?>
-
-			</div>
-		</section>
-
-	<?php endif; ?>
-<?php endif; ?>
-
-<section id="teaser1">
-	
-	<div class="wrapper-1200 padding-ver-50">
-
-		<?php 
-
-		$items = get_field( 'teaser_1' )['items'];
-		include( locate_template("includes/em-module-content-repeater.php") );
+		<?php
+					
+		EM()->load( array(
+			'tpl' => 'posts_grid',
+			'posts' => get_field('partners'),
+			'layout' => 'grid',
+			'columns' => 4,
+			'grid_tpl_suffix' => '-sd2'
+		) );
 
 		?>
-		
+
 	</div>
-	
+</section>
+
+<section id="promo">
+
+	<?php
+
+	EM()->load( array(
+		'tpl' => 'hero_simple',
+		'contents' => get_field('promo_hero_contents'),
+		'height' => get_field('promo_hero_height'),
+		'bg_id' => 'promo',
+		'hl_tag' => 'h2',
+		'tpl_suffix' => '-mybali',
+		'layout_settings' => array(
+		    '500_items' => 1,
+		    '500_autoplay' => "true",
+		    '0_items' => 1,
+		    '0_margin' => 0,
+		    '0_stagepadding' => 0,
+		    '0_autoplay' => "true",
+		    'loop' => "true",
+		    'autoplay' => "true",
+		)
+	) );
+
+	?>
+
 </section>
 
 <section id="products">
 
-	<div class="wrapper-1200 padding-bot-50">
+	<div class="wrapper-1200 padding-top-150 padding-bot-50">
 
 		<h2 class="hl-2 center">
 			<?php echo first_line_bold(get_field('products_hl')); ?>
@@ -104,6 +100,93 @@ Template Name: MyBali - LP 01
 	</div>
 
 </section>
+
+<section id="teaser1">
+	
+	<div class="wrapper-1200 padding-ver-50">
+
+		<?php 
+
+		$items = get_field( 'teaser_1' )['items'];
+		include( locate_template("includes/em-module-content-repeater.php") );
+
+		?>
+		
+	</div>
+	
+</section>
+
+<section id="teaser2">
+	<div class="wrapper-1200 padding-bot-50">
+
+		<?php
+		 
+		$items = get_field( 'teaser_2' )['items'];
+		include( locate_template("includes/em-module-content-repeater.php") );
+
+		?>
+		
+	</div>
+</section>
+
+<?php if ( get_field('video') ): ?>
+	
+	<section id="video-teaser">
+		<div class="wrapper-1200 padding-top-50 padding-bot-50">
+
+			<div class="row">
+				<div class="col_10 color-box">
+
+					<div class="video"
+						data-bottom-top="transform:translateY(120px);"
+			    		data-top-bottom="transform:translateY(20px);">
+
+						<div class="video-container">
+							<?php the_field('video'); ?>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+<?php endif; ?>
+
+<?php
+
+// when remove, se tvideo-teaser padding-bot-150
+
+$testimonials = false;
+
+if ( $testimonials ):
+
+?>
+
+	<section id="testimonials">
+		<div class="wrapper-800">
+
+			<h2 class="hl-4 center">
+				<?php echo first_line_bold( get_field('testimonials_hl') ); ?>
+			</h2>
+
+			<?php
+			
+			EM()->load( array(
+				'tpl' => 'posts_grid',
+				'posts' => get_field('testimonials'),
+				'layout' => 'slider',
+				'columns' => 1,
+				//'post_tpl_suffix' => 'photo'
+			) );
+
+			?>
+
+		</div>
+	</section>
+
+<?php endif; ?>
 
 <section id="newsletter">
 
@@ -130,16 +213,6 @@ Template Name: MyBali - LP 01
 </section>
 
 <section id="instagram">
-
-	<div class="wrapper-1200 padding-bot-50">
-
-		<?php 
-		$items = get_field( 'teaser_2' )['items'];
-		include( locate_template("includes/em-module-content-repeater.php") );
-
-		?>
-		
-	</div>
 
 	<div class="wrapper-1200 padding-bot-50">
 

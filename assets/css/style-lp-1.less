@@ -107,7 +107,10 @@
 		}
 
         .inner-full {
-            padding-bottom: 120px;
+
+        	@media all and (min-width: @breakpoint3) {
+            	padding-bottom: 120px;
+            }
         }
 
 		.inner-wrapper {
@@ -181,118 +184,317 @@
 	}
 
 ////////////////////////////////////////////////////////////////////////////////////
+// PARTNERS
+////////////////////////////////////////////////////////////////////////////////////
+
+	#partners {
+		padding-bottom: 5px;
+
+		@media all and (min-width: @breakpoint3) {
+			padding-top: 50px;
+			padding-bottom: 100px;
+		}
+
+		h2 {
+			margin-bottom: 25px;
+			font-size: 1.2em;
+		}
+
+		[class*=row] {
+
+			@media all and (max-width: 767px) {
+
+				[class*=col_]:nth-child(n+5) {
+					display: none;
+				}
+			}
+		}
+	}
+
+////////////////////////////////////////////////////////////////////////////////////
 // VIDEO
 ////////////////////////////////////////////////////////////////////////////////////
 
-#video-teaser {
-	.video-container { 
-		position: relative; 
-		padding-bottom: 56.25%;
-		overflow: hidden;
-		max-width: 100%;
-		height: auto;
-	} 
+	#video-teaser {
 
-	.video-container iframe,
-	.video-container object,
-	.video-container embed { 
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+		.video-container { 
+			position: relative; 
+			padding-bottom: 56.25%;
+			overflow: hidden;
+			max-width: 100%;
+			height: auto;
+		} 
+
+		.video-container iframe,
+		.video-container object,
+		.video-container embed { 
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		.color-box {
+			background: #a8cfe1 url('../img/gutter-endless.svg');
+			background-size: 400px 400px;
+
+			.video {
+				position: relative;
+
+				@media all and (min-width: @breakpoint3) {
+					left: 100px;
+				}
+			}
+		}
+
+		html.touch & {
+
+			.video {
+				top: -50px;
+				left: 10%;
+				width: 85%;
+			}
+		}
 	}
-}
 
 ////////////////////////////////////////////////////////////////////////////////////
 // TESTIMONIALS
 ////////////////////////////////////////////////////////////////////////////////////
 
-#testimonials {
-	position: relative;
-	
-	h2 {
+	#testimonials {
+		background: #ed745b url('../img/gutter-endless.svg');
+		background-size: 400px 400px;
 		position: relative;
-		margin-bottom: 60px;
-	}
-	
-	p {
-		margin-bottom: 0;
+		color: #FFF;
 
-		&.sub {
-			margin-bottom: 20px;
+		&:before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-image: url(../img/bali-background-2.png);
+            background-size: cover;
+            // background-repeat: repeat-x;
+            // background-position: bottom;
+            z-index: 2;
+            transform: rotate(180deg);
+
+            @media all and (min-width: @breakpoint8_mf) {
+                height: 160px;
+            }
+        }
+
+        // Bottom edge graphic divider - set already globally for em-hero-simple
+		&:after {
+			content: "";
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background-image: url(../img/bali-background-2.png);
+            background-size: cover;
+            // background-repeat: repeat-x;
+            // background-position: bottom;
+            z-index: 2;
+
+            @media all and (min-width: @breakpoint8_mf) {
+                height: 160px;
+            }
 		}
-	}
-	
-	.owl-item {
-		.slide {
-			.em-testimonial-tile {
-				display: block;
+
+		[class*=wrapper-] {
+			padding: 150px 0;
+		}
+		
+		h2 {
+			position: relative;
+			margin-bottom: 60px;
+		}
+		
+		p {
+			margin-bottom: 0;
+
+			&.sub {
+				margin-bottom: 20px;
 			}
 		}
-	}
-	
-	.owl-dot {
-		border: 1px solid @darkblue;
-
-		&.active {
-			background: @darkblue;
-		}
-	}
-	
-	.em-testimonial-tile {
-		display: none;
-		text-align: center;
 		
-		figure {
-			width: 100%;
-			text-align: center;
-			
-			img {
-				display: inline-block;
-				width: 100px;
-				height: 100px;
-				border-radius: 50%;
-			}
-		}
-		
-		.name-position {
-			margin: 5px 0;
-			
-			span {
-//				margin-top: 25px;
-//				margin-bottom: 5px;
-				font-size: 20px;
-				.font1;
-				font-weight: 600;
-				color: @darkblue;
-				text-transform: none;
-				
-				&.name {}
-				&.position {
-					font-size: 18px;
-					font-weight: 400;
-					color: fade(@darkblue, 50%);
+		.owl-item {
+			.slide {
+				.em-testimonial-tile {
+					display: block;
 				}
 			}
 		}
 		
-		.company {
-			font-size: 20px;
-			.font2;
-			font-weight: 300;
-			color: @darkblue;
-		}
+		.owl-dot {
+			border: 1px solid @darkblue;
 
-		.statement {
-			margin-top: 10px;
+			&.active {
+				background: @darkblue;
+			}
+		}
+		
+		.em-testimonial-tile {
+			display: none;
+			text-align: center;
 			
-			@media screen and (min-width: @breakpoint2) {
-				padding: 0 15%;
+			figure {
+				width: 100%;
+				text-align: center;
+				
+				img {
+					display: inline-block;
+					width: 100px;
+					height: 100px;
+					border-radius: 50%;
+				}
+			}
+			
+			.name-position {
+				margin: 5px 0;
+				
+				span {
+	//				margin-top: 25px;
+	//				margin-bottom: 5px;
+					font-size: 20px;
+					.font1;
+					font-weight: 600;
+					color: #FFF;
+					text-transform: none;
+					
+					&.name {}
+					&.position {
+						font-size: 18px;
+						font-weight: 400;
+					}
+				}
+			}
+			
+			.company {
+				font-size: 20px;
+				.font2;
+				font-weight: 300;
+				color: @darkblue;
+			}
+
+			.statement {
+				margin-top: 10px;
+				
+				@media screen and (min-width: @breakpoint2) {
+					padding: 0 15%;
+				}
 			}
 		}
 	}
-}
+
+////////////////////////////////////////////////////////////////////////////////////
+// PROMO SECTION
+////////////////////////////////////////////////////////////////////////////////////
+
+	#promo {
+		
+		.em-hero-simple {
+
+			&:after {
+				background: none;
+			}
+
+			.inner-full {
+				padding-bottom: 0;
+			}
+
+			.owl-stage-outer {
+				height: 100% !important;
+			}
+
+			h2, .desc, .cta {
+				margin: 25px 0;
+			}
+
+			.desc {
+				
+				p {
+					line-height: 1.6;
+				}
+			}
+
+			.cta {
+				.btn;
+				.btn.btn-orange;
+			}
+
+			.slide {
+
+				&:before {
+					content: '';
+					position: absolute;
+					z-index: 0;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: rgba(0, 0, 0, .4);
+				}
+			}
+
+			.em-slider {
+				position: relative;
+
+				&:before {
+		            content: "";
+		            position: absolute;
+		            top: -2px;
+		            left: 0;
+		            width: 100%;
+		            height: 100px;
+		            background-image: url(../img/bali-background-2.png);
+		            background-size: cover;
+		            // background-repeat: repeat-x;
+		            // background-position: bottom;
+		            z-index: 2;
+	                transform: rotate(180deg);
+
+		            @media all and (min-width: @breakpoint8_mf) {
+		                height: 160px;
+		            }
+		        }
+
+		        // Bottom edge graphic divider - set already globally for em-hero-simple
+				&:after {
+					content: "";
+		            position: absolute;
+		            bottom: -2px;
+		            left: 0;
+		            width: 100%;
+		            height: 100px;
+		            background-image: url(../img/bali-background-2.png);
+		            background-size: cover;
+		            // background-repeat: repeat-x;
+		            // background-position: bottom;
+		            z-index: 2;
+
+		            @media all and (min-width: @breakpoint8_mf) {
+		                height: 160px;
+		            }
+				}
+			}
+
+			.owl-dots {
+				z-index: 10;
+				bottom: 20px;
+
+				@media all and (min-width: @breakpoint3) {
+					bottom: -15px;
+				}
+			}
+
+		}
+	}
 
 ////////////////////////////////////////////////////////////////////////////////////
 // TEASER SECTION

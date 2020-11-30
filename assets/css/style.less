@@ -2,7 +2,7 @@
 @import url('mixins.less');
 
 // CUSTOM ICON FONT
-@import url(icon-font-custom.css);
+// @import url(icon-font-custom.css);
 
 ////////////////////////////////////////////////////////////////////////////////////
 // BASIC ELEMENTS
@@ -20,6 +20,7 @@
         color: #033142;
         font-style: normal;
         font-variant: lining-nums;
+        font-family: @font1;
         .font-size-responsive(14px, 14px, 14px, 16px, 16px, 16px, 18px, 18px);
     }
 
@@ -574,12 +575,16 @@
         }
 
         &.starts-with-hero {
-            .em-hero-simple {
-                margin-top: -102px;
+            #intro,
+            #shop-archive-hero {
 
-                &.bg-photo {
-                    .inner-full {
-                        padding-top: 102px !important;
+                .em-hero-simple {
+                    margin-top: -102px;
+
+                    &.bg-photo {
+                        .inner-full {
+                            padding-top: 102px !important;
+                        }
                     }
                 }
             }
@@ -1170,4 +1175,8 @@
                 }
             }
         }
+    }
+
+    .em-partner-tile {
+        border: 1px solid rgba(0, 0, 0, .1);
     }
