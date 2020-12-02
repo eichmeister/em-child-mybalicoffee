@@ -126,7 +126,7 @@ foreach ( $place_terms as $term ) {
 </section>
 
 <section id="merchants">
-	<div class="wrapper-1200">
+	<div class="wrapper-1200 padding-bot-50">
 		
 		<h2 class="hl-4 margin-bot-50 center">
 			<?php echo first_line_bold( get_field('merchants_hl') ); ?>
