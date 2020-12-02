@@ -6,6 +6,51 @@ Template Name: MyBali - Locations
 
 <?php get_header(); ?>
 
+<?php
+$google_maps = array();
+
+$place_terms = get_terms( array(
+    'taxonomy' => 'place',
+    'hide_empty' => false,
+) );
+
+$locations = array();
+
+
+foreach ( $place_terms as $term ) {
+
+    $place_group_query = new WP_Query( array(
+        'post_type' => 'merchant',
+        'meta_query' => array(
+            array(
+                'key' => 'place',
+                'value' => array( $term->term_id ),
+            )
+        ),
+        'posts_per_page' => -1
+    ) );
+
+    if ( $place_group_query->have_posts() ):
+
+    	while ( $place_group_query->have_posts() ) : $place_group_query->the_post(); 
+
+    		$google_maps[] = array('title' => get_the_title(), 'location' => get_field('google_maps') ); 
+
+    		$locations[$term->name][] = array(
+    			"name" => get_the_title(),
+    			"address" => get_field("address"),
+    			"zip_code" => get_field("zip_code"),
+    			"place" => get_term( get_field('place'), 'place' )->name
+    		);
+
+    	endwhile;
+
+	endif;
+
+	wp_reset_postdata();
+}
+?>
+
 <section id="intro">
 		
 	<?php
@@ -61,86 +106,7 @@ Template Name: MyBali - Locations
 	</div>
 </section>
 
-<section id="merchants">
-	<div class="wrapper-1200">
-		
-		<h2 class="hl-4 margin-bot-50 center">
-			<?php echo first_line_bold( get_field('merchants_hl') ); ?>
-		</h2>
-
-		<div class="em-masonry margin-bot-50">
-
-			<?php
-
-			$google_maps = array();
-
-			$place_terms = get_terms( array(
-			    'taxonomy' => 'place',
-			    'hide_empty' => false,
-			) );
-
-			foreach ( $place_terms as $term ) {
-		    
-			    $place_group_query = new WP_Query( array(
-			        'post_type' => 'merchant',
-			        'meta_query' => array(
-			            array(
-			                'key' => 'place',
-			                'value' => array( $term->term_id ),
-			            )
-			        ),
-			        'posts_per_page' => -1
-			    ) );
-
-			    if ( $place_group_query->have_posts() ):
-
-			    ?>
-
-				    <div class="em-masonry-item">
-
-					    <h3>
-					    	<?php echo $term->name; ?>
-				    	</h3>
-					    
-					    <ul>
-						    
-						    <?php 
-
-						    $i=0;
-
-						   while ( $place_group_query->have_posts() ) : $place_group_query->the_post(); 
-
-						    	$google_maps[] = array('title' => get_the_title(), 'location' => get_field('google_maps') ); 
-
-						   	?>
-						        
-						        <li>
-						        	<strong><?php echo the_title(); ?></strong>
-						        	<div><?php the_field('address'); ?> <?php the_field('zip_code'); ?>, <?php echo get_term( get_field('place'), 'place' )->name; ?></div>
-					        	</li>
-
-						    <?php $i++; endwhile; ?>	
-					    
-					    </ul>
-
-					</div>
-
-			<?php
-
-				endif;
-
-			}
-
-			wp_reset_postdata();
-
-			?>
-
-		</div>
-
-	</div>
-</section>
-
-<section id="google-maps-contact">
+<section id="maps">
 	<div class="wrapper-1200 padding-bot-50">
 
 		<div class="google-maps">
@@ -155,6 +121,43 @@ Template Name: MyBali - Locations
 	        ?>
 
 	    </div>
+
+	</div>
+</section>
+
+<section id="merchants">
+	<div class="wrapper-1200">
+		
+		<h2 class="hl-4 margin-bot-50 center">
+			<?php echo first_line_bold( get_field('merchants_hl') ); ?>
+		</h2>
+
+		<div class="em-masonry margin-bot-50">
+			<?php foreach ($locations as $location => $places ) { ?>
+
+				<div class="em-masonry-item">
+				    <h3><?php echo $location; ?></h3>
+
+				    <ul>
+					    <?php foreach ($places as $place) { ?>
+
+					        <li>
+					        	<strong><?php echo $place["name"]; ?></strong>
+					        	<div><?php echo $place["address"]; ?> <?php echo $place["zip_code"]; ?>, <?php echo $place["place"]; ?></div>
+				        	</li>
+					    
+					    <?php } ?>
+					</ul>
+				</div>
+
+			<?php } ?>
+		</div>
+
+	</div>
+</section>
+
+<section id="contact">
+	<div class="wrapper-1200 padding-bot-50">
 
 		<div class="contact">
 
