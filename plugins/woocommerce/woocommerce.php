@@ -146,6 +146,11 @@
     // Dont display subheadline for related products
     add_filter( 'em_related_products_sub_headline', '__return_false' );
 
+    add_action( 'woocommerce_single_product_summary', 'mybali_single_product_price_per_weight', 5 );
+
+    function mybali_single_product_price_per_weight() {
+    	echo'<div class="price-per-weight">'.get_field('price_per_weight').'</div>';
+    }
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////
