@@ -3,15 +3,17 @@
 defined( 'ABSPATH' ) || exit;
 
 // ONLY DISPLAY IF PRODUCT TEMPLATE FIELD HAS VALUE = 1 (Café Product Template setting via Radio Buttons)
-if ( get_field('product_template') == 1 ):
+// if ( get_field('product_template') == 1 ):
 
-	$region_field = get_field('gebiet_region');
-	$region_term_meta = get_term_meta( $region_field->term_id ); 
+$region_field = get_field('gebiet_region');
+$region_term_meta = get_term_meta( $region_field->term_id ); 
 
-	$flavor_field = get_field('bohnenart');
-	$flavor_term_meta = get_term_meta( $flavor_field->term_id ); 
+$flavor_field = get_field('bohnenart');
+$flavor_term_meta = get_term_meta( $flavor_field->term_id );
 
-	?>
+if ( $region_field && $flavor_field ): 
+
+?>
 
 	<div class="region padding-bot-100">
 		<div class="row">
