@@ -48,7 +48,8 @@ if ( get_field('product_template') == 1 ):
                 <div class="content">
                     <div class="text-full">
                         <?php echo wp_get_attachment_image($em_text_box_3['image']['ID'], $size = 'full' ); ?>
-                        <?php echo $em_text_box_3['text']; ?>
+                        <?php // echo $em_text_box_3['text']; ?>
+                        <?php echo get_field('shipping_info', 'option'); ?>
                     </div>
                 </div>
             </div>
@@ -91,7 +92,7 @@ if ( get_field('product_template') == 1 ):
                             <div class="content">
                                 <div class="text-full">
                                     <?php echo wp_get_attachment_image(get_sub_field('image')['ID'], $size = 'landscape_800' ); ?>
-                                    <?php the_sub_field('text'); ?>
+                                    <?php if ( get_sub_field('type') == 1 ) echo get_field('shipping_info', 'option'); else the_sub_field('text'); ?>
                                 </div>
                             </div>
                         </div>
