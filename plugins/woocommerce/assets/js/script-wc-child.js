@@ -62,7 +62,6 @@ jQuery(document).ready(function($) {
         $em_page: '',
         $tr_data: [],
         $elementScrollTo: $('#em-wc-container'),
-        $loader:          $('.em-wc-archive-loader'),
 
         // Filters
         $filter:          $('#em-shop-archive-wrapper #em-shop-archive-sidebar a'),
@@ -86,14 +85,15 @@ jQuery(document).ready(function($) {
         },
 
         triggerAjaxFilter: function(em_page, data) {
-            widgets.$loader.fadeIn(200);
+
+            $('.em-wc-archive-loader').fadeIn(200);
+
             var em_data = {};
             em_data['em_page']    = em_page;
             em_data['tr_data']    = data;
             em_data['query']      = emsaq.query;
-            console.log(em_data);
-            
             em_data['action']     = 'em_shop_archive_filter';
+
             $.ajax({
                 type: 'POST',
                 data: em_data,
@@ -108,6 +108,8 @@ jQuery(document).ready(function($) {
                 },
 
                 success: function(response) {
+                    $('.em-wc-archive-loader').fadeOut(200);
+                    
                     if ( $('#em-shop-archive-wrapper .products-wrapper').length ) {
                         $('#em-shop-archive-wrapper .products-wrapper').replaceWith(response);
                     } else if( $('#em-shop-archive-wrapper p.woocommerce-info').length ) {
