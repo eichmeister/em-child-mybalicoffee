@@ -4,6 +4,62 @@
 // CUSTOM ICON FONT
 // @import url(icon-font-custom.css);
 
+
+////////////////////////////////////////////////////////////////////////////////////
+// LOADING ANIMATION
+////////////////////////////////////////////////////////////////////////////////////
+
+    .em-loading,    // USE THIS ONE!!!
+    .loading,       // DEPRECATED
+    .loader {       // DEPRECATED
+        width: 49px;
+        height: 49px;
+        margin: 0 auto;
+        border: 3px solid rgb(0,0,0);
+        border-radius: 50%;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        animation: cssload-spin 575ms infinite linear;
+        -o-animation: cssload-spin 575ms infinite linear;
+        -ms-animation: cssload-spin 575ms infinite linear;
+        -webkit-animation: cssload-spin 575ms infinite linear;
+        -moz-animation: cssload-spin 575ms infinite linear;
+
+        &.loader-white {
+            border: 3px solid rgb(255,255,255);
+        }
+
+        &.center-absolute {
+            position: absolute;
+            left: calc(50% - 25px);
+            top: calc(50% - 25px);
+        }
+    }
+
+    @keyframes cssload-spin {
+        100%{ transform: rotate(360deg); transform: rotate(360deg); }
+    }
+
+    @-o-keyframes cssload-spin {
+        100%{ -o-transform: rotate(360deg); transform: rotate(360deg); }
+    }
+
+    @-ms-keyframes cssload-spin {
+        100%{ -ms-transform: rotate(360deg); transform: rotate(360deg); }
+    }
+
+    @-webkit-keyframes cssload-spin {
+        100%{ -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+    }
+
+    @-moz-keyframes cssload-spin {
+        100%{ -moz-transform: rotate(360deg); transform: rotate(360deg); }
+    }
+
+    .preload {
+        display: none;
+    }
+    
 ////////////////////////////////////////////////////////////////////////////////////
 // BASIC ELEMENTS
 ////////////////////////////////////////////////////////////////////////////////////

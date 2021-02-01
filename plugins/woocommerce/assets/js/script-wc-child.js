@@ -86,13 +86,23 @@ jQuery(document).ready(function($) {
 
         triggerAjaxFilter: function(em_page, data) {
 
-            $('.em-wc-archive-loader').fadeIn(200);
-
             var em_data = {};
             em_data['em_page']    = em_page;
             em_data['tr_data']    = data;
             em_data['query']      = emsaq.query;
             em_data['action']     = 'em_shop_archive_filter';
+
+            $("html, body").animate({
+                scrollTop: $('#em-wc-container').offset().top - 200
+            }, {
+                duration: 500,
+                step: function( now, fx ) {
+                    var newOffset = $('#em-wc-container').offset().top - 200
+                    if (fx.end !== newOffset)
+                        fx.end = newOffset;
+                }
+            });
+            
 
             $.ajax({
                 type: 'POST',
@@ -100,11 +110,7 @@ jQuery(document).ready(function($) {
                 url: emsaq.ajaxurl,
 
                 beforeSend: function() {
-                    $('#em-shop-archive-wrapper .products-wrapper').html("");
-
-                    $("html, body").animate({
-                        scrollTop: widgets.$elementScrollTo.offset().top - 80
-                    }, 600);
+                    $('#em-shop-archive-wrapper .products-wrapper').html('<div style="height:100vh; position:relative;"><div class="em-loading" style="position:relative; top:200px;"></div>');
                 },
 
                 success: function(response) {

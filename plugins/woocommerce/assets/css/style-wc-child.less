@@ -390,6 +390,29 @@
 			}
 		}
 
+		#em-shop-archive-sidebar {
+			span, div {
+				display: inline-block;
+			}
+			@media all and (max-width: @breakpoint3) {
+				span {
+					display: block;
+					margin-bottom: 10px;
+				}
+
+				div {
+					display: block;
+					overflow-y: scroll;
+
+					a {
+						&:first-child {
+							margin-left: 0;
+						}
+					}
+				}
+			}
+		}
+
 		.trade-vibe {
 			position: relative;
 			background-image: url(../../../../assets/img/bali-background-4.jpg);
