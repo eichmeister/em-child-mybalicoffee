@@ -401,13 +401,28 @@
 				}
 
 				div {
-					display: block;
-					overflow-y: scroll;
-
 					a {
-						&:first-child {
-							margin-left: 0;
-						}
+						transition: unset;
+					    display: inline-block;
+					    padding: 6px 12px;
+					    margin: 4px;
+					    border: 1px solid black;
+
+					    &.active {
+					    	transform: none;
+					    	border: 2px solid black;
+					    	font-weight: bold;
+					    	padding: 5px 11px;
+					    	margin: 3px;
+					    }
+
+					    &:hover {
+					    	transform: none;
+					    	border: 2px solid black;
+					    	font-weight: bold;
+					    	padding: 5px 11px;
+					    	margin: 3px;
+					    }
 					}
 				}
 			}

@@ -576,12 +576,26 @@ body.woocommerce.archive #em-shop-archive-sidebar div {
     display: block;
     margin-bottom: 10px;
   }
-  body.woocommerce.archive #em-shop-archive-sidebar div {
-    display: block;
-    overflow-y: scroll;
+  body.woocommerce.archive #em-shop-archive-sidebar div a {
+    transition: unset;
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 4px;
+    border: 1px solid black;
   }
-  body.woocommerce.archive #em-shop-archive-sidebar div a:first-child {
-    margin-left: 0;
+  body.woocommerce.archive #em-shop-archive-sidebar div a.active {
+    transform: none;
+    border: 2px solid black;
+    font-weight: bold;
+    padding: 5px 11px;
+    margin: 3px;
+  }
+  body.woocommerce.archive #em-shop-archive-sidebar div a:hover {
+    transform: none;
+    border: 2px solid black;
+    font-weight: bold;
+    padding: 5px 11px;
+    margin: 3px;
   }
 }
 body.woocommerce.archive .trade-vibe {
