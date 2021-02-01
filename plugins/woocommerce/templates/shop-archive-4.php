@@ -40,9 +40,12 @@ defined( 'ABSPATH' ) || exit;
 			?>
 
 		</div>
+
+		<?php do_action( 'woocommerce_after_shop_loop' ); // woocommerce_pagination(); ?>
+		
 	</div>
 
-<?php woocommerce_pagination(); ?>
+
 
 <?php } else { ?>
 

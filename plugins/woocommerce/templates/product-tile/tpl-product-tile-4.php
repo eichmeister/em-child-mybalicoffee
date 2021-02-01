@@ -35,11 +35,12 @@ $product_tile_grid = apply_filters( 'product_tile_grid', 'col_sm_6 col_4' );
 
 
 $region_field = get_field( 'gebiet_region', $parent );
-$region_term_meta = get_term_meta( $region_field->term_id ); 
-$region_background_color = $region_term_meta['background_color'][0]; 
+
+$region_term_meta = isset( $region_field->term_id ) ? get_term_meta( $region_field->term_id ) : "";
+$region_background_color = isset( $region_term_meta['background_color'][0] ) ? $region_term_meta['background_color'][0] : ""; 
 
 $flavor_field = get_field( 'bohnenart', $parent );
-$flavor_term_meta = get_term_meta( $flavor_field->term_id ); 
+$flavor_term_meta = isset( $flavor_field->term_id ) ? get_term_meta( $flavor_field->term_id ) : "";
 
 $product_color = get_field( 'product_color', $parent );	
 
@@ -139,14 +140,6 @@ $product_color = get_field( 'product_color', $parent );
 				            $default_variation = wc_get_product($variation_id);
 				            // Raw output of available "default" variation details data
 				        	$em_attribute = "";
-
-				            if ( ($parent->get_default_attributes())['pa_gewicht'] ) {
-				            	$term = get_term_by('slug', ($parent->get_default_attributes())['pa_gewicht'], 'pa_gewicht');
-				            	$em_attribute = $term->name . ' - ';
-				            } else {
-				            	$term = get_term_by('slug', ($parent->get_default_attributes())['pa_groesse'], 'pa_groesse');
-				            	$em_attribute = $term->name . ' - ';
-				            }
 				            // br(($parent->get_default_attributes())['pa_groesse']);
 				            echo '<span class="not-available price">' . $em_attribute . wc_price( $default_variation->get_price() ) . '</span>';
 				        }

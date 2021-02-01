@@ -195,6 +195,10 @@
 				?>
 
 			</div>
+			<?php
+			$em_new_archive = new EM_WC_Archive();
+			$em_new_archive->em_wc_pagination($em_wc_ajax_query , $_POST['em_page']); 
+			?>
 		</div>
 
 		<?php
