@@ -608,6 +608,22 @@
         background: url(../img/ico-angle-down.svg) no-repeat;
         background-size: 15px;
         background-position: right 15px center;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+
+        option {
+            color: #fff;
+            background-color: #033142;
+        }
+
+        &::-ms-expand {
+            display: none;
+        }
+
+        &:focus::-ms-value {
+            background-color: transparent;
+        }
     }
 
 ////////////////////////////////////////////////////////////////////////////////////

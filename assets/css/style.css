@@ -1351,6 +1351,19 @@ select {
   background: url(../img/ico-angle-down.svg) no-repeat;
   background-size: 15px;
   background-position: right 15px center;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+select option {
+  color: #fff;
+  background-color: #033142;
+}
+select::-ms-expand {
+  display: none;
+}
+select:focus::-ms-value {
+  background-color: transparent;
 }
 body .instafeed .wdi_feed_container,
 body .instafeed .wdi_feed_wrapper,
