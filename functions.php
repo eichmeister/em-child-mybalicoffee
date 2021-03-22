@@ -390,6 +390,8 @@
           gtag('config', 'AW-722172369', { 'anonymize_ip': true });
         </script>
 
+        <meta name="facebook-domain-verification" content="y1qb7js4uh7mhadi5iv2hcyukq7m27" />
+
         <?php 
     }
 
